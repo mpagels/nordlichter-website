@@ -1,4 +1,4 @@
-import NavLink from '../NavLink'
+import NavLink from '../NavLink/NavLink'
 import navLinks from '../../config/navLinks'
 import styled from 'styled-components'
 

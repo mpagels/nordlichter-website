@@ -1,9 +1,10 @@
-import Head from "next/head";
-import Navbar from "../components/NavBar";
-import styled from "styled-components";
+import Head from 'next/head'
+import Navbar from './NavBar/NavBar'
+import styled from 'styled-components'
+import WelcomeAttentionMsg from './WelcomeAttentionMsg/WelcomeAttentionMsg'
 
 export default function Layout({ children }) {
-  const appTitle = "Nordlichter Halstenbek";
+  const appTitle = 'Nordlichter Halstenbek'
 
   return (
     <LayoutWrapper>
@@ -15,7 +16,7 @@ export default function Layout({ children }) {
       <Navbar />
       <Content>{children}</Content>
     </LayoutWrapper>
-  );
+  )
 }
 
 const LayoutWrapper = styled.div`
@@ -25,7 +26,7 @@ const LayoutWrapper = styled.div`
 
   height: 100%;
   width: 100%;
-`;
+`
 
 const Content = styled.div`
   flex: 1;
@@ -34,4 +35,4 @@ const Content = styled.div`
   align-items: center;
 
   width: 100%;
-`;
+`
