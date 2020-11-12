@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-test",
+  "name": "nordlichter-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,10 @@
   "dependencies": {
     "next": "10.0.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }
