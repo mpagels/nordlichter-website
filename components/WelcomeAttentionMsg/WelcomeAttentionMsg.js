@@ -1,14 +1,16 @@
 import styled from 'styled-components'
-import React from 'react'
-import Exclamation from '../../assets/svgs/ausrufezeichen-mit-person.svg'
-import ThreePeople from '../../assets/svgs/drei-leute.svg'
+import Exclamation from '../../assets/svgs/leistungen/ausrufezeichen-mit-person.svg'
+import ThreePeople from '../../assets/svgs/leistungen/drei-leute.svg'
+
 import leistungen from '../../assets/api/api-leistungen'
 
 export default function WelcomeAttentionMsg() {
   return (
     <Wrapper>
       <Exclamation style={svgStyle} />
-      <Message>{leistungen[0].attentionMsg}</Message>
+component/leistungen/TextSvgText
+      <Message>{leistungen.attentionMsg}</Message>
+
       <ThreePeople style={svgStyle} />
     </Wrapper>
   )
