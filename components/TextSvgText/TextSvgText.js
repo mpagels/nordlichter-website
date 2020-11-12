@@ -32,6 +32,6 @@ const Svg = styled.span`
 const Line = styled.hr`
   color: var(--line-color-lightgrey);
   width: 50%;
-  margin: 20px;
+  margin: 40px;
   height: 0.1px;
 `

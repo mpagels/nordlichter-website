@@ -26,5 +26,6 @@ body {
     --font-color-blue: #0075AB;
     --font-color-darkgrey: #707070;
     --line-color-lightgrey: #8080801A;
+    --infoBox-color-lightgrey: #E2E2E247;
     }
 `
