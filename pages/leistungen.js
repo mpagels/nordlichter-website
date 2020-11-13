@@ -18,9 +18,12 @@ export default function Leistungen() {
         begleiten Sie auf Ihrem Weg zur <span>Gesundheit</span>.
       </AboutUs>
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
-        <TextSvgText key={index} firstText={firstText} secondText={secondText}>
-          {svg}
-        </TextSvgText>
+        <TextSvgText
+          key={index}
+          firstText={firstText}
+          svg={svg}
+          secondText={secondText}
+        />
       ))}
       <Subline>Die Nordlichter - wir freuen uns auf Sie!</Subline>
       <BottomSvg />
