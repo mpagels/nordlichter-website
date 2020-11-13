@@ -1,3 +1,3 @@
-export default function Svg({ svg }) {
-  return svg
+export default function Svg({ children }) {
+  return children
 }

@@ -2,6 +2,7 @@ import KalenderSVG from '../svgs/leistungen/termin-kalender.svg'
 import TrainingSVG from '../svgs/leistungen/training-mit-experte.svg'
 import FoodListSVG from '../svgs/leistungen/ernaehrungsliste.svg'
 import TreeSwingSVG from '../svgs/leistungen/baum-schaukel.svg'
+import Svg from '../../components/util/Svg'
 
 const leistungen = {
   attentionMsg:
@@ -10,28 +11,45 @@ const leistungen = {
     {
       firstText:
         'Sie haben eine Verordnung von einem Facharzt für Manuelle Therapie, Krankengymnastik oder Lymphdrainage?',
-      svg: <KalenderSVG />,
+      svg: (
+        <Svg>
+          <KalenderSVG />
+        </Svg>
+      ),
       secondText:
         'Dann vereinbaren Sie einen Termin bei uns. Wir erstellen ihnen umgehend eine Behandlungsserie bei dem richtigen Therapeuten für Sie.',
     },
     {
       firstText:
         'Eine Verletzung nach einem Wettkampf oder ein "Ziehen" in der Wade beim Training? Lassen Sie uns sehen woran es liegt.',
-      svg: <TrainingSVG />,
+      svg: (
+        <Svg>
+          <TrainingSVG />
+        </Svg>
+      ),
       secondText:
         'Unsere Experten in der Sportlerbetreuung kennen sich aus uns und bringen Sie wieder "back to the top".',
     },
     {
       firstText:
         'Sie haben eine Verordnung von einem Facharzt für Manuelle Therapie, Krankengymnastik oder Lymphdrainage?',
-      svg: <FoodListSVG />,
+      svg: (
+        <Svg>
+          {' '}
+          <FoodListSVG />{' '}
+        </Svg>
+      ),
       secondText:
         'Dann vereinbaren Sie einen Termin bei uns. Wir erstellen ihnen umgehend eine Behandlungsserie bei dem richtigen Therapeuten für Sie.',
     },
     {
       firstText:
         'Sie haben sich rein gehängt, alles gegeben und brauchen jetzt endlich mal etwas Besonderes für sich?',
-      svg: <TreeSwingSVG />,
+      svg: (
+        <Svg>
+          <TreeSwingSVG />
+        </Svg>
+      ),
       secondText:
         'Vereinbaren Sie doch einen Massage Termin und gönnen Sie sich die Erholung. Sie haben es sich verdient!',
     },
