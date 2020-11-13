@@ -19,7 +19,7 @@ export default function Leistungen() {
       </AboutUs>
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
         <TextSvgText key={index} firstText={firstText} secondText={secondText}>
-          {/* {svg[0]} */}
+          {svg}
         </TextSvgText>
       ))}
       <Subline>Die Nordlichter - wir freuen uns auf Sie!</Subline>

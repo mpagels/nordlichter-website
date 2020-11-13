@@ -4,7 +4,7 @@ export default function TextSvgText({ firstText, children, secondText }) {
   return (
     <Wrapper>
       <Text>{firstText}</Text>
-      <Svg>{children}</Svg>
+      <Svg>{children()}</Svg>
       <Text>{secondText}</Text>
       <Line />
     </Wrapper>
