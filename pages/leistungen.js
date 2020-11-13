@@ -17,8 +17,8 @@ export default function Leistungen() {
         Beschwerden im Alltag oder eine aufwändige Reha nach einer OP, wir
         begleiten Sie auf Ihrem Weg zur <span>Gesundheit</span>.
       </AboutUs>
-      {leistungen.infoTexts.map(({ firstText, svg, secondText }) => (
-        <TextSvgText firstText={firstText} secondText={secondText}>
+      {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
+        <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}
         </TextSvgText>
       ))}
