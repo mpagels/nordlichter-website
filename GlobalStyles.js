@@ -26,3 +26,4 @@ body {
     --infoBox-color-lightgrey: #E2E2E247;
     }
 `
+
