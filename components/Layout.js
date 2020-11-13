@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Navbar from './NavBar/NavBar'
 import styled from 'styled-components'
-import WelcomeAttentionMsg from './WelcomeAttentionMsg/WelcomeAttentionMsg'
 
 export default function Layout({ children }) {
   const appTitle = 'Nordlichter Halstenbek'
