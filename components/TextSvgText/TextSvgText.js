@@ -4,7 +4,7 @@ export default function TextSvgText({ firstText, children, secondText }) {
   return (
     <Wrapper>
       <Text>{firstText}</Text>
-      <Svg>{children}</Svg>
+      <Svg> {children} </Svg>
       <Text>{secondText}</Text>
       <Line />
     </Wrapper>
@@ -25,6 +25,7 @@ const Text = styled.p`
   font-size: 1.1em;
   color: var(--font-color-darkgrey);
 `
+
 const Svg = styled.span`
   margin: 20px;
 `
