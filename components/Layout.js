@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Navbar from './NavBar/NavBar'
+import Footer from './Footer/Footer'
 import styled from 'styled-components'
 
 export default function Layout({ children }) {
@@ -20,6 +21,7 @@ export default function Layout({ children }) {
       </Head>
       {/* <Navbar /> */}
       <Content>{children}</Content>
+      <Footer />
     </LayoutWrapper>
   )
 }
@@ -38,6 +40,5 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
 `

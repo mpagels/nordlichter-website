@@ -1,7 +1,10 @@
+import Svg from '../../components/util/Svg'
+import FacebookSVG from '../svgs/footer/facebook.svg'
+
 const footer = [
   {
     title: 'Sprechzeiten:',
-    info: [
+    infos: [
       'Mo - Do: 07:00 - 19:00',
       'Fr: 07:00 - 18:00',
       'Termine nach Vereinbarung',
@@ -9,33 +12,37 @@ const footer = [
   },
   {
     title: 'Kontakt:',
-    info: [
+    infos: [
       `Hartkirchener Chaussee 3
         25469 Halstenbek`,
-      `Telefon: 04101 43 233
-          Fax: 04101 37 93 41`,
-      `Mail: info@nordlichter-halstenbek.de`,
+      `Telefon: 04101 43 233`,
+      `Fax: 04101 37 93 41`,
+      `Mail: infos@nordlichter-halstenbek.de`,
     ],
   },
   {
     title: 'Besuchen Sie uns auf Facebook!',
-    info: ['facebook logo'],
+    infos: (
+      <Svg>
+        <FacebookSVG />
+      </Svg>
+    ),
   },
   {
     title: 'Impressum',
-    info: [
+    infos: [
       `Die Nordlichter - Praxis für Physiotherapie
         Hartkirchener Chaussee 3
         25469 Halstenbek`,
       `Inhaber & Geschäftsführer:
         Torben Petersen-Lund`,
 
-      `Tel: 04101 432 33
-        Fax: 04101 37 93 41`,
+      `Telefon: 04101 43 233`,
+      `Fax: 04101 37 93 41`,
 
       `Mail: info@nordlichter-halstenbek.de`,
       `www.nordlichter-halstenbek.de`,
-      ` IBAN: DE74 2219 1405 0079 8046 90`,
+      `IBAN: DE74 2219 1405 0079 8046 90`,
     ],
   },
 ]
