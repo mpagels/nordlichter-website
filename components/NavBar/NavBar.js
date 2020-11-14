@@ -5,13 +5,19 @@ import mail from 'react-useanimations/lib/menu3'
 import MailSVG from '../../assets/svgs/navbar/mail.svg'
 import Svg from '../util/Svg'
 import styled from 'styled-components'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
-  const router = useRouter() || { pathname: '/leistungen' }
+  const [location, setLocation] = useState({ pathname: '/leistungen' })
+
+  const router = useRouter()
+
+  useEffect(() => {
+    setLocation({ pathname: router.pathname })
+  }, [router])
 
   return (
     <NavBarWrapper isOpen={isOpen}>
@@ -26,12 +32,12 @@ export default function NavBar() {
       />
       <Navs index={-1}>
         {navLinks
-          .filter(({ path }) => path === router.pathname)[0]
+          .filter(({ path }) => path === location.pathname || path === '/')[0]
           ['label'].toUpperCase()}
       </Navs>
       {isOpen &&
         navLinks
-          .filter(({ path }) => path !== router.pathname)
+          .filter(({ path }) => path !== location.pathname)
           .map(({ label, path }, index) => (
             <NavLink key={label} index={index} path={path} label={label} />
           ))}

@@ -1,28 +1,32 @@
 const navLinks = [
   {
-    label: "Leistungen",
-    path: "/leistungen",
+    label: 'Leistungen',
+    path: '/leistungen',
   },
   {
-    label: "Verordnungen",
-    path: "/verordnungen",
+    label: 'Verordnungen',
+    path: '/verordnungen',
   },
   {
-    label: "Athlethen Betreuung",
-    path: "/athleten-betreuung",
+    label: 'Athlethen Betreuung',
+    path: '/athleten-betreuung',
   },
   {
-    label: "Preise",
-    path: "/preise",
+    label: 'Preise',
+    path: '/preise',
   },
   {
-    label: "Nordlichter",
-    path: "/nordlichter",
+    label: 'Nordlichter',
+    path: '/nordlichter',
   },
   {
-    label: "Kontakt",
-    path: "/kontakt",
+    label: 'Kontakt',
+    path: '/kontakt',
   },
-];
+  {
+    label: 'Leistungen',
+    path: '/',
+  },
+]
 
-export default navLinks;
+export default navLinks
