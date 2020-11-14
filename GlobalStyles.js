@@ -20,10 +20,11 @@ body {
 
 :root {
     --backgroundColor: #fff;
+    --footer-backgroundColor: #141414;
     --font-color-blue: #0075AB;
     --font-color-darkgrey: #707070;
+    --footer-font-color-lightgrey: #EFEFEF;
     --line-color-lightgrey: #8080801A;
     --infoBox-color-lightgrey: #E2E2E247;
     }
 `
-

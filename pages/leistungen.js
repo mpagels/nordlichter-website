@@ -23,7 +23,7 @@ export default function Leistungen() {
         </TextSvgText>
       ))}
       <Subline>Die Nordlichter - wir freuen uns auf Sie!</Subline>
-      <BottomSvg />
+      <BottomSvg style={bottomSvgStyle} />
     </Layout>
   )
 }
@@ -58,3 +58,8 @@ const Subline = styled.h2`
   font-weight: 900;
   font-size: 1.2em;
 `
+
+const bottomSvgStyle = {
+  position: 'relative',
+  bottom: '-9px',
+}
