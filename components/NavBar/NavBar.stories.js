@@ -5,7 +5,9 @@ export default {
   component: NavBar,
 }
 
-const Template = () => <NavBar />
+const Template = (args) => <NavBar {...args} />
 
 export const Navbar = Template.bind({})
-Navbar.args = {}
+Navbar.args = {
+  router: '/leistungen',
+}
