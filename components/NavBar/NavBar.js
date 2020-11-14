@@ -11,14 +11,7 @@ import Link from 'next/link'
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [location, setLocation] = useState({ pathname: '/leistungen' })
-
   const router = useRouter()
-
-  useEffect(() => {
-    setLocation({ pathname: router.pathname })
-  }, [router])
-
   return (
     <NavBarWrapper isOpen={isOpen}>
       <UseAnimations
@@ -31,16 +24,26 @@ export default function NavBar() {
         style={gridStyle}
       />
       <Navs index={-1}>
-        {navLinks
-          .filter(({ path }) => path === location.pathname || path === '/')[0]
-          ['label'].toUpperCase()}
+        {router.pathname !== '/'
+          ? navLinks
+              .filter(({ path }) => path === router.pathname)[0]
+              ['label'].toUpperCase()
+          : 'LEISTUNGEN'}
       </Navs>
-      {isOpen &&
-        navLinks
-          .filter(({ path }) => path !== location.pathname)
-          .map(({ label, path }, index) => (
-            <NavLink key={label} index={index} path={path} label={label} />
-          ))}
+      {isOpen
+        ? router.pathname !== '/'
+          ? navLinks
+              .filter(({ path }) => path !== router.pathname)
+              .map(({ label, path }, index) => (
+                <NavLink key={label} index={index} path={path} label={label} />
+              ))
+          : navLinks
+              .slice(1)
+              .filter(({ path }) => path !== router.pathname)
+              .map(({ label, path }, index) => (
+                <NavLink key={label} index={index} path={path} label={label} />
+              ))
+        : ''}
       <Svg style={gridStyle}>
         <Link href={'/kontakt'}>
           <MailSVG />

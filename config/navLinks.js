@@ -23,10 +23,6 @@ const navLinks = [
     label: 'Kontakt',
     path: '/kontakt',
   },
-  {
-    label: 'Leistungen',
-    path: '/',
-  },
 ]
 
 export default navLinks
