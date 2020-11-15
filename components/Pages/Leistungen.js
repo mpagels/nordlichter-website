@@ -60,6 +60,5 @@ const Subline = styled.h2`
 
 const bottomSvgStyle = {
   position: 'relative',
-  bottom: '-25px',
-  width: '95%',
+  bottom: '-9px',
 }
