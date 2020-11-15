@@ -12,7 +12,7 @@ export default function NavLink({ path, label, index }) {
 }
 
 const NavLinkStyled = styled.div`
-  height: 60px;
+  height: 55px;
   grid-column-start: 2;
   grid-column-end: 2;
   justify-self: start;
