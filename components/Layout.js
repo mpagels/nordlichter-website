@@ -27,6 +27,7 @@ export default function Layout({ children }) {
 }
 
 const LayoutWrapper = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
 

@@ -24,6 +24,7 @@
     "@storybook/addon-links": "^6.0.28",
     "@storybook/react": "^6.0.28",
     "babel-loader": "^8.2.1",
+    "babel-plugin-inline-import-data-uri": "^1.0.1",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-styled-components": "^1.11.1",
     "react-is": "^17.0.1"
