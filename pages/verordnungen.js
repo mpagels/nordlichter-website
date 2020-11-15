@@ -1,6 +1,5 @@
 import Layout from '../components/Layout'
 import HeadlineWithSvg from '../components/HeadlineWithSvg/HeadlineWithSvg'
-import Svg from '../components/util/Svg'
 import Logo from '../components/Logo/Logo'
 import TreeWaySvg from '../assets/svgs/verordnungen/tree-way.svg'
 import verordnungen from '../assets/api/api-verordnungen'
@@ -14,9 +13,7 @@ export default function Verordnungen() {
     <Layout>
       <Logo />
       <HeadlineWithSvg headline={'Behandlungen nach ärztlicher Verordnung'}>
-        <Svg>
-          <TreeWaySvg />
-        </Svg>
+        <TreeWaySvg />
       </HeadlineWithSvg>
       <GreyContentBox text={verordnungen.greyContent} />
       <SubHeadlineWithInfo {...verordnungen.firstInfo} />

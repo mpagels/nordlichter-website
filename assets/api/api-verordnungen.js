@@ -1,9 +1,9 @@
-import Svg from '../../components/util/Svg'
 import FirstTerminSvg from '../svgs/verordnungen/first-termin.svg'
 import SelfMoneySvg from '../svgs/verordnungen/self-money.svg'
 import TreatmentTimeSvg from '../svgs/verordnungen/treatment-time.svg'
 import AppointmentSvg from '../svgs/verordnungen/appointment.svg'
 import TimeUnitsSvg from '../svgs/verordnungen/time-units.svg'
+import Svg from '../../components/util/Svg'
 
 const verordnungen = {
   greyContent: [
