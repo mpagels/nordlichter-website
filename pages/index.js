@@ -1,11 +1,10 @@
 import Layout from '../components/Layout'
-import { useRouter } from 'next/router'
+import LeistungenPage from '../components/Pages/Leistungen'
 
 export default function Index() {
-  const router = useRouter()
-  // Make sure we're in the browser
-  if (typeof window !== 'undefined') {
-    router.push('/leistungen')
-  }
-  return <Layout />
+  return (
+    <Layout>
+      <LeistungenPage />
+    </Layout>
+  )
 }

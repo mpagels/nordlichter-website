@@ -7,12 +7,14 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006 --no-dll",
+    "sb": "start-storybook -p 6006 --no-dll",
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-useanimations": "^2.0.6",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
