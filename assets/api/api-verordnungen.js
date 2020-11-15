@@ -27,6 +27,11 @@ const verordnungen = {
       normal: 'bei uns.',
     },
   ],
+  firstInfo: {
+    headline: 'Warum wir der richtige Partner für Sie sind',
+    info:
+      'Du hast ein Ziel: Wieder gesund und fit zu werden. Wir stehen an Deiner Seite. Hier kommen drei Hinweise, für einen reibungslosen Ablauf bei uns:',
+  },
 }
 
 export default verordnungen
