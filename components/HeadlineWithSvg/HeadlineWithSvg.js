@@ -4,7 +4,7 @@ export default function HeadlineWithSvg({ headline, children }) {
   return (
     <Wrapper>
       <Headline>{headline}</Headline>
-      {children}
+      <Svg>{children}</Svg>
     </Wrapper>
   )
 }
@@ -21,4 +21,7 @@ const Headline = styled.h1`
   color: var(--font-color-darkgrey);
   font-size: 1.3em;
   font-weight: 900;
+`
+const Svg = styled.span`
+  margin: 20px;
 `

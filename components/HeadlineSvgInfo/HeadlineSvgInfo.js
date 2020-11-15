@@ -5,7 +5,7 @@ export default function HeadlineSvgInfo({ headline, children, info }) {
   return (
     <Wrapper>
       <Headline>{headline}</Headline>
-      {children}
+      <Svg> {children} </Svg>
       <Content text={info} fontSize={'1.1em'} />
     </Wrapper>
   )
@@ -25,3 +25,7 @@ const Headline = styled.h3`
 const customStyle = {
   marginTop: '30px',
 }
+
+const Svg = styled.span`
+  margin: 20px;
+`

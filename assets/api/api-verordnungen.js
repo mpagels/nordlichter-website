@@ -1,8 +1,8 @@
-import FirstTerminSvg from '../svgs/verordnungen/first-termin.svg'
-import SelfMoneySvg from '../svgs/verordnungen/self-money.svg'
-import TreatmentTimeSvg from '../svgs/verordnungen/treatment-time.svg'
-import AppointmentSvg from '../svgs/verordnungen/appointment.svg'
-import TimeUnitsSvg from '../svgs/verordnungen/time-units.svg'
+import FirstTerminSVG from '../svgs/verordnungen/first-termin.svg'
+import SelfMoneySVG from '../svgs/verordnungen/self-money.svg'
+import TreatmentTimeSVG from '../svgs/verordnungen/treatment-time.svg'
+import AppointmentSVG from '../svgs/verordnungen/appointment.svg'
+import TimeUnitsSVG from '../svgs/verordnungen/time-units.svg'
 import Svg from '../../components/util/Svg'
 
 const verordnungen = {
@@ -38,7 +38,7 @@ const verordnungen = {
       headline: 'Der erste Termin',
       svg: (
         <Svg>
-          <FirstTerminSvg />
+          <FirstTerminSVG />
         </Svg>
       ),
       info: [
@@ -59,7 +59,7 @@ const verordnungen = {
       headline: 'Bei gesetzlich Versicherten',
       svg: (
         <Svg>
-          <SelfMoneySvg />
+          <SelfMoneySVG />
         </Svg>
       ),
       info: [
@@ -86,7 +86,7 @@ const verordnungen = {
       headline: 'Die Behandlungszeiten',
       svg: (
         <Svg>
-          <TreatmentTimeSvg />
+          <TreatmentTimeSVG />
         </Svg>
       ),
       info: [
@@ -116,7 +116,7 @@ const verordnungen = {
       headline: 'Bei der Terminvergabe',
       svg: (
         <Svg>
-          <AppointmentSvg />
+          <AppointmentSVG />
         </Svg>
       ),
       info: [
@@ -143,7 +143,7 @@ const verordnungen = {
       headline: 'Die Zeiteinheiten',
       svg: (
         <Svg>
-          <TimeUnitsSvg />
+          <TimeUnitsSVG />
         </Svg>
       ),
       info: [
