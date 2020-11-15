@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Content from '../GreyContextBox.js/Content'
+import Content from '../GreyContextBox/Content'
 
 export default function HeadlineSvgInfo({ headline, children, info }) {
   return (
@@ -12,10 +12,16 @@ export default function HeadlineSvgInfo({ headline, children, info }) {
 }
 
 const Wrapper = styled.section`
-  margin: 30px 20px;
+  margin: 20px;
   color: var(--font-color-darkgrey);
   font-family: 'Open Sans';
   text-align: center;
 `
 
-const Headline = styled.h3``
+const Headline = styled.h3`
+  margin-bottom: 30px;
+`
+
+const customStyle = {
+  marginTop: '30px',
+}
