@@ -27,12 +27,10 @@ export default function Layout({ children }) {
 }
 
 const LayoutWrapper = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
 
   height: 100%;
-  width: 100%;
 `
 
 const Content = styled.div`
@@ -40,5 +38,4 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 `
