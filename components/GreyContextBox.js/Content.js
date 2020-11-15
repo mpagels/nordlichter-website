@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export default function Content({ text }) {
+export default function Content({ text, fontSize }) {
   return (
-    <NormalText>
+    <NormalText fontSize={fontSize}>
       {text.map((content) =>
         content.highlight ? (
           <Highlight>{content.highlight}</Highlight>
@@ -15,7 +15,7 @@ export default function Content({ text }) {
 }
 
 const NormalText = styled.p`
-  font-size: 1.2em;
+  font-size: ${({ fontSize }) => fontSize ?? '1.2em'};
   font-weight: lighter;
   font-weight: 200;
   text-align: center;
