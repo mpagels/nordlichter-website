@@ -56,7 +56,7 @@ export default function NavBar() {
 const NavBarWrapper = styled.div`
   display: grid;
   grid-template-columns: 13% 74% 13%;
-  ${({ isOpen }) => isOpen && 'grid-template-rows: repeat(5, 40px)'};
+  ${({ isOpen }) => isOpen && 'grid-template-rows: repeat(5, 55px)'};
   align-items: center;
   justify-items: center;
   background-color: white;
@@ -65,7 +65,7 @@ const NavBarWrapper = styled.div`
   top: 0;
 `
 const Navs = styled.div`
-  height: 40px;
+  height: 55px;
   grid-column-start: 2;
   grid-column-end: 2;
   justify-self: start;
@@ -78,6 +78,7 @@ const Navs = styled.div`
   color: var(--font-color-darkgrey);
   font-family: 'Open Sans';
   font-weight: bold;
+  font-size: 1.1em;
 `
 
 const gridStyle = {

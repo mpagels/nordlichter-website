@@ -12,7 +12,7 @@ export default function NavLink({ path, label, index }) {
 }
 
 const NavLinkStyled = styled.div`
-  height: 40px;
+  height: 60px;
   grid-column-start: 2;
   grid-column-end: 2;
   justify-self: start;
@@ -26,6 +26,7 @@ const NavLinkStyled = styled.div`
   font-family: 'Open Sans';
   font-weight: bold;
   cursor: pointer;
+  font-size: 1.1em;
 `
 const Label = styled.span`
   color: #707070;
