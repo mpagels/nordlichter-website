@@ -1,8 +1,27 @@
 {
-  "presets": ["next/babel"],
+  "presets": [
+    [
+      "next/babel",
+      {
+        // TODO: Remove when airbnb/babel-plugin-inline-react-svg#91 gets fixed
+        "preset-react": { "runtime": "classic", "pragma": "__jsx" }
+      }
+    ]
+  ],
   "plugins": [
     ["styled-components", { "ssr": true }],
-    ["inline-react-svg"],
-    ["inline-import-data-uri"]
+    "inline-react-svg",
+    "inline-import-data-uri",
+    [
+      // TODO: Remove when airbnb/babel-plugin-inline-react-svg#91 gets fixed
+      // Source: https://github.com/vercel/next.js/blob/canary/packages/next/build/babel/preset.ts
+      "next/dist/build/babel/plugins/jsx-pragma",
+      {
+        "module": "react",
+        "importAs": "React",
+        "pragma": "__jsx",
+        "property": "createElement"
+      }
+    ]
   ]
 }
