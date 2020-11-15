@@ -1,3 +1,4 @@
+import React from 'react'
 import FirstTerminSVG from '../svgs/verordnungen/first-termin.svg'
 import SelfMoneySVG from '../svgs/verordnungen/self-money.svg'
 import TreatmentTimeSVG from '../svgs/verordnungen/treatment-time.svg'

@@ -11,7 +11,7 @@ import BottomSvg from '../assets/svgs/verordnungen/verordnung-ende.svg'
 export default function Verordnungen() {
   return (
     <Layout>
-      <Logo />
+      {/* <Logo /> */}
       <HeadlineWithSvg headline={'Behandlungen nach ärztlicher Verordnung'}>
         <TreeWaySvg />
       </HeadlineWithSvg>
