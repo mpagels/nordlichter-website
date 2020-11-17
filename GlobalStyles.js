@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-size: 112.5%;
     background-color: var(--backgroundColor);
-    color: black;
+    color: var(--font-color-darkgrey);
     font-family: 'Nunito Sans', sans-serif;
     a {
         color: black;
@@ -26,5 +26,7 @@ body {
     --footer-font-color-lightgrey: #EFEFEF;
     --line-color-lightgrey: #8080801A;
     --infoBox-color-lightgrey: #E2E2E247;
+    --headcolor-services-normal: #F75119;
+    --headcolor-services-second: #F7C219;
     }
 `
