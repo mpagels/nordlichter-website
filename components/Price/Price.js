@@ -12,42 +12,45 @@ export default function Price({
   arrow,
 }) {
   return (
-    <Wrapper>
-      <Header isBest={isBest} color={color}>
-        {length}
-      </Header>
-      <ContentWrapper>
-        <Service>{serviceName}</Service>
-        <PriceWrapper>
-          <Euro>€</Euro>
-          <Money>{price}</Money>
-          <AdditionalPrice>{priceAdditional}</AdditionalPrice>
-        </PriceWrapper>
-        {arrow && (
-          <ArrowWrapper>
-            <Arrow percent={arrow} />
-          </ArrowWrapper>
-        )}
-      </ContentWrapper>
-      <AdditionalInfosWrapper isBest={isBest}>
-        {additionalInfos}
-      </AdditionalInfosWrapper>
-    </Wrapper>
+    <OverallWrapper>
+      <Wrapper>
+        <Header isBest={isBest} color={color}>
+          {length}
+        </Header>
+        <ContentWrapper>
+          <Service>{serviceName}</Service>
+          <PriceWrapper>
+            <Euro>€</Euro>
+            <Money>{price}</Money>
+            <AdditionalPrice>{priceAdditional}</AdditionalPrice>
+          </PriceWrapper>
+          {arrow && (
+            <ArrowWrapper>
+              <Arrow percent={arrow} />
+            </ArrowWrapper>
+          )}
+        </ContentWrapper>
+        <AdditionalInfosWrapper isBest={isBest}>
+          {additionalInfos}
+        </AdditionalInfosWrapper>
+      </Wrapper>
+    </OverallWrapper>
   )
 }
 
+const OverallWrapper = styled.div`
+  display: inline-block;
+  padding-bottom: 30px;
+`
 const Wrapper = styled.div`
   border-radius: 10px;
   margin: 20px;
-  width: 260px;
+  min-width: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 8px 20px 7px rgba(0, 0, 0, 0.1);
 `
 const Header = styled.div`
   border-radius: 10px 10px 0 0;
