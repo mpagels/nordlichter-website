@@ -28,5 +28,8 @@ body {
     --infoBox-color-lightgrey: #E2E2E247;
     --headcolor-services-normal: #F75119;
     --headcolor-services-second: #F7C219;
+    --form-border-color: #A8C4E5;
+    --form-input-background-color: #F7F9FC;
+    --form-error-color: #F86D70;
     }
 `
