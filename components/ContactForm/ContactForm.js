@@ -9,7 +9,6 @@ export default function ContactForm({ onSubmit }) {
   const { register, handleSubmit, watch, errors } = useForm()
 
   async function sendThisShit(data) {
-    console.log(data)
     const {email, nachricht, name, telefon, adresse, betreff} = data
     const res = await sendContactMail("pagelsmartin@gmx.de", name, "pagelsmartin@gmx.de", nachricht, telefon, adresse, betreff)
     if (res.status < 300 ) {
