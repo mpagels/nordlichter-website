@@ -1,11 +1,25 @@
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
+import {sendContactMail} from '../../lib/mail-api'
+
+
 
 export default function ContactForm({ onSubmit }) {
+
   const { register, handleSubmit, watch, errors } = useForm()
 
+  async function sendThisShit(data) {
+    console.log(data)
+    const {email, nachricht, name, telefon, adresse, betreff} = data
+    const res = await sendContactMail("pagelsmartin@gmx.de", name, "pagelsmartin@gmx.de", nachricht, telefon, adresse, betreff)
+    if (res.status < 300 ) {
+      onSubmit()
+    }
+    
+  }
+
   return (
-    <FormWrapper onSubmit={handleSubmit(onSubmit)}>
+    <FormWrapper onSubmit={handleSubmit(sendThisShit)}>
       <InputWrapper>
         <Label name="name" for="name">
           Name:<Required>*</Required>
@@ -57,11 +71,12 @@ export default function ContactForm({ onSubmit }) {
           id="adresse"
           name="adresse"
           placeholder="Musterstraße 1, 12345, Musterstadt"
+          ref={register()}
         ></Input>
       </InputWrapper>
       <InputWrapper>
         <Label for="betreff">Betreff:</Label>
-        <Input id="betreff" name="betreff" placeholder="Worum geht es?"></Input>
+        <Input id="betreff" name="betreff" placeholder="Worum geht es?" ref={register()}></Input>
       </InputWrapper>
       <InputWrapper>
         <Label for="nachricht">

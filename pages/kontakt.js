@@ -10,8 +10,7 @@ import { useState } from 'react'
 export default function Kontakt() {
   const [isSend, setIsSend] = useState(false)
 
-  const onSubmit = (data) => {
-    console.log(data)
+  const onSubmit = () => {
     setIsSend(true)
   }
 
