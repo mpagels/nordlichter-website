@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "next": "10.0.1",
     "next-images": "^1.6.2",
     "nodemailer": "^6.4.17",
