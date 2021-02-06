@@ -8,7 +8,7 @@ export default function FooterContentArea({ title, infos }) {
         infos.map((info) => (
           <Info>
             {info.includes('Mail:') ? (
-              <Mail href="mailto:infos@nordlichter-halstenbek.de">{info}</Mail>
+              <Mail href="mailto:info@nordlichter-halstenbek.de">{info}</Mail>
             ) : (
               info
             )}
