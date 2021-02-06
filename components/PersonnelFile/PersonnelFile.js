@@ -67,7 +67,7 @@ const GreyBox = styled.div`
 const Name = styled.h2`
   margin-top: 80px;
   color: var(--font-color-blue);
-  font-family: 'Open Sans';
+  font-family: 'NL-bold';
   font-weight: bold;
   font-size: 1.2em;
 `
@@ -79,7 +79,7 @@ const Fachbereiche = styled.section`
 `
 
 const Title = styled.h3`
-  font-family: 'Open Sans';
+  font-family: 'NL-bold';
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 10px;

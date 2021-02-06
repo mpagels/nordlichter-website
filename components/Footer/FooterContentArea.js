@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   margin: 20px 0;
 `
 const Title = styled.h3`
-  font-family: 'Open Sans';
+  font-family: 'NL-bold';
   font-weight: bold;
   font-size: 1.4em;
 `
@@ -33,7 +33,7 @@ const Title = styled.h3`
 const Info = styled.p`
   margin: 40px;
   font-size: 1.1em;
-  font-family: 'Nunito Sans';
+  font-family: 'NL-normal';
   font-weight: lighter;
 `
 const Mail = styled.a`

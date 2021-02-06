@@ -20,7 +20,7 @@ const Wrapper = styled.article`
 const Text = styled.p`
   padding: 0 24px;
   text-align: center;
-  font-family: 'Open Sans';
+  font-family: 'NL-normal';
   font-weight: regular;
   font-size: 1.1em;
   color: var(--font-color-darkgrey);

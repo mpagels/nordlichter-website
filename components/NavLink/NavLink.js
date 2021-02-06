@@ -23,7 +23,7 @@ const NavLinkStyled = styled.div`
   align-items: center;
   padding-left: 20px;
   color: var(--font-color-darkgrey);
-  font-family: 'Open Sans';
+  font-family: 'NL-normal';
   font-weight: bold;
   cursor: pointer;
   font-size: 1.1em;
