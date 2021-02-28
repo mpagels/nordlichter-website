@@ -31,12 +31,24 @@ export default function ContactForm({ onSubmit }) {
 
   return (
     <FormWrapper onSubmit={handleSubmit(sendThisShit)}>
-      <button type="button" onClick={handleAppointmentQuestion}>
-        Ich interessiere mich für einen Termin
-      </button>
-      <button type="button" onClick={handleAppointmentQuestion}>
-        Ich habe eine Frage
-      </button>
+      <AppointmentButtonWrapper>
+        <AppointmentButton
+          isActive={isInterestedInAppointment}
+          type="button"
+          onClick={handleAppointmentQuestion}
+        >
+          Ich interessiere mich für einen Termin
+        </AppointmentButton>
+        <AppointmentButton
+          type="button"
+          isActive={
+            !isInterestedInAppointment && isInterestedInAppointment !== null
+          }
+          onClick={handleAppointmentQuestion}
+        >
+          Ich habe eine Frage
+        </AppointmentButton>
+      </AppointmentButtonWrapper>
       {isInterestedInAppointment ? (
         <>
           <InputWrapper>
@@ -194,4 +206,23 @@ const Required = styled.span`
 const ErrorMessage = styled.span`
   color: var(--form-error-color);
   font-size: 0.5em;
+`
+
+const AppointmentButton = styled.button`
+  all: unset;
+  text-align: center;
+  width: 100%;
+  background-color: ${(props) => props.isActive && 'var(--font-color-blue)'};
+  color: ${(props) => (props.isActive ? 'white' : 'var(--font-color-blue)')};
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 10px;
+  padding: 15px;
+  border: solid 1px var(--font-color-blue);
+  cursor: pointer;
+  margin: 0 20px 20px;
+`
+const AppointmentButtonWrapper = styled.div`
+  display: flex;
 `
