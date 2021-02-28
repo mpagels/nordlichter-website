@@ -32,9 +32,7 @@ export default function Kontakt() {
         </>
       ) : (
         <>
-          <Headline>
-            Wann genau können wir für Sie am besten die Termine planen?
-          </Headline>
+          <Headline>Wie können wir Ihnen am besten helfen?</Headline>
           <ContactForm onSubmit={onSubmit} />
         </>
       )}
