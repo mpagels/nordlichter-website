@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { sendContactMail } from '../../lib/mail-api'
 import { useState } from 'react'
 
@@ -8,19 +8,19 @@ import RadioGroup, { useRadioGroup } from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormLabel from '@material-ui/core/FormLabel'
+import Checkbox from '@material-ui/core/Checkbox'
+import FormGroup from '@material-ui/core/FormGroup'
 
 export default function ContactForm({ onSubmit }) {
   const [isInterestedInAppointment, setIsInteresstedInAppointment] = useState(
     null
   )
-  const { register, handleSubmit, watch, errors } = useForm()
+  const { register, handleSubmit, watch, errors, control } = useForm()
   const noPrediction = watch('noPrediction', false) // you can supply default value as second argument
-  console.log(
-    '🚀 ~ file: ContactForm.js ~ line 12 ~ ContactForm ~ noPrediction',
-    noPrediction
-  )
+
   async function sendThisShit(data) {
     const { email, nachricht, name, telefon, adresse, betreff } = data
+    console.log(data)
     const res = await sendContactMail(
       'pagelsmartin@gmx.de',
       name,
@@ -37,6 +37,7 @@ export default function ContactForm({ onSubmit }) {
 
   function handleIHaveAQuestion() {
     setIsInteresstedInAppointment(false)
+    setWhatPrediction(null)
   }
   function handleIWantAAppointment() {
     setIsInteresstedInAppointment(true)
@@ -44,10 +45,26 @@ export default function ContactForm({ onSubmit }) {
 
   function MyFormControlLabel(props) {
     const radioGroup = useRadioGroup()
-    console.log(radioGroup)
     return <FormControlLabel {...props} />
   }
 
+  const [whatPrediction, setWhatPrediction] = useState(null)
+
+  const predictions = [
+    'Krankengymnastik',
+    'Manuelle Therapie',
+    'Manuelle Lymphdrainage 30 Minuten',
+    'Manuelle Lymphdrainage 45 Minuten',
+    'Manuelle Lymphdrainage 60 Minuten',
+    'Klassische Massagetherapie',
+    'Bindegewebsmassage',
+  ]
+  const additionalPredictions = [
+    'Wärmetherapie (Heissluft/Rotlicht/Infrarot)',
+    'Warmpackungen (Fango/Moor)',
+    'Heisse Rolle',
+    'Kältetherapie',
+  ]
   return (
     <FormWrapper onSubmit={handleSubmit(sendThisShit)}>
       <AppointmentButtonWrapper>
@@ -70,34 +87,101 @@ export default function ContactForm({ onSubmit }) {
       </AppointmentButtonWrapper>
       <>
         {isInterestedInAppointment && (
-          <FormControl component="fieldset" style={{ width: '100%' }}>
-            <FormLabel component="legend">Ich habe:</FormLabel>
-            <RadioGroup
-              row
-              aria-label="position"
-              name="position"
-              style={{ alignContent: 'space-between', width: '100%' }}
+          <>
+            <FormControl
+              component="fieldset"
+              style={{ width: '100%', margin: '10px' }}
             >
-              <MyFormControlLabel
-                value="noPrediction"
-                control={<Radio color="primary" />}
-                label="Keine Verordnung"
-                labelPlacement="bottom"
+              <FormLabel component="legend">
+                <strong>Ich habe:</strong>
+              </FormLabel>
+              <Controller
+                rules={{ required: true }}
+                control={control}
+                name="iWantAppointmentAndIHave"
+                as={
+                  <RadioGroup
+                    row
+                    aria-label="position"
+                    name="position"
+                    style={{ alignContent: 'space-between', width: '100%' }}
+                  >
+                    <MyFormControlLabel
+                      value="noPrediction"
+                      control={<Radio color="primary" />}
+                      label="Keine Verordnung"
+                      labelPlacement="bottom"
+                      onClick={() => setWhatPrediction('noPrediction')}
+                    />
+                    <MyFormControlLabel
+                      value="lawPrediction"
+                      control={<Radio color="primary" />}
+                      label="Eine gesetzliche Verordnung"
+                      labelPlacement="bottom"
+                      onClick={() => setWhatPrediction('lawPrediction')}
+                    />
+                    <MyFormControlLabel
+                      value="privatePrediction"
+                      control={<Radio color="primary" />}
+                      label="Eine private Verordnung"
+                      labelPlacement="bottom"
+                      onClick={() => setWhatPrediction('privatePrediction')}
+                    />
+                    <MyFormControlLabel
+                      value="otherQuestion"
+                      control={<Radio color="primary" />}
+                      label="Ein anderes Anliegen"
+                      labelPlacement="bottom"
+                      onClick={() => setWhatPrediction(null)}
+                    />
+                  </RadioGroup>
+                }
               />
-              <MyFormControlLabel
-                value="lawPrediction"
-                control={<Radio color="primary" />}
-                label="Eine gesetzliche Verordnung"
-                labelPlacement="bottom"
-              />
-              <MyFormControlLabel
-                value="privatePrediction"
-                control={<Radio color="primary" />}
-                label="Eine private Verordnung"
-                labelPlacement="bottom"
-              />
-            </RadioGroup>
-          </FormControl>
+            </FormControl>
+            {whatPrediction && (
+              <>
+                <FormControl component="fieldset" style={{ margin: '10px' }}>
+                  <FormLabel component="legend" style={{ margin: '10px 0' }}>
+                    <strong>
+                      {whatPrediction !== 'noPrediction'
+                        ? 'Mir wurde verschrieben:'
+                        : 'Ich interessiere mich für:'}
+                    </strong>
+                  </FormLabel>
+
+                  <FormGroup aria-label="position" row>
+                    {predictions.map((prediction) => (
+                      <FormControlLabel
+                        key={prediction}
+                        value={prediction}
+                        control={<Checkbox color="primary" />}
+                        label={prediction}
+                        labelPlacement="end"
+                        name={prediction}
+                        inputRef={register}
+                      />
+                    ))}
+                  </FormGroup>
+                </FormControl>
+                <FormControl component="fieldset" style={{ margin: '10px' }}>
+                  <FormLabel component="legend" style={{ margin: '10px 0' }}>
+                    <strong>Ergänzende Heilmittel:</strong>
+                  </FormLabel>
+                  <FormGroup aria-label="position" row>
+                    {additionalPredictions.map((additionalPrediction) => (
+                      <FormControlLabel
+                        key={additionalPrediction}
+                        value={additionalPrediction}
+                        control={<Checkbox color="primary" />}
+                        label={additionalPrediction}
+                        labelPlacement="end"
+                      />
+                    ))}
+                  </FormGroup>
+                </FormControl>
+              </>
+            )}
+          </>
         )}
         <InputWrapper>
           <Label name="name" for="name">
