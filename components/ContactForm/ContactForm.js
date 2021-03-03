@@ -3,6 +3,12 @@ import { useForm } from 'react-hook-form'
 import { sendContactMail } from '../../lib/mail-api'
 import { useState } from 'react'
 
+import Radio from '@material-ui/core/Radio'
+import RadioGroup, { useRadioGroup } from '@material-ui/core/RadioGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormControl from '@material-ui/core/FormControl'
+import FormLabel from '@material-ui/core/FormLabel'
+
 export default function ContactForm({ onSubmit }) {
   const [isInterestedInAppointment, setIsInteresstedInAppointment] = useState(
     null
@@ -36,6 +42,12 @@ export default function ContactForm({ onSubmit }) {
     setIsInteresstedInAppointment(true)
   }
 
+  function MyFormControlLabel(props) {
+    const radioGroup = useRadioGroup()
+    console.log(radioGroup)
+    return <FormControlLabel {...props} />
+  }
+
   return (
     <FormWrapper onSubmit={handleSubmit(sendThisShit)}>
       <AppointmentButtonWrapper>
@@ -58,20 +70,34 @@ export default function ContactForm({ onSubmit }) {
       </AppointmentButtonWrapper>
       <>
         {isInterestedInAppointment && (
-          <InputWrapper>
-            <p>Ich habe:</p>
-            <StyledCheckbox
-              type="radio"
-              id="noPrediction"
-              name="prediction"
-              ref={register}
-            />
-            <Label for="noPrediction" value="Keine Verordnung">
-              Keine
-            </Label>
-            <input type="radio" name="socialPrediction" ref={register} />
-            <input type="radio" name="privatePrediction" ref={register} />
-          </InputWrapper>
+          <FormControl component="fieldset" style={{ width: '100%' }}>
+            <FormLabel component="legend">Ich habe:</FormLabel>
+            <RadioGroup
+              row
+              aria-label="position"
+              name="position"
+              style={{ alignContent: 'space-between', width: '100%' }}
+            >
+              <MyFormControlLabel
+                value="noPrediction"
+                control={<Radio color="primary" />}
+                label="Keine Verordnung"
+                labelPlacement="bottom"
+              />
+              <MyFormControlLabel
+                value="lawPrediction"
+                control={<Radio color="primary" />}
+                label="Eine gesetzliche Verordnung"
+                labelPlacement="bottom"
+              />
+              <MyFormControlLabel
+                value="privatePrediction"
+                control={<Radio color="primary" />}
+                label="Eine private Verordnung"
+                labelPlacement="bottom"
+              />
+            </RadioGroup>
+          </FormControl>
         )}
         <InputWrapper>
           <Label name="name" for="name">
@@ -260,3 +286,5 @@ const StyledCheckbox = styled.input`
   cursor: pointer;
   margin: 0 20px 20px;
 `
+
+const RadioGroupWrapper = styled(RadioGroup)``
