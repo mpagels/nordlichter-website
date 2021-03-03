@@ -12,6 +12,9 @@
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@material-ui/core": "^5.0.0-alpha.26",
     "axios": "^0.21.1",
     "next": "10.0.1",
     "next-images": "^1.6.2",
