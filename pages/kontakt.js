@@ -17,8 +17,12 @@ export default function Kontakt() {
   return (
     <Layout>
       <Logo />
-      {kontakt.map((element) => (
-        <HeadlineSvgInfo headline={element.headline} info={element.info}>
+      {kontakt.map((element, index) => (
+        <HeadlineSvgInfo
+          key={`headlineSvgInfo_${index}`}
+          headline={element.headline}
+          info={element.info}
+        >
           {element.svg}
         </HeadlineSvgInfo>
       ))}
