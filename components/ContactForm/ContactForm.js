@@ -184,7 +184,7 @@ export default function ContactForm({ onSubmit }) {
           </>
         )}
         <InputWrapper>
-          <Label name="name" for="name">
+          <Label name="name" htmlFor="name">
             Name:<Required>*</Required>
           </Label>
           <Input
@@ -198,7 +198,7 @@ export default function ContactForm({ onSubmit }) {
           )}
         </InputWrapper>
         <InputWrapper>
-          <Label for="telefon">
+          <Label htmlFor="telefon">
             Telefon:<Required>*</Required>
           </Label>
           <Input
@@ -214,7 +214,7 @@ export default function ContactForm({ onSubmit }) {
           )}
         </InputWrapper>
         <InputWrapper>
-          <Label for="email">
+          <Label htmlFor="email">
             Email:<Required>*</Required>
           </Label>
           <Input
@@ -229,7 +229,7 @@ export default function ContactForm({ onSubmit }) {
           )}
         </InputWrapper>
         <InputWrapper>
-          <Label for="adresse">Adresse:</Label>
+          <Label htmlFor="adresse">Adresse:</Label>
           <Input
             id="adresse"
             name="adresse"
@@ -238,7 +238,7 @@ export default function ContactForm({ onSubmit }) {
           ></Input>
         </InputWrapper>
         <InputWrapper>
-          <Label for="betreff">Betreff:</Label>
+          <Label htmlFor="betreff">Betreff:</Label>
           <Input
             id="betreff"
             name="betreff"
@@ -247,7 +247,7 @@ export default function ContactForm({ onSubmit }) {
           ></Input>
         </InputWrapper>
         <InputWrapper>
-          <Label for="nachricht">
+          <Label htmlFor="nachricht">
             Nachricht:<Required>*</Required>
           </Label>
           <TextArea
