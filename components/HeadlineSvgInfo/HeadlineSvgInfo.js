@@ -14,7 +14,7 @@ export default function HeadlineSvgInfo({ headline, children, info }) {
 const Wrapper = styled.section`
   margin: 20px;
   color: var(--font-color-darkgrey);
-  font-family: 'Open Sans';
+  font-family: 'NL-normal';
   text-align: center;
 `
 

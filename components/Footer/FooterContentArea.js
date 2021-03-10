@@ -5,10 +5,10 @@ export default function FooterContentArea({ title, infos }) {
     <Wrapper>
       <Title>{title}</Title>
       {Array.isArray(infos) ? (
-        infos.map((info) => (
-          <Info>
+        infos.map((info, index) => (
+          <Info key={`info_${index}`}>
             {info.includes('Mail:') ? (
-              <Mail href="mailto:infos@nordlichter-halstenbek.de">{info}</Mail>
+              <Mail href="mailto:info@nordlichter-halstenbek.de">{info}</Mail>
             ) : (
               info
             )}
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   margin: 20px 0;
 `
 const Title = styled.h3`
-  font-family: 'Open Sans';
+  font-family: 'NL-bold';
   font-weight: bold;
   font-size: 1.4em;
 `
@@ -33,7 +33,7 @@ const Title = styled.h3`
 const Info = styled.p`
   margin: 40px;
   font-size: 1.1em;
-  font-family: 'Nunito Sans';
+  font-family: 'NL-normal';
   font-weight: lighter;
 `
 const Mail = styled.a`

@@ -6,11 +6,11 @@ import Map from './Map'
 export default function Footer() {
   return (
     <Wrapper>
-      {footer.map((infos) => (
-        <>
+      {footer.map((infos, index) => (
+        <div key={`footerContent_${index}`}>
           <FooterContentArea {...infos} />
           <Line />
-        </>
+        </div>
       ))}
       <Map />
     </Wrapper>

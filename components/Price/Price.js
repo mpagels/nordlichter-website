@@ -71,13 +71,12 @@ const ContentWrapper = styled.section`
 `
 
 const Service = styled.h3`
-  font-family: 'Open Sans';
+  font-family: 'NL-bold';
   font-size: 1.4em;
   font-weight: 400;
 `
 
 const AdditionalInfosWrapper = styled.div`
-  font-family: 'Open Sans';
   font-size: ${({ isBest }) => (isBest ? '1.4em' : '1em')};
   font-weight: bold;
   background-color: var(--infoBox-color-lightgrey);
@@ -110,5 +109,5 @@ const AdditionalPrice = styled.span`
   margin-bottom: 1.1em;
 `
 const ArrowWrapper = styled.div`
-  margin-left: -30px;
+  margin-left: -50px;
 `
