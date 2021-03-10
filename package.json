@@ -17,6 +17,7 @@
     "@material-ui/core": "^5.0.0-alpha.26",
     "axios": "^0.21.1",
     "next": "10.0.1",
+    "next-fonts": "^1.5.1",
     "next-images": "^1.6.2",
     "nodemailer": "^6.4.17",
     "react": "17.0.1",

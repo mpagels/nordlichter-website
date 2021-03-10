@@ -17,7 +17,7 @@ const footer = [
         25469 Halstenbek`,
       `Telefon: 04101 43 233`,
       `Fax: 04101 37 93 41`,
-      `Mail: infos@nordlichter-halstenbek.de`,
+      `Mail: info@nordlichter-halstenbek.de`,
     ],
   },
   {

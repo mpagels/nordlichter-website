@@ -19,7 +19,7 @@ const Headline = styled.h2`
 `
 
 const Info = styled.p`
-  font-family: 'Open Sans';
+  font-family: 'NL-normal';
   font-weight: 400;
   font-size: 1.1em;
 `

@@ -1,6 +1,24 @@
 import { createGlobalStyle } from 'styled-components'
+import AkzidGroStdBolCnd from './assets/fonts/AkzidGroStdBolCnd.woff';
+import AkzidGroStdCnd from './assets/fonts/AkzidGroStdCnd.woff';
+
 
 export default createGlobalStyle`
+
+@font-face {
+        font-family: 'NL-bold';
+        src: local('NL-bold'), local('NL-bold'),
+        url(${AkzidGroStdBolCnd}) format('woff');
+        font-style: bold;
+    }
+
+@font-face {
+        font-family: 'NL-normal';
+        src: local('NL-normal'), local('NL-normal'),
+        url(${AkzidGroStdCnd}) format('woff');
+        font-style: normal;
+    }
+
 
 * {
     box-sizing: border-box;
@@ -11,11 +29,17 @@ body {
     font-size: 112.5%;
     background-color: var(--backgroundColor);
     color: var(--font-color-darkgrey);
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'NL-normal', sans-serif;
+    letter-spacing: 1px;
+}
     a {
         color: black;
         text-decoration: none;
     }
+}
+
+section, div {
+    font-family: 'NL-normal';
 }
 
 :root {
