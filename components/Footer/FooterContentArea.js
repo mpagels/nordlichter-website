@@ -5,8 +5,8 @@ export default function FooterContentArea({ title, infos }) {
     <Wrapper>
       <Title>{title}</Title>
       {Array.isArray(infos) ? (
-        infos.map((info) => (
-          <Info>
+        infos.map((info, index) => (
+          <Info key={`info_${index}`}>
             {info.includes('Mail:') ? (
               <Mail href="mailto:info@nordlichter-halstenbek.de">{info}</Mail>
             ) : (
