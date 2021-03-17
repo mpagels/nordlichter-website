@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from './NavBar/NavBar'
+import Navbar2 from './NavBar2/NavBar2'
 import Footer from './Footer/Footer'
 import styled from 'styled-components'
 
@@ -13,8 +13,9 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </Head>
-      <Navbar />
+      <Navbar2 />
       <Content>{children}</Content>
+      
       <Footer />
     </LayoutWrapper>
   )
