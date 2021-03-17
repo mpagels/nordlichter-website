@@ -1,7 +1,7 @@
 import NavBar2 from './NavBar2'
 
 export default {
-  title: 'nordlichter/Navbar',
+  title: 'nordlichter/Navbar/Navbar',
   component: NavBar2,
 }
 
