@@ -11,21 +11,21 @@ export default function Athlenbetreuung() {
   return (
     <Layout>
       <GreyBox>
-        {athlethenBetreuung.firstText.map((text) => (
-          <Text>{text}</Text>
+        {athlethenBetreuung.firstText.map((text, index) => (
+          <Text key={`firstText_${index}`}>{text}</Text>
         ))}
         <Help src={help} alt="Logo" />
-        {athlethenBetreuung.secondText.map((text) => (
-          <Text>{text}</Text>
+        {athlethenBetreuung.secondText.map((text, index) => (
+          <Text key={`secondText_${index}`}>{text}</Text>
         ))}
       </GreyBox>
       <GreyBox>
-        {athlethenBetreuung.thirdText.map((text) => (
-          <Text>{text}</Text>
+        {athlethenBetreuung.thirdText.map((text, index) => (
+          <Text key={`thirdText_${index}`}>{text}</Text>
         ))}
         <Help src={team} alt="Logo" />
-        {athlethenBetreuung.fourthText.map((text) => (
-          <Text>{text}</Text>
+        {athlethenBetreuung.fourthText.map((text, index) => (
+          <Text key={`fourthText_${index}`}>{text}</Text>
         ))}
         <CallToAction>Sprechen Sie uns an!</CallToAction>
       </GreyBox>
