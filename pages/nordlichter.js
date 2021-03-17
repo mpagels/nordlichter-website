@@ -8,7 +8,6 @@ import styled from 'styled-components'
 export default function Nordlichter() {
   return (
     <Layout>
-      <Logo />
       <Headline>Unser Team stellt sich vor</Headline>
       {nordlichter.map((nordlicht, index) => (
         <PersonnelFile key={index} {...nordlicht} />

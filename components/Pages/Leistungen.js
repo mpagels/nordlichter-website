@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import leistungen from '../../assets/api/api-leistungen'
-import Logo from '../Logo/Logo'
 import WelcomeAttentionMsg from '../WelcomeAttentionMsg/WelcomeAttentionMsg'
 import TextSvgText from '../TextSvgText/TextSvgText'
 import BottomSvg from '../../assets/svgs/leistungen/begruessung-ende.svg'
@@ -8,7 +7,6 @@ import BottomSvg from '../../assets/svgs/leistungen/begruessung-ende.svg'
 export default function LeistungenPage() {
   return (
     <>
-      <Logo />
       <WelcomeAttentionMsg />
       <Headline>Herzlich Willkommen bei den Nordlichtern</Headline>
       <AboutUs>

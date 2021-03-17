@@ -1,26 +1,52 @@
 import { useState } from 'react'
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import BurgerMenu from './BurgerMenu'
 import Logo from '../../assets/png/NordlichterLogo-small.png'
+import Link from 'next/link'
+
 export default function NavBar2() {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <NavigationWrapper>
-      <StyledImage src={Logo} alt="" />
+      <Link href="/">
+        <a>
+          <StyledImage src={Logo} alt="" />
+        </a>
+      </Link>
       <NavBarWrapper isOpen={isOpen}>
         <NavBarList>
-          <StyledNavLink>Home</StyledNavLink>
           <StyledNavLink>
-            Leistungen
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </StyledNavLink>
+          <StyledNavLink>
+            <Link href="/leistungen">
+              <a>Leistungen</a>
+            </Link>
+
             <ul>
               <li onClick={() => console.log('verordnung')}>Verordnung</li>
               <li>Selbstzahler</li>
               <li>Betriebliches Gesundheitsmanagment</li>
-              <li>Athlethen Betreuung</li>
+              <li>
+                <Link href="/athleten-betreuung">
+                  <a>Athlethen Betreuung</a>
+                </Link>
+              </li>
             </ul>
           </StyledNavLink>
           <StyledNavLink>Partner</StyledNavLink>
-          <StyledNavLink>Team</StyledNavLink>
+          <StyledNavLink>
+            <Link href="/nordlichter">
+              <a>Team</a>
+            </Link>
+          </StyledNavLink>
+          <StyledNavLink>
+            <Link href="/kontakt">
+              <a>Kontakt</a>
+            </Link>
+          </StyledNavLink>
           <StyledNavLink>Blog</StyledNavLink>
         </NavBarList>
       </NavBarWrapper>
@@ -34,7 +60,7 @@ export default function NavBar2() {
 }
 
 const StyledImage = styled.img`
-padding-left: 20px
+  padding-left: 20px;
 `
 const NavigationWrapper = styled.div`
   display: flex;
@@ -42,6 +68,9 @@ const NavigationWrapper = styled.div`
   // padding: 0 30px;
   position: relative;
   height: 72px;
+  & a {
+    color: var(--color-font-darkgrey);
+  }
 `
 
 const NavBarWrapper = styled.nav`
@@ -53,6 +82,7 @@ const NavBarWrapper = styled.nav`
   background: white;
   border-radius: 15px;
   width: 95%;
+  margin-right: 0;
   padding: 20px;
   box-shadow: 0 0px 5.7px rgba(0, 0, 0, 0.022),
     0 0px 14.5px rgba(0, 0, 0, 0.031), 0 0px 29.6px rgba(0, 0, 0, 0.039),
@@ -63,6 +93,7 @@ const NavBarWrapper = styled.nav`
     position: relative;
     box-shadow: none;
     top: 0;
+    left: 0;
   }
 `
 
@@ -74,7 +105,6 @@ const NavBarList = styled.ul`
   padding: 0;
   @media (min-width: 736px) {
     flex-direction: row;
-    padding-right: 20px;
   }
 `
 const StyledNavLink = styled.li`
@@ -89,6 +119,7 @@ const StyledNavLink = styled.li`
   & > ul {
     list-style-type: none;
     padding-left: 15px;
+
     & li {
       margin: 5px 0;
       color: var(--font-color-darkgrey);
@@ -111,6 +142,7 @@ const StyledNavLink = styled.li`
     &:hover > ul {
       color: var(--font-color-darkgrey);
       border-radius: 10px;
+      background: white;
       position: absolute;
       top: 20px;
       left: -20px;

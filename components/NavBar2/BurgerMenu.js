@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 
 export default function BurgerMenu({ onClick, isOpen }) {
   return (
@@ -25,6 +25,7 @@ const Wrapper = styled.div`
     border-radius: 15px;
     min-width: 50px;
     min-height: 50px;
+    background: white;
     ${(prop) =>
       !prop.isOpen &&
       `box-shadow: 0 0px 5.7px rgba(0, 0, 0, 0.022),

@@ -16,7 +16,6 @@ export default function Kontakt() {
 
   return (
     <Layout>
-      <Logo />
       {kontakt.map((element, index) => (
         <HeadlineSvgInfo
           key={`headlineSvgInfo_${index}`}

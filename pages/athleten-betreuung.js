@@ -10,7 +10,6 @@ import network from '../assets/png/athlethen-betreuung/netztwerk.png'
 export default function Athlenbetreuung() {
   return (
     <Layout>
-      <Logo />
       <GreyBox>
         {athlethenBetreuung.firstText.map((text) => (
           <Text>{text}</Text>
