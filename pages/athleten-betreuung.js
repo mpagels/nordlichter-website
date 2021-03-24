@@ -19,7 +19,7 @@ export default function Athlenbetreuung() {
           <Text key={`secondText_${index}`}>{text}</Text>
         ))}
       </GreyBox>
-      <GreyBox>
+      <GreyBox noGrid={true}>
         {athlethenBetreuung.thirdText.map((text, index) => (
           <Text key={`thirdText_${index}`}>{text}</Text>
         ))}
@@ -41,6 +41,17 @@ const GreyBox = styled.div`
   text-align: center;
   margin: 20px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 992px) { 
+    padding: 60px 0;width: 880px;
+    ${({noGrid}) => !noGrid && `display: grid;
+    grid-template-columns: 430px 430px;
+    gap: 20px;`}
+    margin-top: 190px;
+    position: relative;
+   }
 `
 
 const Text = styled.p`
@@ -49,9 +60,18 @@ const Text = styled.p`
   font-size: 1.1em;
   margin-left: 10px;
   margin-right: 10px;
+  @media (min-width: 992px) { padding: 0 30px;}
 `
 
-const Help = styled.img``
+const Help = styled.img`
+
+width: 308px;
+height: 227py;
+@media (min-width: 992px) { position: absolute ;margin-left: auto;
+margin-right: auto;
+top:-150px;
+left: 0;
+right: 0;}`
 
 const CallToAction = styled.p`
   text-align: center;
@@ -60,7 +80,7 @@ const CallToAction = styled.p`
   font-size: 1.2em;
 `
 
-const NetworkLogo = styled(Help)`
+const NetworkLogo = styled.img`
   margin: 60px;
 `
 
