@@ -26,17 +26,17 @@ export default function NavBar2() {
             </Link>
 
             <ul>
-              <li onClick={() => console.log('verordnung')}>Verordnung</li>
-              <li>Selbstzahler</li>
-              <li>Betriebliches Gesundheitsmanagment</li>
-              <li>
+              <StyledNavLinkItem  onClick={() => console.log('verordnung')}>Verordnung</StyledNavLinkItem >
+              <StyledNavLinkItem isDeactivated={true}>Selbstzahler</StyledNavLinkItem>
+              <StyledNavLinkItem isDeactivated={true}>Betriebliches Gesundheitsmanagment</StyledNavLinkItem>
+              <StyledNavLinkItem >
                 <Link href="/athleten-betreuung">
                   <a>Athlethen Betreuung</a>
                 </Link>
-              </li>
+              </StyledNavLinkItem >
             </ul>
           </StyledNavLink>
-          <StyledNavLink>Partner</StyledNavLink>
+          <StyledNavLink isDeactivated={true}>Partner</StyledNavLink>
           <StyledNavLink>
             <Link href="/nordlichter">
               <a>Team</a>
@@ -47,7 +47,7 @@ export default function NavBar2() {
               <a>Kontakt</a>
             </Link>
           </StyledNavLink>
-          <StyledNavLink>Blog</StyledNavLink>
+          <StyledNavLink isDeactivated={true}>Blog</StyledNavLink>
         </NavBarList>
       </NavBarWrapper>
       <BurgerMenu onClick={changeBurgerOpen} isOpen={isOpen} />
@@ -107,26 +107,30 @@ const NavBarList = styled.ul`
     flex-direction: row;
   }
 `
-const StyledNavLink = styled.li`
-  margin: 5px 20px;
-  cursor: pointer;
-  position: relative;
 
+const StyledNavLinkItem = styled.li`
+      margin: 5px 0;
+      color: lightgray;
+    
+      ${({isDeactivated}) => !isDeactivated && `color: var(--font-color-darkgrey);
   &:hover {
     color: var(--font-color-blue);
-  }
+  }`}
+`
+const StyledNavLink = styled.li`
+  margin: 5px 20px;
+  color: lightgray;
+  position: relative;
+  ${({isDeactivated}) => !isDeactivated && `color: var(--font-color-darkgrey);
+  &:hover {
+    color: var(--font-color-blue);
+  }`}
+  
 
   & > ul {
     list-style-type: none;
     padding-left: 15px;
 
-    & li {
-      margin: 5px 0;
-      color: var(--font-color-darkgrey);
-      &:hover {
-        color: var(--font-color-blue);
-      }
-    }
     &:hover > ul {
       color: var(--font-color-darkgrey);
     }
@@ -156,10 +160,6 @@ const StyledNavLink = styled.li`
         0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
         0 22.3px 17.9px rgba(0, 0, 0, 0.042),
         0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
-
-      & > li:hover {
-        color: var(--font-color-blue);
-      }
     }
   }
 `
