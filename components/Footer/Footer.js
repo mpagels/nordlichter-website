@@ -2,6 +2,7 @@ import footer from '../../assets/api/api-footer'
 import styled from 'styled-components'
 import FooterContentArea from './FooterContentArea'
 import Map from './Map'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -12,6 +13,11 @@ export default function Footer() {
           <Line />
         </div>
       ))}
+      <Link href="/datenschutz">
+        <StyledLink>
+          Datenschutz
+        </StyledLink>
+      </Link>
       <Map />
     </Wrapper>
   )
@@ -34,4 +40,10 @@ const Line = styled.hr`
   margin: 40px;
   height: 0.1px;
   text-align: center;
+`
+
+const StyledLink = styled.a`
+color: var(--footer-font-color-lightgrey);
+cursor: pointer;
+margin-bottom: 30px;
 `
