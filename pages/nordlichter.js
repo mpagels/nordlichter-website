@@ -9,9 +9,11 @@ export default function Nordlichter() {
   return (
     <Layout>
       <Headline>Unser Team stellt sich vor</Headline>
+      <Wrapper>
       {nordlichter.map((nordlicht, index) => (
         <PersonnelFile key={index} {...nordlicht} />
       ))}
+      </Wrapper>
       <BottomSVG style={customSvgStyle} />
     </Layout>
   )
@@ -27,4 +29,13 @@ const Headline = styled.h1`
   font-weight: 900;
   text-align: center;
   font-size: 1.4em;
+`
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1092px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 `
