@@ -22,26 +22,36 @@ export default function PersonnelFile({
         </Fachbereiche>
         <Person>
           <Title>Zur Person</Title>
-        </Person>
-        <Line />
+          <Line />
         <p>{person}</p>
+        </Person>
       </GreyBox>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 20px 20px 20px 20px;
+  margin: 150px 20px 0;
+
+  &:nth-last-of-type(1) {
+    margin: 150px 20px 80px;
+  }
+  position: relative;
 `
 
-const SubWrapper = styled.div`
-  position: absolute;
-`
 const Profilphoto = styled.img`
+position: absolute;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+top:-100px;
+
+@media (min-width: 1092px) {
+  margin-left: 40px 
+
+}
   width: 175px;
   border-radius: 50%;
   border: 3px solid var(--font-color-blue);
@@ -57,11 +67,22 @@ const GreyBox = styled.div`
   color: var(--font-color-darkgrey);
   text-align: center;
   position: relative;
-  top: -60px;
-  left: 0px;
-  right: 10px;
   z-index: -1;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  @media (min-width: 1092px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "Name ."
+    "Fachbereich Person"
+  }
+
+
 `
 
 const Name = styled.h2`
@@ -70,12 +91,19 @@ const Name = styled.h2`
   font-family: 'NL-bold';
   font-weight: bold;
   font-size: 1.2em;
+  @media (min-width: 1092px) {
+    grid-area: Name
+  }
+  
 `
 
 const Fachbereiche = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 1092px) {
+    grid-area: Fachbereich
+  }
 `
 
 const Title = styled.h3`
@@ -94,4 +122,12 @@ const List = styled.ul`
   padding: 0;
 `
 
-const Person = styled(Fachbereiche)``
+const Person = styled.section`
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1092px) {
+    grid-area: Person;
+  }
+
+`
