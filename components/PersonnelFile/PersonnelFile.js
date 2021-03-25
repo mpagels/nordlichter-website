@@ -47,6 +47,7 @@ margin-right: auto;
 left: 0;
 right: 0;
 top:-100px;
+z-index: -1;
 
 @media (min-width: 1092px) {
   margin-left: 40px 
@@ -73,6 +74,7 @@ const GreyBox = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 500px;
+  z-index: -2;
   @media (min-width: 1092px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
