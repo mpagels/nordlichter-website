@@ -14,9 +14,7 @@ export default function Footer() {
         </div>
       ))}
       <Link href="/datenschutz">
-        <StyledLink>
-          Datenschutz
-        </StyledLink>
+        <StyledLink>Datenschutz</StyledLink>
       </Link>
       <Map />
     </Wrapper>
@@ -43,7 +41,7 @@ const Line = styled.hr`
 `
 
 const StyledLink = styled.a`
-color: var(--footer-font-color-lightgrey);
-cursor: pointer;
-margin-bottom: 30px;
+  color: var(--footer-font-color-lightgrey);
+  cursor: pointer;
+  margin-bottom: 30px;
 `
