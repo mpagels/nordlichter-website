@@ -40,7 +40,7 @@ const Headline = styled.h1`
   margin: 40px 0;
   text-align: center;
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 2em;
 `
 
 const AboutUs = styled.section`
