@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import WelcomeAttentionMsg from '../WelcomeAttentionMsg/WelcomeAttentionMsg'
 import BottomSvg from '../../assets/svgs/leistungen/begruessung-ende.svg'
 import CallToAction from '../CallToAction/CallToAction'
 import ContactForm from '../ContactForm/ContactForm'
 import leistungen from '../../assets/api/api-leistungen'
 import TextSvgText from '../TextSvgText/TextSvgText'
+import TrustElements from '../TrustElements/TrustElements'
 
 export default function LeistungenPage() {
   return (
@@ -23,6 +23,8 @@ export default function LeistungenPage() {
           {svg}
         </TextSvgText>
       ))}
+      <TrustElements />
+      <Line />
       <ContactForm />
       <Subline>Die Nordlichter - wir freuen uns auf Sie!</Subline>
       <BottomSvg style={bottomSvgStyle} />
@@ -72,3 +74,10 @@ const bottomSvgStyle = {
   width: '350px',
   height: '100%',
 }
+
+const Line = styled.hr`
+  color: var(--line-color-lightgrey);
+  width: 50%;
+  margin: 40px;
+  height: 0.1px;
+`
