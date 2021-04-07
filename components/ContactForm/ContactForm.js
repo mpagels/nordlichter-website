@@ -149,7 +149,7 @@ export default function ContactForm({ onSubmit }) {
                     </strong>
                   </FormLabel>
 
-                  <FormGroup aria-label="position" row>
+                  <FormGroup aria-label="position" column>
                     {predictions.map((prediction) => (
                       <FormControlLabel
                         key={prediction}
@@ -167,7 +167,7 @@ export default function ContactForm({ onSubmit }) {
                   <FormLabel component="legend" style={{ margin: '10px 0' }}>
                     <strong>Ergänzende Heilmittel:</strong>
                   </FormLabel>
-                  <FormGroup aria-label="position" row>
+                  <FormGroup aria-label="position" column>
                     {additionalPredictions.map((additionalPrediction) => (
                       <FormControlLabel
                         key={additionalPrediction}
@@ -336,6 +336,10 @@ const Required = styled.span`
 const ErrorMessage = styled.span`
   color: var(--form-error-color);
   font-size: 0.5em;
+`
+const PredictionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 const AppointmentButton = styled.button`
