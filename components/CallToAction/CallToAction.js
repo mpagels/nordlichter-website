@@ -22,7 +22,7 @@ const ActionWrapper = styled.section`
   justify-content: space-around;
   border-radius: 10px;
   height: 250px;
-  width: 350px;
+  max-width: 340px;
   box-shadow: 0 1.5px 2.2px rgba(0, 0, 0, 0.02),
     0 3.7px 5.3px rgba(0, 0, 0, 0.028), 0 7px 10px rgba(0, 0, 0, 0.035),
     0 12.5px 17.9px rgba(0, 0, 0, 0.042), 0 23.4px 33.4px rgba(0, 0, 0, 0.05),
@@ -46,15 +46,9 @@ const StyledButton = styled.button`
     0 19px 80px rgba(0, 0, 0, 0.16);
 `
 
-const SvgWrapper = styled.div`
-  position: absolute;
-  max-width: 100px;
-  max-height: 100px;
-`
 const bottomSvgStyle = {
   position: 'absolute',
   bottom: '0',
-  width: '450px',
   height: '100%',
   zIndex: '-1',
   opacity: '0.3',
