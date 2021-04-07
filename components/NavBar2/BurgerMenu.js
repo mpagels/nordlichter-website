@@ -12,9 +12,9 @@ export default function BurgerMenu({ onClick, isOpen }) {
 
 const Wrapper = styled.div`
   display: none;
-  @media (max-width: 735px) {
+  @media (max-width: 841px) {
     position: absolute;
-    top: 11px;
+    top: 61px;
     right: 30px;
 
     cursor: pointer;
