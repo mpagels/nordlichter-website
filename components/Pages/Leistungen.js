@@ -10,6 +10,7 @@ export default function LeistungenPage() {
   return (
     <Wrapper>
       <Headline>Herzlich Willkommen bei den Nordlichtern</Headline>
+      <CallToAction />
       <AboutUs>
         Ihre <span>Ansprechpartner</span> in Halstenbek rund um das Thema
         Physiotherapie, Prävention und Gesundheit.
@@ -17,7 +18,6 @@ export default function LeistungenPage() {
         nach einer OP, wir begleiten Sie auf Ihrem Weg zur{' '}
         <span>Gesundheit</span>.
       </AboutUs>
-      <CallToAction />
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
         <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}

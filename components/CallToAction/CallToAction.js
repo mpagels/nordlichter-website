@@ -4,7 +4,8 @@ import Call2 from '../../assets/svgs/callToAction/call2.svg'
 export default function CallToAction() {
   return (
     <ActionWrapper>
-      Möchten Sie die 5 besten Tipps gegen Beschwerden im Homeoffice erfahren?
+      Möchten Sie die 5 besten Tipps gegen Rückenschmerzen im Homeoffice
+      erfahren?
       <Link href={'service/5tipps'}>
         <StyledButton>Klicken Sie hier für mehr Gesundheit</StyledButton>
       </Link>
@@ -28,7 +29,7 @@ const ActionWrapper = styled.section`
     0 56px 80px rgba(0, 0, 0, 0.07);
   color: var(--font-color-darkgrey);
   text-align: center;
-  margin: 75px 0;
+  margin: 35px 0;
   padding: 10px;
   font-size: 1.2em;
 `
