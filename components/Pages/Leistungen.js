@@ -9,7 +9,6 @@ import TextSvgText from '../TextSvgText/TextSvgText'
 export default function LeistungenPage() {
   return (
     <Wrapper>
-      <WelcomeAttentionMsg />
       <Headline>Herzlich Willkommen bei den Nordlichtern</Headline>
       <AboutUs>
         Ihre <span>Ansprechpartner</span> in Halstenbek rund um das Thema
