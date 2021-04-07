@@ -288,13 +288,13 @@ const Input = styled.input`
   background-color: var(--form-input-background-color);
   color: var(--font-color-darkgrey);
   padding: 10px;
-  font-family: 'Open Sans';
   font-size: 1em;
   height: 45px;
 
   &::placeholder {
     ${({ isSmall }) => isSmall && 'font-size: 0.5em;'}
     color: var(--form-border-color);
+    font-family: 'NL-normal';
   }
 `
 
@@ -304,12 +304,13 @@ const TextArea = styled.textarea`
   background-color: var(--form-input-background-color);
   color: var(--font-color-darkgrey);
   padding: 10px;
-  font-family: 'Open Sans';
   font-size: 1em;
   resize: vertical;
   min-height: 200px;
+  font-family: 'NL-normal';
   &::placeholder {
     color: var(--form-border-color);
+    font-family: 'NL-normal';
   }
 `
 
@@ -317,7 +318,6 @@ const SubmitButton = styled.input`
   width: 100%;
   background-color: var(--font-color-blue);
   color: white;
-  font-family: 'Open Sans';
   font-weight: bold;
   font-size: 1.2em;
   border-radius: 10px;
@@ -325,6 +325,7 @@ const SubmitButton = styled.input`
   border: none;
   cursor: pointer;
   margin-top: 30px;
+  font-family: 'NL-normal';
 `
 
 const Required = styled.span`
@@ -343,7 +344,6 @@ const AppointmentButton = styled.button`
   width: 100%;
   background-color: ${(props) => props.isActive && 'var(--font-color-blue)'};
   color: ${(props) => (props.isActive ? 'white' : 'var(--font-color-blue)')};
-  font-family: 'Open Sans';
   font-weight: bold;
   font-size: 1.2em;
   border-radius: 10px;
@@ -361,7 +361,6 @@ const StyledCheckbox = styled.input`
   width: 100%;
   background-color: ${(props) => props.isActive && 'var(--font-color-blue)'};
   color: ${(props) => (props.isActive ? 'white' : 'var(--font-color-blue)')};
-  font-family: 'Open Sans';
   font-weight: bold;
   font-size: 1.2em;
   border-radius: 10px;
