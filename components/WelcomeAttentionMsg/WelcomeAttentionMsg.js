@@ -15,9 +15,12 @@ export default function WelcomeAttentionMsg() {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 841px) {
+    flex-direction: column;
+  }
 `
 
 const Message = styled.section`
@@ -26,6 +29,7 @@ const Message = styled.section`
   color: var(--font-color-blue);
   margin: 20px 33px;
   font-size: 1.1em;
+  max-width: 400px;
 `
 
 const svgStyle = {

@@ -22,7 +22,7 @@ const Text = styled.p`
   text-align: center;
   font-family: 'NL-normal';
   font-weight: regular;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: var(--font-color-darkgrey);
 `
 
