@@ -14,6 +14,15 @@ export default function BetrieblichesGesundheitsmanagement() {
           fontSize={'1.1em'}
           text={betrieblichesManagement.greyContent_1}
         />
+        <TipBox>
+          <ColorBorder />
+          <div>
+            <strong>Tipp:</strong> Wussten Sie dass Sie eine betriebliche
+            Gesundheitsförderung mit <br />
+            <strong>500 € pro Mitarbeiter</strong> <br /> pro Jahr steuerlich
+            geltend machen können?
+          </div>
+        </TipBox>
         <Content
           fontSize={'1.1em'}
           text={betrieblichesManagement.greyContent_2}
@@ -40,6 +49,29 @@ const GreyBox = styled.div`
   margin: 20px;
   padding: 20px;
   max-width: 880px;
+  display: flex;
+  flex-direction: column;
+`
+
+const TipBox = styled.section`
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  max-width: 70%;
+  background-color: #c8e5e2;
+  border-radius: 15px;
+  padding: 30px;
+  align-self: center;
+  display: flex;
+`
+const ColorBorder = styled.div`
+  height: 100%;
+  width: 10px;
+  background-color: #006d77;
+  border-radius: 15px 0 0 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
 `
 
 const HeadlineGreyBox = styled.h1`
