@@ -6,6 +6,7 @@ import franziska from '../jpg/nordlichter/franziska-neu.png'
 import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
 import rebecca from '../jpg/nordlichter/rebecca-neu.png'
+import kira from '../jpg/nordlichter/kira-neu.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 
 const nordlichter = [
@@ -84,6 +85,17 @@ const nordlichter = [
     fachbereich: ['Krankengymnastik', 'Manuelle Lymphdrainage'],
     person:
       'Seit 2020 im Beruf und als Start in das Berufsleben als Physiotherapeutin gleich bei den Nordlichtern angeuert. Anschließende Fortbildung in manueller Lymphdrainage. Als begeisterte Reiterin ist sie eine kompetente Ansprechpartnerin rund um den Reitsport.',
+  },
+  {
+    profilfoto: kira,
+    name: 'Kira Schlüter',
+    fachbereich: [
+      'Krankengymnastik',
+      'Manuelle Lymphdrainage',
+      'Spezifisches Krafttraining',
+    ],
+    person:
+      'Angehende Bachelorabsolventin der Physiotherapie, seit 2020 examinierte Physiotherapeutin und seit ihrem Abschluss bei den Nordlichtern tätig. Zertifikatsfortbildung in der manuellen Lymphdrainage und Expertin für gezieltes Krafttraining.',
   },
   {
     profilfoto: janeDoe,
