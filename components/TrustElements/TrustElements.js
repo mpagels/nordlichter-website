@@ -16,4 +16,6 @@ const Wrapper = styled.section`
   justify-content: space-around;
   height: 140px;
   width: 300px;
+  margin: 40px;
+  margin-bottom: 80px;
 `
