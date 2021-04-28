@@ -26,8 +26,10 @@ export default function NavBar2() {
             </Link>
 
             <ul>
-              <StyledNavLinkItem onClick={() => console.log('verordnung')}>
-                Verordnung
+              <StyledNavLinkItem>
+                <Link href="/verordnungen">
+                  <a>Verordnung</a>
+                </Link>
               </StyledNavLinkItem>
               <StyledNavLinkItem>
                 <Link href="/selbstzahler">
