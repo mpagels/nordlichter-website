@@ -15,7 +15,7 @@ export default function WelcomeAttentionMsg() {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   @media (max-width: 841px) {
