@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   text-align: center;
   margin: 20px;
   color: var(--font-color-darkgrey);
+  max-width: 880px;
 `
 const Headline = styled.h2`
   font-weight: 900;

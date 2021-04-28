@@ -14,4 +14,5 @@ const Box = styled.section`
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
+  max-width: 880px;
 `

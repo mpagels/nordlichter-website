@@ -26,14 +26,20 @@ export default function NavBar2() {
             </Link>
 
             <ul>
-              <StyledNavLinkItem onClick={() => console.log('verordnung')}>
-                Verordnung
+              <StyledNavLinkItem>
+                <Link href="/verordnungen">
+                  <a>Verordnung</a>
+                </Link>
               </StyledNavLinkItem>
-              <StyledNavLinkItem isDeactivated={true}>
-                Selbstzahler
+              <StyledNavLinkItem>
+                <Link href="/selbstzahler">
+                  <a>Selbstzahler</a>
+                </Link>
               </StyledNavLinkItem>
-              <StyledNavLinkItem isDeactivated={true}>
-                Betriebliches Gesundheitsmanagment
+              <StyledNavLinkItem>
+                <Link href="/leistungen/betriebliches-gesundheitsmanagment">
+                  <a>Betriebliches Gesundheitsmanagment</a>
+                </Link>
               </StyledNavLinkItem>
               <StyledNavLinkItem>
                 <Link href="/athleten-betreuung">
