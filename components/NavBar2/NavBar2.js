@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import BurgerMenu from './BurgerMenu'
-import Logo from '../../assets/png/NordlichterLogo-small.png'
+import Logo from '../../assets/png/NordlichterLogo-big.png'
 import Link from 'next/link'
 
 export default function NavBar2() {
@@ -9,9 +9,9 @@ export default function NavBar2() {
   return (
     <NavigationWrapper>
       <Link href="/">
-        <a>
+        <StyledLogoAnchor>
           <StyledImage src={Logo} alt="" />
-        </a>
+        </StyledLogoAnchor>
       </Link>
       <NavBarWrapper isOpen={isOpen}>
         <NavBarList>
@@ -72,14 +72,21 @@ export default function NavBar2() {
 }
 
 const StyledImage = styled.img`
-  padding-left: 20px;
+  padding: 20px;
+  height: 160px;
+  @media (max-width: 1060px) {
+    height: 130px;
+  }
+  @media (max-width: 954px) {
+    height: 100px;
+  }
 `
 const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   // padding: 0 30px;
   position: relative;
-  height: 72px;
+  height: 172px;
   & a {
     color: var(--color-font-darkgrey);
   }
@@ -90,7 +97,7 @@ const NavBarWrapper = styled.nav`
   justify-content: flex-start;
   position: absolute;
   left: 20px;
-  top: 7px;
+  top: 57px;
   background: white;
   border-radius: 15px;
   width: 95%;
@@ -99,7 +106,7 @@ const NavBarWrapper = styled.nav`
   box-shadow: 0 0px 5.7px rgba(0, 0, 0, 0.022),
     0 0px 14.5px rgba(0, 0, 0, 0.031), 0 0px 29.6px rgba(0, 0, 0, 0.039),
     0 0px 61px rgba(0, 0, 0, 0.048), 0 0px 167px rgba(0, 0, 0, 0.07);
-  @media (min-width: 736px) {
+  @media (min-width: 842px) {
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -115,7 +122,7 @@ const NavBarList = styled.ul`
   flex-direction: column;
   margin: 0;
   padding: 0;
-  @media (min-width: 736px) {
+  @media (min-width: 842px) {
     flex-direction: row;
   }
 `
@@ -151,7 +158,7 @@ const StyledNavLink = styled.li`
     }
   }
 
-  @media (min-width: 736px) {
+  @media (min-width: 842px) {
     & > ul {
       display: none;
     }
@@ -177,4 +184,8 @@ const StyledNavLink = styled.li`
         0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
     }
   }
+`
+
+const StyledLogoAnchor = styled.a`
+  margin: 20px;
 `

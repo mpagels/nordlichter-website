@@ -1,37 +1,47 @@
 import styled from 'styled-components'
-import leistungen from '../../assets/api/api-leistungen'
-import WelcomeAttentionMsg from '../WelcomeAttentionMsg/WelcomeAttentionMsg'
-import TextSvgText from '../TextSvgText/TextSvgText'
 import BottomSvg from '../../assets/svgs/leistungen/begruessung-ende.svg'
+import CallToAction from '../CallToAction/CallToAction'
+import ContactForm from '../ContactForm/ContactForm'
+import leistungen from '../../assets/api/api-leistungen'
+import TextSvgText from '../TextSvgText/TextSvgText'
+import TrustElements from '../TrustElements/TrustElements'
 
 export default function LeistungenPage() {
   return (
-    <>
-      <WelcomeAttentionMsg />
+    <Wrapper>
       <Headline>Herzlich Willkommen bei den Nordlichtern</Headline>
       <AboutUs>
-        Wir sind Ihre <span>Ansprechpartner</span> in Halstenbek rund um das
-        Thema Physiotherapie, Prävention und Ernährung. Ob körperliche
-        Beschwerden im Alltag oder eine aufwändige Reha nach einer OP, wir
-        begleiten Sie auf Ihrem Weg zur <span>Gesundheit</span>.
+        Ihre <span>Ansprechpartner</span> in Halstenbek rund um das Thema
+        Physiotherapie, Prävention und Gesundheit.
+        <br /> Ob körperliche Beschwerden im Alltag oder eine aufwändige Reha
+        nach einer OP, wir begleiten Sie auf Ihrem Weg zur{' '}
+        <span>Gesundheit</span>.
       </AboutUs>
+      <CallToAction />
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
         <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}
         </TextSvgText>
       ))}
+      <TrustElements />
+      <ContactForm />
       <Subline>Die Nordlichter - wir freuen uns auf Sie!</Subline>
       <BottomSvg style={bottomSvgStyle} />
-    </>
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 const Headline = styled.h1`
   color: var(--font-color-darkgrey);
   margin: 40px 0;
   text-align: center;
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 2em;
 `
 
 const AboutUs = styled.section`
@@ -39,9 +49,9 @@ const AboutUs = styled.section`
   text-align: center;
   border-radius: 10px;
   padding: 30px;
-  margin: 20px 20px 75px 20px;
+  margin: 20px;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 1.2em;
 
   & span {
     color: var(--font-color-blue);
@@ -63,3 +73,10 @@ const bottomSvgStyle = {
   width: '350px',
   height: '100%',
 }
+
+const Line = styled.hr`
+  color: var(--line-color-lightgrey);
+  width: 50%;
+  margin: 40px;
+  height: 0.1px;
+`

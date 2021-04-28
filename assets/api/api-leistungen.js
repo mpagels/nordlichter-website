@@ -10,48 +10,13 @@ const leistungen = {
   infoTexts: [
     {
       firstText:
-        'Sie haben eine Verordnung von einem Facharzt für Manuelle Therapie, Krankengymnastik oder Lymphdrainage?',
+        'Sie haben eine ärztliche Verordnung oder benötigen einen Termin bei unseren Physiotherapeuten?',
       svg: (
         <Svg>
           <KalenderSVG />
         </Svg>
       ),
-      secondText:
-        'Dann vereinbaren Sie einen Termin bei uns. Wir erstellen ihnen umgehend eine Behandlungsserie bei dem richtigen Therapeuten für Sie.',
-    },
-    {
-      firstText:
-        'Eine Verletzung nach einem Wettkampf oder ein "Ziehen" in der Wade beim Training? Lassen Sie uns sehen woran es liegt.',
-      svg: (
-        <Svg>
-          <TrainingSVG />
-        </Svg>
-      ),
-      secondText:
-        'Unsere Experten in der Sportlerbetreuung kennen sich aus uns und bringen Sie wieder "back to the top".',
-    },
-    {
-      firstText:
-        'Sie haben eine Verordnung von einem Facharzt für Manuelle Therapie, Krankengymnastik oder Lymphdrainage?',
-      svg: (
-        <Svg>
-          {' '}
-          <FoodListSVG />{' '}
-        </Svg>
-      ),
-      secondText:
-        'Dann vereinbaren Sie einen Termin bei uns. Wir erstellen ihnen umgehend eine Behandlungsserie bei dem richtigen Therapeuten für Sie.',
-    },
-    {
-      firstText:
-        'Sie haben sich rein gehängt, alles gegeben und brauchen jetzt endlich mal etwas Besonderes für sich?',
-      svg: (
-        <Svg>
-          <TreeSwingSVG />
-        </Svg>
-      ),
-      secondText:
-        'Vereinbaren Sie doch einen Massage Termin und gönnen Sie sich die Erholung. Sie haben es sich verdient!',
+      secondText: 'Wir helfen Ihnen!',
     },
   ],
 }
