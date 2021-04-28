@@ -10,7 +10,6 @@ import BottomSVG from '../assets/svgs/preise/bottom-preise.svg'
 export default function Preise() {
   return (
     <Layout>
-      <Logo />
       <GreyBox>
         <HeadlineGreyBox>Angebote für Selbstzahler</HeadlineGreyBox>
         <Content fontSize={'1.1em'} text={preise.greyContent} />
@@ -38,6 +37,7 @@ const GreyBox = styled.div`
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
+  max-width: 880px;
 `
 
 const HeadlineGreyBox = styled.h1`
@@ -53,6 +53,7 @@ const NormalText = styled.p`
   font-weight: 300;
   font-size: 1.1em;
   padding: 20px;
+  max-width: 880px;
 `
 
 const BlueText = styled(NormalText)`
@@ -70,11 +71,15 @@ const Subheadline = styled.h2`
 
 const PriceWrapper = styled.div`
   display: flex;
-  scrollbar-width: none;
+
   overflow-x: scroll;
   max-width: 100%;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 900px) {
+    scrollbar-width: none;
+  }
 `
 
 const SvgWrapper = styled.div`

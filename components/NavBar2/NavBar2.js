@@ -29,8 +29,10 @@ export default function NavBar2() {
               <StyledNavLinkItem onClick={() => console.log('verordnung')}>
                 Verordnung
               </StyledNavLinkItem>
-              <StyledNavLinkItem isDeactivated={true}>
-                Selbstzahler
+              <StyledNavLinkItem>
+                <Link href="/selbstzahler">
+                  <a>Selbstzahler</a>
+                </Link>
               </StyledNavLinkItem>
               <StyledNavLinkItem>
                 <Link href="/leistungen/betriebliches-gesundheitsmanagment">
