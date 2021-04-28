@@ -4,6 +4,7 @@ import Content from '../../components/GreyContextBox/Content'
 import styled from 'styled-components'
 import GreyBoxContent from '../../components/GreyContextBox/GreyContentBox'
 import BetreuungListItem from '../../components/BetreuungsListItem/BetreuungListItem'
+import ContactForm from '../../components/ContactForm/ContactForm'
 
 export default function BetrieblichesGesundheitsmanagement() {
   return (
@@ -35,10 +36,10 @@ export default function BetrieblichesGesundheitsmanagement() {
       <SupportList>
         {betrieblichesManagement.beratungen.map((beratung) => (
           // @ts-ignore
-          <BetreuungListItem {...beratung} />
+          <BetreuungListItem key={beratung.description} {...beratung} />
         ))}
       </SupportList>
-      <CustomBox text={betrieblichesManagement.additionalText} />
+      <ContactForm />
     </Layout>
   )
 }
@@ -86,12 +87,21 @@ const SupportHeadline = styled.h2`
   font-size: 1.2em;
   text-align: center;
   padding: 0 20px;
+  margin-top: 40px;
 `
 
 const SupportList = styled.ul`
   list-style: none;
+  max-width: 880px;
   padding: 0px;
   margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  @media (max-width: 925px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const CustomBox = styled(GreyBoxContent)`

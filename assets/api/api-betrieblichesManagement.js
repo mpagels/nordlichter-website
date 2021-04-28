@@ -13,7 +13,7 @@ const betrieblichesManagement = {
     { highlight: 'betrieblichen ' },
     {
       normal:
-        'Gesundheitsmanagement interessiert? Dann ist es von Vorteil, gemeinsam mit professioneller Hilfe, darüber nachzudenken.Krankheitsbedingte  ',
+        'Gesundheitsmanagement interessiert? Dann ist es von Vorteil, gemeinsam mit professioneller Hilfe, darüber nachzudenken. Krankheitsbedingte  ',
     },
     { highlight: 'Ausfälle ' },
     {
