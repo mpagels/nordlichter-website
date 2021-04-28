@@ -26,14 +26,22 @@ export default function NavBar2() {
             </Link>
 
             <ul>
-              <StyledNavLinkItem  onClick={() => console.log('verordnung')}>Verordnung</StyledNavLinkItem >
-              <StyledNavLinkItem isDeactivated={true}>Selbstzahler</StyledNavLinkItem>
-              <StyledNavLinkItem isDeactivated={true}>Betriebliches Gesundheitsmanagment</StyledNavLinkItem>
-              <StyledNavLinkItem >
+              <StyledNavLinkItem onClick={() => console.log('verordnung')}>
+                Verordnung
+              </StyledNavLinkItem>
+              <StyledNavLinkItem isDeactivated={true}>
+                Selbstzahler
+              </StyledNavLinkItem>
+              <StyledNavLinkItem>
+                <Link href="/leistungen/betriebliches-gesundheitsmanagment">
+                  <a>Betriebliches Gesundheitsmanagment</a>
+                </Link>
+              </StyledNavLinkItem>
+              <StyledNavLinkItem>
                 <Link href="/athleten-betreuung">
                   <a>Athlethen Betreuung</a>
                 </Link>
-              </StyledNavLinkItem >
+              </StyledNavLinkItem>
             </ul>
           </StyledNavLink>
           <StyledNavLink isDeactivated={true}>Partner</StyledNavLink>
@@ -109,10 +117,12 @@ const NavBarList = styled.ul`
 `
 
 const StyledNavLinkItem = styled.li`
-      margin: 5px 0;
-      color: lightgray;
-    
-      ${({isDeactivated}) => !isDeactivated && `color: var(--font-color-darkgrey);
+  margin: 5px 0;
+  color: lightgray;
+
+  ${({ isDeactivated }) =>
+    !isDeactivated &&
+    `color: var(--font-color-darkgrey);
   &:hover {
     color: var(--font-color-blue);
   }`}
@@ -121,11 +131,12 @@ const StyledNavLink = styled.li`
   margin: 5px 20px;
   color: lightgray;
   position: relative;
-  ${({isDeactivated}) => !isDeactivated && `color: var(--font-color-darkgrey);
+  ${({ isDeactivated }) =>
+    !isDeactivated &&
+    `color: var(--font-color-darkgrey);
   &:hover {
     color: var(--font-color-blue);
   }`}
-  
 
   & > ul {
     list-style-type: none;
