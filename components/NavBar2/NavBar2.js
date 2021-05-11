@@ -48,7 +48,7 @@ export default function NavBar2() {
               </StyledNavLinkItem>
             </ul>
           </StyledNavLink>
-          <StyledNavLink isDeactivated={true}>Partner</StyledNavLink>
+          <StyledNavLink isDeactivated={true}>Jobs</StyledNavLink>
           <StyledNavLink>
             <Link href="/nordlichter">
               <a>Team</a>
@@ -160,7 +160,17 @@ const StyledNavLink = styled.li`
 
   @media (min-width: 842px) {
     & > ul {
-      display: none;
+      display: flex;
+      opacity: 0;
+      position: absolute;
+      transition: 0.3s;
+      flex-direction: column;
+      padding: 20px;
+      margin: 0;
+      gap: 7px;
+      top: 20px;
+      left: -20px;
+      visibility: hidden;
     }
     & li {
       margin: 0;
@@ -173,10 +183,12 @@ const StyledNavLink = styled.li`
       top: 20px;
       left: -20px;
       display: flex;
+      opacity: 1;
       flex-direction: column;
       gap: 7px;
       margin: 0;
       padding: 20px;
+      visibility: visible;
       list-style-type: none;
       box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
         0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
