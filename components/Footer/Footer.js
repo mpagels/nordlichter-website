@@ -17,7 +17,7 @@ export default function Footer() {
           schreiben Sie uns gerne eine Rezension. Wir freuen uns über
           konstruktive Kritik und positive Rückmeldungen. Herzlichen Dank!
         </p>
-        <a href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,," target="_blank">
+        <a href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,," target="_blank" rel="noopener noreferrer">
         <GoogleLogo src={GoogleLogoPNG} alt="google-logo" /> </a>
       </GoogleRezession>
 
