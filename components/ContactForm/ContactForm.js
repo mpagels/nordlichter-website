@@ -15,8 +15,9 @@ export default function ContactForm({ onSubmit }) {
   const [isInterestedInAppointment, setIsInteresstedInAppointment] = useState(
     null
   )
+  const [whatPrediction, setWhatPrediction] = useState('noPrediction')
   const { register, handleSubmit, watch, errors, control } = useForm()
-  const noPrediction = watch('noPrediction', false) // you can supply default value as second argument
+  //const noPrediction = watch('noPrediction', false) // you can supply default value as second argument
 
   async function sendThisShit(data) {
     const { email, nachricht, name, telefon, adresse, betreff } = data
@@ -40,15 +41,16 @@ export default function ContactForm({ onSubmit }) {
     setWhatPrediction(null)
   }
   function handleIWantAAppointment() {
-    setIsInteresstedInAppointment(true)
+    if (!isInterestedInAppointment) {
+      setIsInteresstedInAppointment(true)
+      setWhatPrediction('noPrediction')
+    }
   }
 
   function MyFormControlLabel(props) {
     const radioGroup = useRadioGroup()
     return <FormControlLabel {...props} />
   }
-
-  const [whatPrediction, setWhatPrediction] = useState(null)
 
   const predictions = [
     'Krankengymnastik',
@@ -99,11 +101,13 @@ export default function ContactForm({ onSubmit }) {
                 rules={{ required: true }}
                 control={control}
                 name="iWantAppointmentAndIHave"
+                defaultValue="noPrediction"
+                // value={whatPrediction}
                 as={
                   <RadioGroup
                     row
-                    aria-label="position"
-                    name="position"
+                    aria-label="prediction"
+                    name="prediction1"
                     style={{ alignContent: 'space-between', width: '100%' }}
                   >
                     <MyFormControlLabel
@@ -111,34 +115,42 @@ export default function ContactForm({ onSubmit }) {
                       control={<Radio color="primary" />}
                       label="Keine Verordnung"
                       labelPlacement="bottom"
-                      onClick={() => setWhatPrediction('noPrediction')}
+                      onChange={(event) => {
+                        setWhatPrediction(event.target.value)
+                      }}
                     />
                     <MyFormControlLabel
                       value="lawPrediction"
                       control={<Radio color="primary" />}
                       label="Eine gesetzliche Verordnung"
                       labelPlacement="bottom"
-                      onClick={() => setWhatPrediction('lawPrediction')}
+                      onChange={(event) => {
+                        setWhatPrediction(event.target.value)
+                      }}
                     />
                     <MyFormControlLabel
                       value="privatePrediction"
                       control={<Radio color="primary" />}
                       label="Eine private Verordnung"
                       labelPlacement="bottom"
-                      onClick={() => setWhatPrediction('privatePrediction')}
+                      onChange={(event) => {
+                        setWhatPrediction(event.target.value)
+                      }}
                     />
                     <MyFormControlLabel
                       value="otherQuestion"
                       control={<Radio color="primary" />}
                       label="Ein anderes Anliegen"
                       labelPlacement="bottom"
-                      onClick={() => setWhatPrediction(null)}
+                      onChange={(event) => {
+                        setWhatPrediction(event.target.value)
+                      }}
                     />
                   </RadioGroup>
                 }
               />
             </FormControl>
-            {whatPrediction && (
+            {whatPrediction !== 'otherQuestion' && (
               <>
                 <FormControl component="fieldset" style={{ margin: '10px' }}>
                   <FormLabel component="legend" style={{ margin: '10px 0' }}>
@@ -149,7 +161,7 @@ export default function ContactForm({ onSubmit }) {
                     </strong>
                   </FormLabel>
 
-                  <FormGroup aria-label="position" column>
+                  <FormGroup aria-label="position">
                     {predictions.map((prediction) => (
                       <FormControlLabel
                         key={prediction}
@@ -167,7 +179,7 @@ export default function ContactForm({ onSubmit }) {
                   <FormLabel component="legend" style={{ margin: '10px 0' }}>
                     <strong>Ergänzende Heilmittel:</strong>
                   </FormLabel>
-                  <FormGroup aria-label="position" column>
+                  <FormGroup aria-label="position">
                     {additionalPredictions.map((additionalPrediction) => (
                       <FormControlLabel
                         key={additionalPrediction}
@@ -205,8 +217,7 @@ export default function ContactForm({ onSubmit }) {
             name="telefon"
             type="tel"
             id="telefon"
-            isSmall={true}
-            placeholder="Telefonnummer unter der wir Sie am schnellsten erreichen können"
+            placeholder="040/123456"
             ref={register({ required: true })}
           ></Input>
           {errors.telefon && (
@@ -253,7 +264,8 @@ export default function ContactForm({ onSubmit }) {
           <TextArea
             name="nachricht"
             id="nachricht"
-            placeholder="Geben Sie hier so viele Informationen wie möglich ein!"
+            placeholder={`Geben Sie hier so viele Informationen wie möglich ein!
+Um die Terminfindung zu erleichtern, nennen Sie am besten auch schon mögliche Zeiten, wann Ihnen ein Termin am besten passen würde.`}
             ref={register({ required: true })}
           ></TextArea>
           {errors.nachricht && (
@@ -269,6 +281,7 @@ export default function ContactForm({ onSubmit }) {
 const FormWrapper = styled.form`
   margin: 20px 20px;
   padding: 0 20px;
+  max-width: 880px;
   width: 100%;
 `
 const InputWrapper = styled.div`
@@ -293,7 +306,7 @@ const Input = styled.input`
 
   &::placeholder {
     ${({ isSmall }) => isSmall && 'font-size: 0.5em;'}
-    color: var(--form-border-color);
+    color: var(--font-placeholder);
     font-family: 'NL-normal';
   }
 `
@@ -309,7 +322,7 @@ const TextArea = styled.textarea`
   min-height: 200px;
   font-family: 'NL-normal';
   &::placeholder {
-    color: var(--form-border-color);
+    color: var(--font-placeholder);
     font-family: 'NL-normal';
   }
 `

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Link from 'next/link'
-import Call2 from '../../assets/svgs/callToAction/call2.svg'
+import Call2 from '../../assets/svgs/callToAction/call2.png'
 export default function CallToAction() {
   return (
     <ActionWrapper>
@@ -9,7 +9,7 @@ export default function CallToAction() {
       <Link href={'service/5tipps'}>
         <StyledButton>Klicken Sie hier für mehr Gesundheit</StyledButton>
       </Link>
-      <Call2 style={bottomSvgStyle} />
+      <StyledImg src={Call2} />
     </ActionWrapper>
   )
 }
@@ -53,3 +53,14 @@ const bottomSvgStyle = {
   zIndex: '-1',
   opacity: '0.3',
 }
+
+const StyledImg = styled.img`
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  z-Index: -1;
+  opacity: 0.3;
+  
+
+
+`
