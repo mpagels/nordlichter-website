@@ -13,7 +13,7 @@ export default function Footer() {
       <GoogleRezession>
         <p>
           Waren Sie mit unser Leistung zufrieden oder haben Sie Vorschläge, wie
-          wir uns verbessern können? Dann klicken Sie auf das <a style={{"color" : "white"}} href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,," target="_blank">Google Logo</a> und
+          wir uns verbessern können? Dann klicken Sie auf das <a style={{"color" : "white"}} href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,," target="_blank" rel="noopener noreferrer">Google Logo</a> und
           schreiben Sie uns gerne eine Rezension. Wir freuen uns über
           konstruktive Kritik und positive Rückmeldungen. Herzlichen Dank!
         </p>
