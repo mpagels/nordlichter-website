@@ -10,16 +10,29 @@ export default function Footer() {
   const isDesktop = useMediaQuery({ query: '(max-width: 841px)' })
   return (
     <Wrapper>
-      <GoogleRezession>
+      <GoogleRezension>
         <p>
           Waren Sie mit unser Leistung zufrieden oder haben Sie Vorschläge, wie
-          wir uns verbessern können? Dann klicken Sie auf das <a style={{"color" : "white"}} href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,," target="_blank" rel="noopener noreferrer">Google Logo</a> und
-          schreiben Sie uns gerne eine Rezension. Wir freuen uns über
+          wir uns verbessern können? Dann klicken Sie auf das{' '}
+          <a
+            style={{ color: 'white' }}
+            href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,,"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Logo
+          </a>{' '}
+          und schreiben Sie uns gerne eine Rezension. Wir freuen uns über
           konstruktive Kritik und positive Rückmeldungen. Herzlichen Dank!
         </p>
-        <a href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,," target="_blank" rel="noopener noreferrer">
-        <GoogleLogo src={GoogleLogoPNG} alt="google-logo" /> </a>
-      </GoogleRezession>
+        <a
+          href="https://www.google.com/search?q=nordlichter+halsenbek#lrd=0x47b18128d7d26c01:0x975243cc198cbb69,1,,,"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GoogleLogo src={GoogleLogoPNG} alt="google-logo" />{' '}
+        </a>
+      </GoogleRezension>
 
       <TextWrapper>
         {footer.map((infos, index) => (
@@ -34,7 +47,7 @@ export default function Footer() {
           <StyledLink>Datenschutz</StyledLink>
         </Link>
       </LastWrapper>
-        <Map />
+      <Map />
     </Wrapper>
   )
 }
@@ -43,7 +56,7 @@ const GoogleLogo = styled.img`
   height: 60px;
 `
 
-const GoogleRezession = styled.section`
+const GoogleRezension = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
