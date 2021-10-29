@@ -5,22 +5,10 @@ import kevin from '../jpg/nordlichter/kevin-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
 import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
-import rebecca from '../jpg/nordlichter/rebecca-neu.png'
 import kira from '../jpg/nordlichter/kira-neu.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 
 const nordlichter = [
-  {
-    profilfoto: torben,
-    name: 'Torben Petersen-Lund',
-    fachbereich: [
-      'Athleten Betreuung',
-      'Orthopädie/Chirurgie',
-      'Manuelle Therapie',
-    ],
-    person:
-      'Seit 2010 ausgebildeter Physiotherapeut mit den Fortbildungen für manuelle Lymphdrainage, Manuelle Therapie, professioneller Athletenbetreuung und Ernährungsberatung. Seit vielen Jahren betreut er Fußballer, Handballer und Leichtathleten in Hamburg und gründete 2017 "Die Nordlichter" in Halstenbek.',
-  },
   {
     profilfoto: stefanieW,
     name: 'Stefanie Wenzel',
@@ -78,13 +66,6 @@ const nordlichter = [
     ],
     person:
       'Seit 2010 im Beruf und seit Dezember 2019 an Bord. Fortbildungen in allen wichtigen Bereichen der Physiotherapie: Manuelle Therapie, Krankengymnastik PNF (KG ZNS), Manuelle Lymphdrainage, Kinesiotaping,Krankengymnastik am Gerät und Sportphysiotherapie. Langjährige Erfahrung in der Erstellung und Kontrolle von individuellen Trainingsplänen.',
-  },
-  {
-    profilfoto: rebecca,
-    name: 'Rebecca Samm',
-    fachbereich: ['Krankengymnastik', 'Manuelle Lymphdrainage'],
-    person:
-      'Seit 2020 im Beruf und als Start in das Berufsleben als Physiotherapeutin gleich bei den Nordlichtern angeuert. Anschließende Fortbildung in manueller Lymphdrainage. Als begeisterte Reiterin ist sie eine kompetente Ansprechpartnerin rund um den Reitsport.',
   },
   {
     profilfoto: kira,
