@@ -17,7 +17,6 @@ export default function ContactForm({ onSubmit }) {
   )
   const [whatPrediction, setWhatPrediction] = useState('noPrediction')
   const { register, handleSubmit, watch, errors, control } = useForm()
-  //const noPrediction = watch('noPrediction', false) // you can supply default value as second argument
 
   async function sendThisShit(data) {
     const { email, nachricht, name, telefon, adresse, betreff } = data
@@ -102,7 +101,6 @@ export default function ContactForm({ onSubmit }) {
                 control={control}
                 name="iWantAppointmentAndIHave"
                 defaultValue="noPrediction"
-                // value={whatPrediction}
                 as={
                   <RadioGroup
                     row
