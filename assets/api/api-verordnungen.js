@@ -48,7 +48,7 @@ const verordnungen = {
         },
         { highlight: 'spätestens ' },
         {
-          normal: 'spätestens nach 14 Tagen nach Ausstellung der Verordnung ',
+          normal: 'spätestens nach 28 Tagen nach Ausstellung der Verordnung ',
         },
         { highlight: 'durchgeführt' },
         {
