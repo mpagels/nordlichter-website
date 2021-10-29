@@ -1,4 +1,3 @@
-import torben from '../jpg/nordlichter/torben-neu.png'
 import stefanieW from '../jpg/nordlichter/stefanieW-neu.png'
 import stefanieK from '../jpg/nordlichter/stefanieK-neu.png'
 import kevin from '../jpg/nordlichter/kevin-neu.png'
@@ -6,6 +5,7 @@ import franziska from '../jpg/nordlichter/franziska-neu.png'
 import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
 import kira from '../jpg/nordlichter/kira-neu.png'
+import marco from '../jpg/nordlichter/marco.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 
 const nordlichter = [
@@ -77,6 +77,12 @@ const nordlichter = [
     ],
     person:
       'Angehende Bachelorabsolventin der Physiotherapie, seit 2020 examinierte Physiotherapeutin und seit ihrem Abschluss bei den Nordlichtern tätig. Zertifikatsfortbildung in der manuellen Lymphdrainage und Expertin für gezieltes Krafttraining.',
+  },
+  {
+    profilfoto: marco,
+    name: 'Marco Hönemann',
+    fachbereich: ['Physiotherapie', 'Manuelle Therapie', 'Trainingstherapie'],
+    person: '',
   },
   {
     profilfoto: janeDoe,
