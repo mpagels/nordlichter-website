@@ -17,7 +17,6 @@ export default function LeistungenPage() {
         nach einer OP, wir begleiten Sie auf Ihrem Weg zur{' '}
         <span>Gesundheit</span>.
       </AboutUs>
-      <CallToAction />
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
         <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}
