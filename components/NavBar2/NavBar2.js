@@ -84,6 +84,7 @@ const StyledImage = styled.img`
 const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   // padding: 0 30px;
   position: relative;
   height: 172px;
@@ -100,7 +101,7 @@ const NavBarWrapper = styled.nav`
   top: 57px;
   background: white;
   border-radius: 15px;
-  width: 95%;
+
   margin-right: 0;
   padding: 20px;
   box-shadow: 0 0px 5.7px rgba(0, 0, 0, 0.022),
