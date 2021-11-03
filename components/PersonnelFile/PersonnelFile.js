@@ -1,39 +1,64 @@
 import styled from 'styled-components'
+import { useState } from 'react'
 
 export default function PersonnelFile({
   profilfoto,
   name,
   fachbereich,
-  person,
+  proffession,
+  language,
 }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleClick() {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <Wrapper>
-      <Profilphoto src={profilfoto} alt={name} />
+      <Profilphoto src={profilfoto} alt={name} isOpen={isOpen} />
       <GreyBox>
         <Name>{name}</Name>
+        <Proffession>{proffession}</Proffession>
+        <Language>Sprachen: {language}</Language>
         <Fachbereiche>
-          <Title>Fachbereiche</Title>
-          <Line />
-          <List>
-            {fachbereich.map((bereich) => (
-              <li key={bereich}>{bereich}</li>
-            ))}
-          </List>
+          <TitleButton onClick={handleClick}>
+            {!isOpen ? 'Zeige' : 'Schließe'} Fachbereiche
+          </TitleButton>
+          {isOpen ? (
+            <>
+              <Line />
+              <List>
+                {fachbereich.map((bereich) => (
+                  <li key={bereich}>{bereich}</li>
+                ))}
+              </List>
+            </>
+          ) : (
+            ' '
+          )}
         </Fachbereiche>
-        <Person>
-          <Title>Zur Person</Title>
-          <Line />
-        <p>{person}</p>
-        </Person>
       </GreyBox>
     </Wrapper>
   )
 }
 
+const Language = styled.h4`
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 0.89em;
+`
+const Proffession = styled.h3`
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 1em;
+`
+
 const Wrapper = styled.div`
   align-items: center;
   margin: 150px 20px 0;
-
+  width: 300px;
   &:nth-last-of-type(1) {
     margin: 150px 20px 80px;
   }
@@ -41,18 +66,15 @@ const Wrapper = styled.div`
 `
 
 const Profilphoto = styled.img`
-position: absolute;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-top:-100px;
-z-index: -1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: -100px;
+  opacity: ${({ isOpen }) => (isOpen ? '0.4' : '1')};
+  z-index: 1;
 
-@media (min-width: 1092px) {
-  margin-left: 40px 
-
-}
   width: 175px;
   border-radius: 50%;
   border: 3px solid var(--font-color-blue);
@@ -68,35 +90,23 @@ const GreyBox = styled.div`
   color: var(--font-color-darkgrey);
   text-align: center;
   position: relative;
-  z-index: -1;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 500px;
-  z-index: -2;
-  @media (min-width: 1092px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-    "Name ."
-    "Fachbereich Person"
-  }
-
-
 `
 
 const Name = styled.h2`
   margin-top: 80px;
+  margin-bottom: 0;
   color: var(--font-color-blue);
   font-family: 'NL-bold';
   font-weight: bold;
   font-size: 1.2em;
   @media (min-width: 1092px) {
-    grid-area: Name
+    grid-area: Name;
   }
-  
 `
 
 const Fachbereiche = styled.section`
@@ -104,15 +114,21 @@ const Fachbereiche = styled.section`
   flex-direction: column;
   align-items: center;
   @media (min-width: 1092px) {
-    grid-area: Fachbereich
+    grid-area: Fachbereich;
   }
 `
 
-const Title = styled.h3`
+const TitleButton = styled.button`
+  all: unset;
+  width: 185px;
+  cursor: pointer;
   font-family: 'NL-bold';
-  font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
+  color: white;
   margin-bottom: 10px;
+  background-color: #15bd77;
+  padding: 0.8em;
+  border-radius: 15px;
 `
 const Line = styled.hr`
   color: var(--footer-font-color-lightgrey);
@@ -125,11 +141,10 @@ const List = styled.ul`
 `
 
 const Person = styled.section`
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   @media (min-width: 1092px) {
     grid-area: Person;
   }
-
 `
