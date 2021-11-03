@@ -18,4 +18,5 @@ const Wrapper = styled.section`
   width: 300px;
   margin: 40px;
   margin-bottom: 80px;
+  background: white;
 `
