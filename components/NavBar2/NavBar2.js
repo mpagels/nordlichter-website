@@ -99,7 +99,11 @@ const NavBarWrapper = styled.nav`
   position: absolute;
   left: 20px;
   top: 57px;
-  background: white;
+  ${(prop) =>
+    prop.isOpen
+      ? `background: white;
+  width: 95%;`
+      : ';'}
   border-radius: 15px;
 
   margin-right: 0;
