@@ -10,9 +10,9 @@ export default function Nordlichter() {
     <Layout>
       <Headline>Unser Team stellt sich vor</Headline>
       <Wrapper>
-      {nordlichter.map((nordlicht, index) => (
-        <PersonnelFile key={index} {...nordlicht} />
-      ))}
+        {nordlichter.map((nordlicht, index) => (
+          <PersonnelFile key={index} {...nordlicht} />
+        ))}
       </Wrapper>
       <BottomSVG style={customSvgStyle} />
     </Layout>
@@ -34,8 +34,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 1092px) {
+  @media (min-width: 800px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 1092px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `
