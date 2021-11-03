@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Navbar2 from './NavBar2/NavBar2'
 import Footer from './Footer/Footer'
 import styled from 'styled-components'
-
+import Background from './BackGroundAnchor/BackGroundAnchor'
 export default function Layout({ children }) {
   const appTitle = 'Nordlichter Halstenbek'
 
@@ -13,9 +13,10 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </Head>
+      <Background />
       <Navbar2 />
       <Content>{children}</Content>
-      
+
       <Footer />
     </LayoutWrapper>
   )
@@ -25,7 +26,6 @@ const LayoutWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-
   height: 100%;
 `
 

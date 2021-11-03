@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-import AkzidGroStdBolCnd from './assets/fonts/AkzidGroStdBolCnd.woff';
-import AkzidGroStdCnd from './assets/fonts/AkzidGroStdCnd.woff';
-
+import AkzidGroStdBolCnd from './assets/fonts/AkzidGroStdBolCnd.woff'
+import AkzidGroStdCnd from './assets/fonts/AkzidGroStdCnd.woff'
 
 export default createGlobalStyle`
 
