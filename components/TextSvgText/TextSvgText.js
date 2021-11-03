@@ -1,11 +1,17 @@
 import styled from 'styled-components'
 
-export default function TextSvgText({ firstText, children, secondText }) {
+export default function TextSvgText({
+  firstText,
+  children,
+  secondText,
+  button,
+}) {
   return (
     <Wrapper>
       <Text>{firstText}</Text>
       <Svg> {children} </Svg>
       <Text>{secondText}</Text>
+      {button}
       <Line />
     </Wrapper>
   )
