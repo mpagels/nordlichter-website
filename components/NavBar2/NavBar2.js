@@ -84,6 +84,7 @@ const StyledImage = styled.img`
 const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   // padding: 0 30px;
   position: relative;
   height: 172px;
@@ -98,9 +99,13 @@ const NavBarWrapper = styled.nav`
   position: absolute;
   left: 20px;
   top: 57px;
-  background: white;
+  ${(prop) =>
+    prop.isOpen
+      ? `background: white;
+  width: 95%;`
+      : ';'}
   border-radius: 15px;
-  width: 95%;
+
   margin-right: 0;
   padding: 20px;
   box-shadow: 0 0px 5.7px rgba(0, 0, 0, 0.022),

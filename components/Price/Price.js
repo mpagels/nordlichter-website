@@ -51,6 +51,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 20px 7px rgba(0, 0, 0, 0.1);
+  background: white;
 `
 const Header = styled.div`
   border-radius: 10px 10px 0 0;

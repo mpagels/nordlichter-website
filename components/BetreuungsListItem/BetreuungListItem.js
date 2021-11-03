@@ -54,6 +54,7 @@ const Description = styled.div`
     font-weight: bold;
     margin: 0;
   }
+  background: white;
 `
 
 const SvgWrapper = styled.div`

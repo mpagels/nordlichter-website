@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-import AkzidGroStdBolCnd from './assets/fonts/AkzidGroStdBolCnd.woff';
-import AkzidGroStdCnd from './assets/fonts/AkzidGroStdCnd.woff';
-
+import AkzidGroStdBolCnd from './assets/fonts/AkzidGroStdBolCnd.woff'
+import AkzidGroStdCnd from './assets/fonts/AkzidGroStdCnd.woff'
 
 export default createGlobalStyle`
 
@@ -49,7 +48,7 @@ section, div {
     --font-color-darkgrey: #707070;
     --footer-font-color-lightgrey: #EFEFEF;
     --line-color-lightgrey: #8080801A;
-    --infoBox-color-lightgrey: #E2E2E247;
+    --infoBox-color-lightgrey: #f7f7f7;
     --headcolor-services-normal: #F75119;
     --headcolor-services-second: #F7C219;
     --form-border-color: #A8C4E5;
