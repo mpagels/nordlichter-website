@@ -105,7 +105,7 @@ const preise = {
         },
       },
     ],
-    other: [
+    others: [
       {
         isSmall: true,
         title: 'Kenisiotape',
