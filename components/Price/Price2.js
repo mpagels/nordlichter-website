@@ -52,6 +52,7 @@ const ListItem = styled.li`
   font-weight: 200;
   font-family: Roboto;
   width: 160px;
+  margin: 7px 0;
   &::before {
     content: '+';
     font-weight: bold;
