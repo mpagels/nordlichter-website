@@ -85,6 +85,26 @@ const preise = {
         },
       },
     ],
+    abos: [
+      {
+        title: 'Abo 6fach',
+        description: '30 Minuten Massge',
+        extras: ['Wärmepackung'],
+        price: {
+          was: 'Statt 312 €',
+          is: 'nur 279,90 €',
+        },
+      },
+      {
+        title: 'Abo 10fach',
+        description: '30 Minuten Massge',
+        extras: ['Wärmepackung'],
+        price: {
+          was: 'Statt 520 €',
+          is: 'nur 439,90 €',
+        },
+      },
+    ],
   },
   additionalBlueText: [
     {
