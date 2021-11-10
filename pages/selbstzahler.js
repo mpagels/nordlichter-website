@@ -32,7 +32,12 @@ export default function Preise() {
           <Price2 {...abo} />
         ))}
       </PriceWrapper>
-
+      <Subheadline>und unseren weiteren Angeboten</Subheadline>
+      <PriceWrapper>
+        {preise.newServices.others.map((other) => (
+          <Price2 {...other} />
+        ))}
+      </PriceWrapper>
       <SvgWrapper>
         <BottomSVG />
       </SvgWrapper>
