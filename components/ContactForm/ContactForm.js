@@ -346,7 +346,8 @@ const Required = styled.span`
 
 const ErrorMessage = styled.span`
   color: var(--form-error-color);
-  font-size: 0.5em;
+  margin-top: 3px;
+  font-size: 0.8em;
 `
 const PredictionWrapper = styled.div`
   display: flex;
