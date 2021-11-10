@@ -6,6 +6,7 @@ import Content from '../components/GreyContextBox/Content'
 import Price from '../components/Price/Price'
 import GreyBoxContent from '../components/GreyContextBox/GreyContentBox'
 import BottomSVG from '../assets/svgs/preise/bottom-preise.svg'
+import Price2 from '../components/Price/Price2'
 
 export default function Preise() {
   return (
@@ -20,8 +21,8 @@ export default function Preise() {
       <Subheadline>Klassische Massage Therapie</Subheadline>
 
       <PriceWrapper>
-        {preise.services.map((service) => (
-          <Price {...service} />
+        {preise.newServices.massages.map((massage) => (
+          <Price2 {...massage} />
         ))}
       </PriceWrapper>
       <GreyBoxContent text={preise.additionalBlueText} />
