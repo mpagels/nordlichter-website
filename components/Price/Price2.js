@@ -1,18 +1,29 @@
 import styled from 'styled-components'
 
-export default function Price2({ title, description, extras, price }) {
+export default function Price2({ title, description, extras, price, isSmall }) {
   return (
-    <PriceWrapper>
+    <PriceWrapper isSmall={isSmall}>
       <InfoWrapper>
         <h2>{title}</h2>
-        <Description>{description}</Description>
-        <Line />
-        <ExtraList>
-          {extras.map((extra) => (
-            <ListItem key={extra}>{extra}</ListItem>
-          ))}
-        </ExtraList>
+        {!isSmall ? (
+          <>
+            <Description>{description}</Description>
+            <Line />
+            {extras ? (
+              <ExtraList>
+                {extras.map((extra) => (
+                  <ListItem key={extra}>{extra}</ListItem>
+                ))}
+              </ExtraList>
+            ) : (
+              ''
+            )}
+          </>
+        ) : (
+          ''
+        )}
       </InfoWrapper>
+
       <PriceArea>
         {price.was ? <Price>{price.was}</Price> : ''}
         <Price isNow>{price.is}</Price>
@@ -52,7 +63,7 @@ const ListItem = styled.li`
 const PriceWrapper = styled.section`
   display: flex;
   margin: 20px;
-  height: 450px;
+  height: ${({ isSmall }) => (!isSmall ? '450px' : 'auto')};
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
