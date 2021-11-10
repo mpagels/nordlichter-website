@@ -25,7 +25,7 @@ export default function Preise() {
           <Price2 {...massage} />
         ))}
       </PriceWrapper>
-      <GreyBoxContent text={preise.additionalBlueText} />
+
       <SvgWrapper>
         <BottomSVG />
       </SvgWrapper>
