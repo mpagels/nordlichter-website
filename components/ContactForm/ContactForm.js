@@ -262,7 +262,7 @@ export default function ContactForm({ onSubmit }) {
           <TextArea
             name="nachricht"
             id="nachricht"
-            placeholder={`Geben Sie hier so viele Informationen wie möglich ein!
+            placeholder={`Geben Sie hier so viele Informationen wie möglich ein! 
 Um die Terminfindung zu erleichtern, nennen Sie am besten auch schon mögliche Zeiten, wann Ihnen ein Termin am besten passen würde.`}
             ref={register({ required: true })}
           ></TextArea>
@@ -346,7 +346,7 @@ const Required = styled.span`
 
 const ErrorMessage = styled.span`
   color: var(--form-error-color);
-  margin-top: 3px;
+  margin-top: Zpx;
   font-size: 0.8em;
 `
 const PredictionWrapper = styled.div`
