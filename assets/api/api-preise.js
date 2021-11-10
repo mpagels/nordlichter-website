@@ -87,18 +87,18 @@ const preise = {
     ],
     abos: [
       {
-        title: 'Abo 6fach',
+        title: 'Schmerz lass nach!',
         description: '30 Minuten Massge',
-        extras: ['Wärmepackung'],
+        extras: ['Wärmepackung', '6x Massage', '10% Rabatt'],
         price: {
           was: 'Statt 312 €',
           is: 'nur 279,90 €',
         },
       },
       {
-        title: 'Abo 10fach',
+        title: 'Schmerz lass nach!',
         description: '30 Minuten Massge',
-        extras: ['Wärmepackung'],
+        extras: ['Wärmepackung', '10x Massage', '15% Rabatt'],
         price: {
           was: 'Statt 520 €',
           is: 'nur 439,90 €',
