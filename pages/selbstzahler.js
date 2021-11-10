@@ -26,6 +26,13 @@ export default function Preise() {
         ))}
       </PriceWrapper>
 
+      <Subheadline>Profitieren sie auch von unseren günstigen Abos</Subheadline>
+      <PriceWrapper>
+        {preise.newServices.abos.map((abo) => (
+          <Price2 {...abo} />
+        ))}
+      </PriceWrapper>
+
       <SvgWrapper>
         <BottomSVG />
       </SvgWrapper>
