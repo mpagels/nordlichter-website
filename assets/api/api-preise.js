@@ -105,6 +105,22 @@ const preise = {
         },
       },
     ],
+    other: [
+      {
+        isSmall: true,
+        title: 'Kenisiotape',
+        price: {
+          is: 'nur 10 € Grundpreis',
+        },
+      },
+      {
+        isSmall: true,
+        title: 'Osteopathische Behandlung',
+        price: {
+          is: '85 €',
+        },
+      },
+    ],
   },
   additionalBlueText: [
     {
