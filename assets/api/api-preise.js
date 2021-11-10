@@ -56,6 +56,72 @@ const preise = {
       arrow: '-9%',
     },
   ],
+  newServices: {
+    massages: [
+      {
+        title: 'Schmerz adé',
+        description: '40 Minuten Massage',
+        extras: ['Wärmepackung', '10% Rabatt auf den nächsten Termin'],
+        price: {
+          was: 'Statt 63 €',
+          is: 'nur 57,90 €',
+        },
+      },
+      {
+        title: 'Schmerz lass nach!',
+        description: '30 Minuten Massage',
+        extras: ['Wärmepackung'],
+        price: {
+          was: 'Statt 52 €',
+          is: 'nur 47,90 €',
+        },
+      },
+      {
+        title: 'Standart',
+        description: '20 Minuten Massage',
+        extras: ['Wärmepackung'],
+        price: {
+          is: 'nur 40 €',
+        },
+      },
+    ],
+    abos: [
+      {
+        title: 'Schmerz lass nach!',
+        description: '30 Minuten Massge',
+        extras: ['Wärmepackung', '6x Massage', '10% Rabatt'],
+        price: {
+          was: 'Statt 312 €',
+          is: 'nur 279,90 €',
+        },
+      },
+      {
+        title: 'Schmerz lass nach!',
+        description: '30 Minuten Massge',
+        extras: ['Wärmepackung', '10x Massage', '15% Rabatt'],
+        price: {
+          was: 'Statt 520 €',
+          is: 'nur 439,90 €',
+        },
+      },
+    ],
+    others: [
+      {
+        isSmall: true,
+        title: 'Kenisiotape',
+        price: {
+          is: 'nur 10 € Grundpreis',
+        },
+      },
+      {
+        isSmall: true,
+        title: 'Osteopathische Behandlung',
+        price: {
+          is: '85 €',
+        },
+      },
+    ],
+  },
   additionalBlueText: [
     {
       highlight:
