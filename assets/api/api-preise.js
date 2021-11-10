@@ -56,6 +56,36 @@ const preise = {
       arrow: '-9%',
     },
   ],
+  newServices: {
+    massages: [
+      {
+        title: 'Schmerz adé',
+        description: '40 Minuten Massage',
+        extras: ['Wärmepackung', '10% Rabatt auf den nächsten Termin'],
+        price: {
+          was: 'Statt 63 €',
+          is: 'nur 57,90 €',
+        },
+      },
+      {
+        title: 'Schmerz lass nach!',
+        description: '30 Minuten Massage',
+        extras: ['Wärmepackung'],
+        price: {
+          was: 'Statt 52 €',
+          is: 'nur 47,90 €',
+        },
+      },
+      {
+        title: 'Standart',
+        description: '20 Minuten Massage',
+        extras: ['Wärmepackung'],
+        price: {
+          is: 'nur 40 €',
+        },
+      },
+    ],
+  },
   additionalBlueText: [
     {
       highlight:
