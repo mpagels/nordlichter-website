@@ -27,15 +27,6 @@ const nordlichter = [
       'Sie beendete 2009 ihre Ausbildung zur Physiotherapeutin und arbeitet seidem in dieser Praxis. Im Laufe der Zeit hat sie Fortbildungen in manueller Lymphdrainage, manueller Therapie, Kinesiotaping, Fußreflexzonentherapie und in die Einführung der Rolfing-Methode absolviert. Neben ihrer Arbeit in der Praxis betreut sie die Fußballer von Blau Weiß 96 Schenefeld.',
   },
   {
-    profilfoto: kevin,
-    name: 'Kevin Köneke',
-    fachbereich: ['Krankengymnastik', 'Massage', 'Kinisio Taping'],
-    proffession: 'Physiotherapeut',
-    language: 'deutsch',
-    person:
-      'Seit 2013 ist er staatlich anerkannter Physiotherapeut und arbeitet seidem in dieser Praxis. In der Zeit hat er sich auf das Kinisiotaping sowie die klassische Massage-, Brügger- und Triggerpunkttherapie spezialisiert.',
-  },
-  {
     profilfoto: franziska,
     name: 'Franziska Schulz',
     fachbereich: [
