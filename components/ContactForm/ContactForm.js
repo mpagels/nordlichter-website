@@ -37,7 +37,8 @@ export default function ContactForm() {
       nachricht,
       telefon,
       adresse,
-      betreff
+      betreff,
+      email
     )
     if (res.status < 300) {
       onSubmit()
