@@ -306,6 +306,11 @@ export default async (req, res) => {
                 </section>
                 <section class="overall__topic">
                 <p class=tag>${ImInterestedIn.topic}</p>
+                ${
+                  ImInterestedIn.prediction
+                    ? `<p class=tag>${ImInterestedIn.prediction}</p>`
+                    : ''
+                }
                 </section>
                 ${
                   ImInterestedIn.prediction && ImInterestedIn.interestedIn

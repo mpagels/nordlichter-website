@@ -40,8 +40,18 @@ export default function ContactForm() {
       iWantAppointmentAndIHave,
     } = data
 
+    function convertUserPrediction(prediction) {
+      const predictions = {
+        noPrediction: 'Keine Verordnung',
+        lawPrediction: 'Gesetzliche Verordnung',
+        privatePrediction: 'Private Verordnung',
+        otherQuestion: 'Anderes Anliegen',
+      }
+      return predictions[prediction]
+    }
+
     console.log(data)
-    let ImInterestedIn = { topic: 'NACHRICHT' }
+    let ImInterestedIn = { topic: 'FRAGE VOM PATIENTEN' }
 
     if (iWantAppointmentAndIHave) {
       const interestedIn = predictions.filter((prediction) => data[prediction])
@@ -50,8 +60,8 @@ export default function ContactForm() {
       )
 
       ImInterestedIn = {
-        topic: 'TERMINANFRAGE',
-        prediction: iWantAppointmentAndIHave,
+        topic: 'TERMINANFRAGE VOM PATIENTEN',
+        prediction: convertUserPrediction(iWantAppointmentAndIHave),
         interestedIn: interestedIn.length !== 0 ? interestedIn : null,
         addition: additional.lenght !== 0 ? additional : null,
       }
@@ -67,7 +77,7 @@ export default function ContactForm() {
       email,
       ImInterestedIn
     )
-    console.log('fehler', res)
+
     if (res.status < 300) {
       onSubmit('success')
     }
