@@ -11,16 +11,60 @@ import FormLabel from '@material-ui/core/FormLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import FormGroup from '@material-ui/core/FormGroup'
 
-export default function ContactForm({ onSubmit }) {
+import Logo from '../Logo/Logo'
+import MessageSendSVG from '../../assets/svgs/kontakt/emailSend.svg'
+import MessageErrorSVG from '../../assets/svgs/kontakt/emailError.svg'
+
+export default function ContactForm() {
+  const [isSend, setIsSend] = useState({ status: false, type: null })
+  const [isError, setIsError] = useState(false)
+
+  const onSubmit = (type) => {
+    setIsSend({ status: true, type })
+  }
+
   const [isInterestedInAppointment, setIsInteresstedInAppointment] = useState(
     null
   )
+  const [whatPrediction, setWhatPrediction] = useState('noPrediction')
   const { register, handleSubmit, watch, errors, control } = useForm()
-  const noPrediction = watch('noPrediction', false) // you can supply default value as second argument
 
   async function sendThisShit(data) {
-    const { email, nachricht, name, telefon, adresse, betreff } = data
-    console.log(data)
+    const {
+      email,
+      nachricht,
+      name,
+      telefon,
+      adresse,
+      betreff,
+      iWantAppointmentAndIHave,
+    } = data
+
+    function convertUserPrediction(prediction) {
+      const predictions = {
+        noPrediction: 'Keine Verordnung',
+        lawPrediction: 'Gesetzliche Verordnung',
+        privatePrediction: 'Private Verordnung',
+        otherQuestion: 'Anderes Anliegen',
+      }
+      return predictions[prediction]
+    }
+
+    let ImInterestedIn = { topic: 'FRAGE VOM PATIENTEN' }
+
+    if (iWantAppointmentAndIHave) {
+      const interestedIn = predictions.filter((prediction) => data[prediction])
+      const additional = additionalPredictions.filter(
+        (addition) => data[addition]
+      )
+
+      ImInterestedIn = {
+        topic: 'TERMINANFRAGE VOM PATIENTEN',
+        prediction: convertUserPrediction(iWantAppointmentAndIHave),
+        interestedIn: interestedIn.length !== 0 ? interestedIn : null,
+        addition: additional.lenght !== 0 ? additional : null,
+      }
+    }
     const res = await sendContactMail(
       'pagelsmartin@gmx.de',
       name,
@@ -28,10 +72,16 @@ export default function ContactForm({ onSubmit }) {
       nachricht,
       telefon,
       adresse,
-      betreff
+      betreff,
+      email,
+      ImInterestedIn
     )
+
     if (res.status < 300) {
-      onSubmit()
+      onSubmit('success')
+    }
+    if (res.status > 399) {
+      onSubmit('error')
     }
   }
 
@@ -40,15 +90,16 @@ export default function ContactForm({ onSubmit }) {
     setWhatPrediction(null)
   }
   function handleIWantAAppointment() {
-    setIsInteresstedInAppointment(true)
+    if (!isInterestedInAppointment) {
+      setIsInteresstedInAppointment(true)
+      setWhatPrediction('noPrediction')
+    }
   }
 
   function MyFormControlLabel(props) {
     const radioGroup = useRadioGroup()
     return <FormControlLabel {...props} />
   }
-
-  const [whatPrediction, setWhatPrediction] = useState(null)
 
   const predictions = [
     'Krankengymnastik',
@@ -65,210 +116,246 @@ export default function ContactForm({ onSubmit }) {
     'Heisse Rolle',
     'Kältetherapie',
   ]
-  return (
-    <FormWrapper onSubmit={handleSubmit(sendThisShit)} id="contactForm">
-      <AppointmentButtonWrapper>
-        <AppointmentButton
-          type="button"
-          isActive={
-            !isInterestedInAppointment && isInterestedInAppointment !== null
-          }
-          onClick={handleIHaveAQuestion}
-        >
-          Ich habe eine Frage
-        </AppointmentButton>
-        <AppointmentButton
-          isActive={isInterestedInAppointment}
-          type="button"
-          onClick={handleIWantAAppointment}
-        >
-          Ich interessiere mich für einen Termin
-        </AppointmentButton>
-      </AppointmentButtonWrapper>
+  return isSend.status ? (
+    isSend.type === 'success' ? (
       <>
-        {isInterestedInAppointment && (
-          <>
-            <FormControl
-              component="fieldset"
-              style={{ width: '100%', margin: '10px' }}
-            >
-              <FormLabel component="legend">
-                <strong>Ich habe:</strong>
-              </FormLabel>
-              <Controller
-                rules={{ required: true }}
-                control={control}
-                name="iWantAppointmentAndIHave"
-                as={
-                  <RadioGroup
-                    row
-                    aria-label="position"
-                    name="position"
-                    style={{ alignContent: 'space-between', width: '100%' }}
-                  >
-                    <MyFormControlLabel
-                      value="noPrediction"
-                      control={<Radio color="primary" />}
-                      label="Keine Verordnung"
-                      labelPlacement="bottom"
-                      onClick={() => setWhatPrediction('noPrediction')}
-                    />
-                    <MyFormControlLabel
-                      value="lawPrediction"
-                      control={<Radio color="primary" />}
-                      label="Eine gesetzliche Verordnung"
-                      labelPlacement="bottom"
-                      onClick={() => setWhatPrediction('lawPrediction')}
-                    />
-                    <MyFormControlLabel
-                      value="privatePrediction"
-                      control={<Radio color="primary" />}
-                      label="Eine private Verordnung"
-                      labelPlacement="bottom"
-                      onClick={() => setWhatPrediction('privatePrediction')}
-                    />
-                    <MyFormControlLabel
-                      value="otherQuestion"
-                      control={<Radio color="primary" />}
-                      label="Ein anderes Anliegen"
-                      labelPlacement="bottom"
-                      onClick={() => setWhatPrediction(null)}
-                    />
-                  </RadioGroup>
-                }
-              />
-            </FormControl>
-            {whatPrediction && (
-              <>
-                <FormControl component="fieldset" style={{ margin: '10px' }}>
-                  <FormLabel component="legend" style={{ margin: '10px 0' }}>
-                    <strong>
-                      {whatPrediction !== 'noPrediction'
-                        ? 'Mir wurde verschrieben:'
-                        : 'Ich interessiere mich für:'}
-                    </strong>
-                  </FormLabel>
-
-                  <FormGroup aria-label="position" column>
-                    {predictions.map((prediction) => (
-                      <FormControlLabel
-                        key={prediction}
-                        value={prediction}
-                        control={<Checkbox color="primary" />}
-                        label={prediction}
-                        labelPlacement="end"
-                        name={prediction}
-                        inputRef={register}
-                      />
-                    ))}
-                  </FormGroup>
-                </FormControl>
-                <FormControl component="fieldset" style={{ margin: '10px' }}>
-                  <FormLabel component="legend" style={{ margin: '10px 0' }}>
-                    <strong>Ergänzende Heilmittel:</strong>
-                  </FormLabel>
-                  <FormGroup aria-label="position" column>
-                    {additionalPredictions.map((additionalPrediction) => (
-                      <FormControlLabel
-                        key={additionalPrediction}
-                        value={additionalPrediction}
-                        control={<Checkbox color="primary" />}
-                        label={additionalPrediction}
-                        labelPlacement="end"
-                      />
-                    ))}
-                  </FormGroup>
-                </FormControl>
-              </>
-            )}
-          </>
-        )}
-        <InputWrapper>
-          <Label name="name" htmlFor="name">
-            Name:<Required>*</Required>
-          </Label>
-          <Input
-            name="name"
-            id="name"
-            placeholder="Ihr Vor- und Nachname"
-            ref={register({ required: true })}
-          ></Input>
-          {errors.name && (
-            <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
-          )}
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="telefon">
-            Telefon:<Required>*</Required>
-          </Label>
-          <Input
-            name="telefon"
-            type="tel"
-            id="telefon"
-            isSmall={true}
-            placeholder="Telefonnummer unter der wir Sie am schnellsten erreichen können"
-            ref={register({ required: true })}
-          ></Input>
-          {errors.telefon && (
-            <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
-          )}
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="email">
-            Email:<Required>*</Required>
-          </Label>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="maxmustermann@email.de"
-            ref={register({ required: true })}
-          ></Input>
-          {errors.email && (
-            <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
-          )}
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="adresse">Adresse:</Label>
-          <Input
-            id="adresse"
-            name="adresse"
-            placeholder="Musterstraße 1, 12345, Musterstadt"
-            ref={register()}
-          ></Input>
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="betreff">Betreff:</Label>
-          <Input
-            id="betreff"
-            name="betreff"
-            placeholder="Worum geht es?"
-            ref={register()}
-          ></Input>
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="nachricht">
-            Nachricht:<Required>*</Required>
-          </Label>
-          <TextArea
-            name="nachricht"
-            id="nachricht"
-            placeholder="Geben Sie hier so viele Informationen wie möglich ein!"
-            ref={register({ required: true })}
-          ></TextArea>
-          {errors.nachricht && (
-            <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
-          )}
-        </InputWrapper>
-        <SubmitButton type="submit" value="NACHRICHT ABSCHICKEN" />{' '}
+        <MessageSendSVG />
+        <SucessMessage>
+          Ihre Nachricht wurde erfolgreich versendet und wir haben sie erhalten.
+          Wir danken Ihnen herzlich für Ihr Vertrauen. Wir werden uns umgehend
+          bei Ihnen melden.
+        </SucessMessage>
       </>
-    </FormWrapper>
+    ) : (
+      <>
+        <MessageErrorSVG />
+        <SucessMessage>
+          Hier ist etwas schief gelaufen. Wir entschuldigen uns dafür. Bitte
+          nehmen Sie mit uns telefonisch Kontakt auf. Telefon: 04101 43 233
+        </SucessMessage>
+      </>
+    )
+  ) : (
+    <>
+      <Headline>
+        Zu welchem der beiden Themen wollen Sie uns schreiben?
+      </Headline>
+      <FormWrapper onSubmit={handleSubmit(sendThisShit)} id="contactForm">
+        <AppointmentButtonWrapper>
+          <AppointmentButton
+            type="button"
+            isActive={
+              !isInterestedInAppointment && isInterestedInAppointment !== null
+            }
+            onClick={handleIHaveAQuestion}
+          >
+            Ich habe eine Frage
+          </AppointmentButton>
+          <AppointmentButton
+            isActive={isInterestedInAppointment}
+            type="button"
+            onClick={handleIWantAAppointment}
+          >
+            Ich interessiere mich für einen Termin
+          </AppointmentButton>
+        </AppointmentButtonWrapper>
+        <>
+          {isInterestedInAppointment && (
+            <>
+              <FormControl
+                component="fieldset"
+                style={{ width: '100%', margin: '10px' }}
+              >
+                <FormLabel component="legend">
+                  <strong>Ich habe:</strong>
+                </FormLabel>
+                <Controller
+                  rules={{ required: true }}
+                  control={control}
+                  name="iWantAppointmentAndIHave"
+                  defaultValue="noPrediction"
+                  as={
+                    <RadioGroup
+                      row
+                      aria-label="prediction"
+                      name="prediction1"
+                      style={{ alignContent: 'space-between', width: '100%' }}
+                    >
+                      <MyFormControlLabel
+                        value="noPrediction"
+                        control={<Radio color="primary" />}
+                        label="Keine Verordnung"
+                        labelPlacement="bottom"
+                        onChange={(event) => {
+                          setWhatPrediction(event.target.value)
+                        }}
+                      />
+                      <MyFormControlLabel
+                        value="lawPrediction"
+                        control={<Radio color="primary" />}
+                        label="Eine gesetzliche Verordnung"
+                        labelPlacement="bottom"
+                        onChange={(event) => {
+                          setWhatPrediction(event.target.value)
+                        }}
+                      />
+                      <MyFormControlLabel
+                        value="privatePrediction"
+                        control={<Radio color="primary" />}
+                        label="Eine private Verordnung"
+                        labelPlacement="bottom"
+                        onChange={(event) => {
+                          setWhatPrediction(event.target.value)
+                        }}
+                      />
+                      <MyFormControlLabel
+                        value="otherQuestion"
+                        control={<Radio color="primary" />}
+                        label="Ein anderes Anliegen"
+                        labelPlacement="bottom"
+                        onChange={(event) => {
+                          setWhatPrediction(event.target.value)
+                        }}
+                      />
+                    </RadioGroup>
+                  }
+                />
+              </FormControl>
+              {whatPrediction !== 'otherQuestion' && (
+                <>
+                  <FormControl component="fieldset" style={{ margin: '10px' }}>
+                    <FormLabel component="legend" style={{ margin: '10px 0' }}>
+                      <strong>
+                        {whatPrediction !== 'noPrediction'
+                          ? 'Mir wurde verschrieben:'
+                          : 'Ich interessiere mich für:'}
+                      </strong>
+                    </FormLabel>
+
+                    <FormGroup aria-label="position">
+                      {predictions.map((prediction) => (
+                        <FormControlLabel
+                          key={prediction}
+                          value={prediction}
+                          control={<Checkbox color="primary" />}
+                          label={prediction}
+                          labelPlacement="end"
+                          name={prediction}
+                          inputRef={register}
+                        />
+                      ))}
+                    </FormGroup>
+                  </FormControl>
+                  <FormControl component="fieldset" style={{ margin: '10px' }}>
+                    <FormLabel component="legend" style={{ margin: '10px 0' }}>
+                      <strong>Ergänzende Heilmittel:</strong>
+                    </FormLabel>
+                    <FormGroup aria-label="position">
+                      {additionalPredictions.map((additionalPrediction) => (
+                        <FormControlLabel
+                          key={additionalPrediction}
+                          value={additionalPrediction}
+                          control={<Checkbox color="primary" />}
+                          label={additionalPrediction}
+                          labelPlacement="end"
+                          name={additionalPrediction}
+                          inputRef={register}
+                        />
+                      ))}
+                    </FormGroup>
+                  </FormControl>
+                </>
+              )}
+            </>
+          )}
+          <InputWrapper>
+            <Label name="name" htmlFor="name">
+              Name:<Required>*</Required>
+            </Label>
+            <Input
+              name="name"
+              id="name"
+              placeholder="Ihr Vor- und Nachname"
+              ref={register({ required: true })}
+            ></Input>
+            {errors.name && (
+              <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
+            )}
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="telefon">
+              Telefon:<Required>*</Required>
+            </Label>
+            <Input
+              name="telefon"
+              type="tel"
+              id="telefon"
+              placeholder="040/123456"
+              ref={register({ required: true })}
+            ></Input>
+            {errors.telefon && (
+              <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
+            )}
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="email">
+              Email:<Required>*</Required>
+            </Label>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="maxmustermann@email.de"
+              ref={register({ required: true })}
+            ></Input>
+            {errors.email && (
+              <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
+            )}
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="adresse">Adresse:</Label>
+            <Input
+              id="adresse"
+              name="adresse"
+              placeholder="Musterstraße 1, 12345, Musterstadt"
+              ref={register()}
+            ></Input>
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="betreff">Betreff:</Label>
+            <Input
+              id="betreff"
+              name="betreff"
+              placeholder="Worum geht es?"
+              ref={register()}
+            ></Input>
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="nachricht">
+              Nachricht:<Required>*</Required>
+            </Label>
+            <TextArea
+              name="nachricht"
+              id="nachricht"
+              placeholder={`Geben Sie hier so viele Informationen wie möglich ein! 
+Um die Terminfindung zu erleichtern, nennen Sie am besten auch schon mögliche Zeiten, wann Ihnen ein Termin am besten passen würde.`}
+              ref={register({ required: true })}
+            ></TextArea>
+            {errors.nachricht && (
+              <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
+            )}
+          </InputWrapper>
+          <SubmitButton type="submit" value="NACHRICHT ABSCHICKEN" />{' '}
+        </>
+      </FormWrapper>
+    </>
   )
 }
 
 const FormWrapper = styled.form`
   margin: 20px 20px;
   padding: 0 20px;
+  max-width: 880px;
   width: 100%;
 `
 const InputWrapper = styled.div`
@@ -293,7 +380,7 @@ const Input = styled.input`
 
   &::placeholder {
     ${({ isSmall }) => isSmall && 'font-size: 0.5em;'}
-    color: var(--form-border-color);
+    color: var(--font-placeholder);
     font-family: 'NL-normal';
   }
 `
@@ -309,7 +396,7 @@ const TextArea = styled.textarea`
   min-height: 200px;
   font-family: 'NL-normal';
   &::placeholder {
-    color: var(--form-border-color);
+    color: var(--font-placeholder);
     font-family: 'NL-normal';
   }
 `
@@ -335,7 +422,8 @@ const Required = styled.span`
 
 const ErrorMessage = styled.span`
   color: var(--form-error-color);
-  font-size: 0.5em;
+  margin-top: Zpx;
+  font-size: 0.8em;
 `
 const PredictionWrapper = styled.div`
   display: flex;
@@ -375,3 +463,14 @@ const StyledCheckbox = styled.input`
 `
 
 const RadioGroupWrapper = styled(RadioGroup)``
+
+const Headline = styled.p`
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+`
+
+const SucessMessage = styled.h4`
+  text-align: center;
+  padding: 30px;
+`

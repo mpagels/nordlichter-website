@@ -12,32 +12,36 @@ const transporter = nodemailer.createTransport({
 //[1]
 
 export default async (req, res) => {
-  const {
-    senderMail,
-    name,
-    content,
-    recipientMail,
-    telefon,
-    adresse,
-    betreff,
-  } = req.body
-  //[2]
+  try {
+    const {
+      senderMail,
+      name,
+      content,
+      recipientMail,
+      telefon,
+      adresse,
+      betreff,
+      email,
+      ImInterestedIn,
+    } = req.body
+    //[2]
+    // Check if fields are all filled
+    if (
+      senderMail === '' ||
+      name === '' ||
+      content === '' ||
+      recipientMail === '' ||
+      telefon === '' ||
+      adresse === '' ||
+      betreff === '' ||
+      email === ''
+    ) {
+      res.status(403).send('')
+      return
+    }
 
-  // Check if fields are all filled
-  if (
-    senderMail === '' ||
-    name === '' ||
-    content === '' ||
-    recipientMail === '' ||
-    telefon === '' ||
-    adresse === '' ||
-    betreff === ''
-  ) {
-    res.status(403).send('')
-    return
-  }
-  //[3]
-  const mergedContent = `
+    //[3]
+    const mergedContent = `
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,130 +51,130 @@ export default async (req, res) => {
     <link rel="stylesheet" href="style.css">
     <title>Email Template</title>
     <style>
-        * {
-  box-sizing: border-box;
-}
+      * {
+        box-sizing: border-box;
+      }
 
-body {
-  font-family: sans-serif;
-  font-size: 112.5%;
-  line-height: 1.5;
-  margin: 0;
-  background-color: #17abed;
-}
+      body {
+        font-family: sans-serif;
+        font-size: 112.5%;
+        line-height: 1.5;
+        margin: 0;
+        background-color: #17abed;
+      }
 
-header {
-  font-weight: bolder;
-  color: #535461;
-}
+      header {
+        font-weight: bolder;
+        color: #535461;
+      }
 
-main {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  border-radius: 50px;
-  background-color: #fff;
-  padding: 100px;
-  height: auto;
-}
+      main {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        border-radius: 50px;
+        background-color: #fff;
+        padding: 100px;
+        height: auto;
+      }
 
-h3 {
-  color: #17abed;
-  margin-bottom: 7px;
-}
+      h3 {
+        color: #17abed;
+        margin-bottom: 7px;
+      }
 
-h4 {
-  color: #535461;
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-.overall__layout {
-  display: grid;
-  grid-template-columns: 1fr 90% 1fr;
-  grid-template-rows: 300px auto 300px;
-}
-.content__layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
+      h4 {
+        color: #535461;
+        margin-top: 7px;
+        margin-bottom: 7px;
+      }
+      .overall__layout {
+        display: grid;
+        grid-template-columns: 1fr 90% 1fr;
+        grid-template-rows: 100px auto 300px;
+      }
+      .content__layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
 
-.content__logo {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: -400px;
-}
+      .content__logo {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: -400px;
+      }
 
-svg {
-  width: 80%;
-}
+      svg {
+        width: 80%;
+      }
 
-.content__about-sender {
-  align-self: self-start;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: repeat(5, 10px);
-  gap: 20px;
-  margin-top: 160px;
-}
+      .content__about-sender {
+        align-self: self-start;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: repeat(5, 10px);
+        gap: 20px;
+        margin-top: 160px;
+      }
 
-.key {
-  color: #17abed;
-  font-weight: bolder;
-  text-align: end;
-}
-.value {
-  justify-self: start;
-  color: #535461;
-}
+      .key {
+        color: #17abed;
+        font-weight: bolder;
+        text-align: end;
+      }
+      .value {
+        justify-self: start;
+        color: #535461;
+      }
 
-.overall__topic {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  margin-top: 20px;
-}
+      .overall__topic {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 20px;
+      }
 
-.tag {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  border-radius: 50px;
-  background-color: #17abed;
+      .tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        border-radius: 50px;
+        background-color: #17abed;
 
-  color: #fff;
-}
-.tag:not(:first-child) {
-  margin: 15px;
-}
-.tag:first-child {
-  margin: 15px 15px 15px;
-  margin-left: 0;
-}
+        color: #fff;
+      }
+      .tag:not(:first-child) {
+        margin: 15px;
+      }
+      .tag:first-child {
+        margin: 15px 15px 15px;
+        margin-left: 0;
+      }
 
-.additional-infos {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      .additional-infos {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-.tag__wrapper {
-  display: flex;
-}
+      .tag__wrapper {
+        display: flex;
+      }
 
-.logo {
-  display: flex;
-  flex-direction: column;
- align-items: center;
-}
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-.content__footer {
-  font-size: 0.8em;
-  color: #535461;
-}
+      .content__footer {
+        font-size: 0.8em;
+        color: #535461;
+      }
     </style>
 </head>
 <body>
@@ -292,36 +296,62 @@ svg {
                 </section>
                 <section class="content__about-sender">
                     <p class="key">NAME:</p>
-                    <p class="value">Max Mustermann</p>
+                    <p class="value">${name}</p>
                     <p class="key">EMAIL:</p>
-                    <p class="value">max.mustermann@email.de</p>
+                    <p class="value">${email}</p>
                     <p class="key">TELEFON:</p>
-                    <p class="value">0123456789</p>
+                    <p class="value">${telefon}</p>
                     <p class="key">ADRESSE:</p>
-                    <p class="value">Musterstraße 1, 11111, Mustestadt</p>
+                    <p class="value">${adresse}</p>
                 </section>
                 <section class="overall__topic">
-                    <p class=tag>TERMINANFRAGE</p>
-                    <p class="tag">PRIVATE VERORDNUNG</p>
+                <p class=tag>${ImInterestedIn.topic}</p>
+                ${
+                  ImInterestedIn.prediction
+                    ? `<p class=tag>${ImInterestedIn.prediction}</p>`
+                    : ''
+                }
                 </section>
-                <section class="additional-infos">
+                ${
+                  ImInterestedIn.prediction && ImInterestedIn.interestedIn
+                    ? `<section class="additional-infos">
                     <header>VERORDNUNG/EN</header>
                     <div class="tag__wrapper">
-                        <p class=tag>KRANKENGYMNASTIK</p>
-                        <p class="tag">KLASSISCHE MASSAGETHERAPIE</p>
+                    ${
+                      ImInterestedIn.prediction
+                        ? ImInterestedIn.interestedIn
+                            .map(
+                              (interested) => `<p class=tag>${interested}</p>`
+                            )
+                            .join('\n')
+                        : ''
+                    }
                     </div>
-                </section>
+                </section>`
+                    : ''
+                }
+
+                ${
+                  ImInterestedIn.prediction && ImInterestedIn.addition
+                    ? `
                 <section class="additional-infos">
                     <header>ERGÄNZENDE HEILMITTEL</header>
                     <div class="tag__wrapper">
-                        <p class=tag>KÄLTETHERAPIE</p>
-                        <p class="tag">HEISSE ROLLE</p>
+                    ${
+                      ImInterestedIn.prediction
+                        ? ImInterestedIn.addition
+                            .map((addition) => `<p class=tag>${addition}</p>`)
+                            .join('\n')
+                        : ''
+                    }
                     </div>
-                </section>
+                </section>`
+                    : ''
+                }
                 <section class="message__wrapper">
                     <h3>NACHRICHT DES:DER PATIENT:IN</h3>
-                    <h4>Lorem Ipsum Betreff</h4>
-                    <p>I’m baby chicharrones locavore church-key VHS next level neutra pok pok hell of post-ironic kogi craft beer heirloom paleo ramps slow-carb. 8-bit tbh adaptogen meggings raclette affogato chia mixtape whatever pug. Austin williamsburg flannel, roof party copper mug photo booth shoreditch chambray. Offal semiotics irony tumeric intelligentsia. Intelligentsia bitters typewriter try-hard, coloring book venmo chicharrones wayfarers. Slow-carb whatever thundercats, gochujang adaptogen irony franzen sustainable art party marfa raw denim kickstarter mustache. Hell of 8-bit hexagon everyday carry pok pok. Cronut poutine tattooed yuccie polaroid man bun selfies meggings prism master cleanse ramps pitchfork mumblecore. Crucifix occupy butcher vexillologist blog stumptown squid letterpress church-key fashion axe blue bottle lo-fi keffiyeh celiac direct trade. Meggings cold-pressed twee hella. Craft beer helvetica poutine authentic literally.</p>
+                    <h4>${betreff}</h4>
+                    <p>${content}</p>
                 </section>
                 <section class="logo">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="810" height="221" viewBox="0 0 810 221">
@@ -336,22 +366,27 @@ svg {
 </body>
 </html>
 `
-  //     const mergedContent = `
-  // Name: ${name}
-  // Telefon: ${telefon}
-  // Adresse: ${adresse}
-  // Betreff: ${betreff}
-  // Nachricht:
-  // ${content}`
+    //     const mergedContent = `
+    // Name: ${name}
+    // Telefon: ${telefon}
+    // Adresse: ${adresse}
+    // Betreff: ${betreff}
+    // Nachricht:
+    // ${content}`
 
-  const mailerRes = await mailer({
-    senderMail,
-    name,
-    text: mergedContent,
-    recipientMail,
-  })
-  res.send(mailerRes)
-  //[4]
+    const mailerRes = await mailer({
+      senderMail,
+      name,
+      text: mergedContent,
+      recipientMail,
+    })
+    res.send(mailerRes)
+    //[4]
+  } catch (error) {
+    console.log('error')
+    res.status(404).send('')
+    return
+  }
 }
 
 const mailer = ({ senderMail, name, text, recipientMail }) => {

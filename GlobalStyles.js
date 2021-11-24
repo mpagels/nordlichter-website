@@ -45,6 +45,7 @@ section, div {
     --backgroundColor: #fff;
     --footer-backgroundColor: #141414;
     --font-color-blue: #0075AB;
+    --font-placeholder: #0070A3;
     --font-color-darkgrey: #707070;
     --footer-font-color-lightgrey: #EFEFEF;
     --line-color-lightgrey: #8080801A;
