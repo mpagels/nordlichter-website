@@ -12,35 +12,36 @@ const transporter = nodemailer.createTransport({
 //[1]
 
 export default async (req, res) => {
-  console.log(req.body)
-  const {
-    senderMail,
-    name,
-    content,
-    recipientMail,
-    telefon,
-    adresse,
-    betreff,
-    email,
-  } = req.body
-  //[2]
+  try {
+    const {
+      senderMail,
+      name,
+      content,
+      recipientMail,
+      telefon,
+      adresse,
+      betreff,
+      email,
+      ImInterestedIn,
+    } = req.body
+    //[2]
+    // Check if fields are all filled
+    if (
+      senderMail === '' ||
+      name === '' ||
+      content === '' ||
+      recipientMail === '' ||
+      telefon === '' ||
+      adresse === '' ||
+      betreff === '' ||
+      email === ''
+    ) {
+      res.status(403).send('')
+      return
+    }
 
-  // Check if fields are all filled
-  if (
-    senderMail === '' ||
-    name === '' ||
-    content === '' ||
-    recipientMail === '' ||
-    telefon === '' ||
-    adresse === '' ||
-    betreff === '' ||
-    email === ''
-  ) {
-    res.status(403).send('')
-    return
-  }
-  //[3]
-  const mergedContent = `
+    //[3]
+    const mergedContent = `
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -304,23 +305,44 @@ export default async (req, res) => {
                     <p class="value">${adresse}</p>
                 </section>
                 <section class="overall__topic">
-                    <p class=tag>TERMINANFRAGE</p>
-                    <p class="tag">PRIVATE VERORDNUNG</p>
+                <p class=tag>${ImInterestedIn.topic}</p>
                 </section>
-                <section class="additional-infos">
+                ${
+                  ImInterestedIn.prediction && ImInterestedIn.interestedIn
+                    ? `<section class="additional-infos">
                     <header>VERORDNUNG/EN</header>
                     <div class="tag__wrapper">
-                        <p class=tag>KRANKENGYMNASTIK</p>
-                        <p class="tag">KLASSISCHE MASSAGETHERAPIE</p>
+                    ${
+                      ImInterestedIn.prediction
+                        ? ImInterestedIn.interestedIn
+                            .map(
+                              (interested) => `<p class=tag>${interested}</p>`
+                            )
+                            .join('\n')
+                        : ''
+                    }
                     </div>
-                </section>
+                </section>`
+                    : ''
+                }
+
+                ${
+                  ImInterestedIn.prediction && ImInterestedIn.addition
+                    ? `
                 <section class="additional-infos">
                     <header>ERGÄNZENDE HEILMITTEL</header>
                     <div class="tag__wrapper">
-                        <p class=tag>KÄLTETHERAPIE</p>
-                        <p class="tag">HEISSE ROLLE</p>
+                    ${
+                      ImInterestedIn.prediction
+                        ? ImInterestedIn.addition
+                            .map((addition) => `<p class=tag>${addition}</p>`)
+                            .join('\n')
+                        : ''
+                    }
                     </div>
-                </section>
+                </section>`
+                    : ''
+                }
                 <section class="message__wrapper">
                     <h3>NACHRICHT DES:DER PATIENT:IN</h3>
                     <h4>${betreff}</h4>
@@ -339,22 +361,27 @@ export default async (req, res) => {
 </body>
 </html>
 `
-  //     const mergedContent = `
-  // Name: ${name}
-  // Telefon: ${telefon}
-  // Adresse: ${adresse}
-  // Betreff: ${betreff}
-  // Nachricht:
-  // ${content}`
+    //     const mergedContent = `
+    // Name: ${name}
+    // Telefon: ${telefon}
+    // Adresse: ${adresse}
+    // Betreff: ${betreff}
+    // Nachricht:
+    // ${content}`
 
-  const mailerRes = await mailer({
-    senderMail,
-    name,
-    text: mergedContent,
-    recipientMail,
-  })
-  res.send(mailerRes)
-  //[4]
+    const mailerRes = await mailer({
+      senderMail,
+      name,
+      text: mergedContent,
+      recipientMail,
+    })
+    res.send(mailerRes)
+    //[4]
+  } catch (error) {
+    console.log('error')
+    res.status(404).send('')
+    return
+  }
 }
 
 const mailer = ({ senderMail, name, text, recipientMail }) => {

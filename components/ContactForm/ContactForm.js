@@ -13,12 +13,14 @@ import FormGroup from '@material-ui/core/FormGroup'
 
 import Logo from '../Logo/Logo'
 import MessageSendSVG from '../../assets/svgs/kontakt/emailSend.svg'
+import MessageErrorSVG from '../../assets/svgs/kontakt/emailError.svg'
 
 export default function ContactForm() {
-  const [isSend, setIsSend] = useState(false)
+  const [isSend, setIsSend] = useState({ status: false, type: null })
+  const [isError, setIsError] = useState(false)
 
-  const onSubmit = () => {
-    setIsSend(true)
+  const onSubmit = (type) => {
+    setIsSend({ status: true, type })
   }
 
   const [isInterestedInAppointment, setIsInteresstedInAppointment] = useState(
@@ -28,8 +30,32 @@ export default function ContactForm() {
   const { register, handleSubmit, watch, errors, control } = useForm()
 
   async function sendThisShit(data) {
-    const { email, nachricht, name, telefon, adresse, betreff } = data
+    const {
+      email,
+      nachricht,
+      name,
+      telefon,
+      adresse,
+      betreff,
+      iWantAppointmentAndIHave,
+    } = data
+
     console.log(data)
+    let ImInterestedIn = { topic: 'NACHRICHT' }
+
+    if (iWantAppointmentAndIHave) {
+      const interestedIn = predictions.filter((prediction) => data[prediction])
+      const additional = additionalPredictions.filter(
+        (addition) => data[addition]
+      )
+
+      ImInterestedIn = {
+        topic: 'TERMINANFRAGE',
+        prediction: iWantAppointmentAndIHave,
+        interestedIn: interestedIn.length !== 0 ? interestedIn : null,
+        addition: additional.lenght !== 0 ? additional : null,
+      }
+    }
     const res = await sendContactMail(
       'pagelsmartin@gmx.de',
       name,
@@ -38,10 +64,15 @@ export default function ContactForm() {
       telefon,
       adresse,
       betreff,
-      email
+      email,
+      ImInterestedIn
     )
+    console.log('fehler', res)
     if (res.status < 300) {
-      onSubmit()
+      onSubmit('success')
+    }
+    if (res.status > 399) {
+      onSubmit('error')
     }
   }
 
@@ -76,15 +107,25 @@ export default function ContactForm() {
     'Heisse Rolle',
     'Kältetherapie',
   ]
-  return isSend ? (
-    <>
-      <MessageSendSVG />
-      <SucessMessage>
-        Ihre Nachricht wurde erfolgreich versendet und wir haben sie erhalten.
-        Wir danken Ihnen herzlich für Ihr Vertrauen. Wir werden uns umgehend bei
-        Ihnen melden.
-      </SucessMessage>
-    </>
+  return isSend.status ? (
+    isSend.type === 'success' ? (
+      <>
+        <MessageSendSVG />
+        <SucessMessage>
+          Ihre Nachricht wurde erfolgreich versendet und wir haben sie erhalten.
+          Wir danken Ihnen herzlich für Ihr Vertrauen. Wir werden uns umgehend
+          bei Ihnen melden.
+        </SucessMessage>
+      </>
+    ) : (
+      <>
+        <MessageErrorSVG />
+        <SucessMessage>
+          Hier ist etwas schief gelaufen. Wir entschuldigen uns dafür. Bitte
+          nehmen Sie mit uns telefonisch Kontakt auf. Telefon: 04101 43 233
+        </SucessMessage>
+      </>
+    )
   ) : (
     <>
       <Headline>
@@ -208,6 +249,8 @@ export default function ContactForm() {
                           control={<Checkbox color="primary" />}
                           label={additionalPrediction}
                           labelPlacement="end"
+                          name={additionalPrediction}
+                          inputRef={register}
                         />
                       ))}
                     </FormGroup>
