@@ -50,7 +50,6 @@ export default function ContactForm() {
       return predictions[prediction]
     }
 
-    console.log(data)
     let ImInterestedIn = { topic: 'FRAGE VOM PATIENTEN' }
 
     if (iWantAppointmentAndIHave) {
