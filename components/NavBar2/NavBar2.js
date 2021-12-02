@@ -46,7 +46,7 @@ export default function NavBar2() {
           <StyledNavLink isDeactivated={true}>Jobs</StyledNavLink>
           <StyledNavLink>
             <Link href="/nordlichter">
-              <a>Team</a>
+              <a>Nordlichter</a>
             </Link>
           </StyledNavLink>
           <StyledNavLink>
