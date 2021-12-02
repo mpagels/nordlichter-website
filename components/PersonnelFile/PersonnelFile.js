@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import ReactCountryFlag from 'react-country-flag'
 
 export default function PersonnelFile({
   profilfoto,
   name,
   fachbereich,
   proffession,
-  language,
+  languages,
 }) {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -20,7 +21,12 @@ export default function PersonnelFile({
       <GreyBox>
         <Name>{name}</Name>
         <Proffession>{proffession}</Proffession>
-        <Language>Sprachen: {language}</Language>
+        <Language>
+          Sprachen:{' '}
+          {languages.map((language) => (
+            <ReactCountryFlag key={name + language} countryCode={language} />
+          ))}
+        </Language>
         <Fachbereiche>
           <TitleButton onClick={handleClick}>
             {!isOpen ? 'Zeige' : 'Schließe'} Fachbereiche
@@ -43,7 +49,7 @@ export default function PersonnelFile({
   )
 }
 
-const Language = styled.h4`
+const Language = styled.p`
   margin-top: 0;
   font-weight: 400;
   font-size: 0.89em;
