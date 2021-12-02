@@ -7,6 +7,7 @@ import HeadlineSvgInfo from '../components/HeadlineSvgInfo/HeadlineSvgInfo'
 import GreyContentBox from '../components/GreyContextBox/GreyContentBox'
 import SubHeadlineWithInfo from '../components/SubHeadlineWithInfo/SubHeadlineWithInfo'
 import BottomSvg from '../assets/svgs/verordnungen/verordnung-ende.svg'
+import ButtonToContactForm from '../components/ButtonToContactForm/ButtonToContactForm'
 
 export default function Verordnungen() {
   return (
@@ -15,6 +16,7 @@ export default function Verordnungen() {
         <TreeWaySvg />
       </HeadlineWithSvg>
       <GreyContentBox text={verordnungen.greyContent} />
+      <ButtonToContactForm toContactForm />
       <SubHeadlineWithInfo {...verordnungen.firstInfo} />
       <PrescriptionWrapper>
         {verordnungen.operationInfoNormal.map(({ headline, svg, info }) => (
@@ -31,6 +33,7 @@ export default function Verordnungen() {
           </HeadlineSvgInfo>
         ))}
       </PrescriptionWrapper>
+      <ButtonToContactForm toContactForm />
       <GreyContentBox text={verordnungen.attention} />
       <BottomSvg style={bottomSvgStyle} />
     </Layout>
