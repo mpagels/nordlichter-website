@@ -7,24 +7,19 @@ import Price from '../components/Price/Price'
 import GreyBoxContent from '../components/GreyContextBox/GreyContentBox'
 import BottomSVG from '../assets/svgs/preise/bottom-preise.svg'
 import Price2 from '../components/Price/Price2'
+import ButtonToContactForm from '../components/ButtonToContactForm/ButtonToContactForm'
 
 export default function Preise() {
   return (
     <Layout>
-      <GreyBox>
-        <HeadlineGreyBox>Angebote für Selbstzahler</HeadlineGreyBox>
-        <Content fontSize={'1.1em'} text={preise.greyContent} />
-      </GreyBox>
-      <NormalText>{preise.normalContent}</NormalText>
-      <Svg>{preise.svg}</Svg>
       <BlueText>{preise.blueText}</BlueText>
       <Subheadline>Klassische Massage Therapie</Subheadline>
-
       <PriceWrapper>
         {preise.newServices.massages.map((massage) => (
           <Price2 {...massage} />
         ))}
       </PriceWrapper>
+      <ButtonToContactForm toContactForm />
 
       <Subheadline>Profitieren sie auch von unseren günstigen Abos</Subheadline>
       <PriceWrapper>
@@ -38,6 +33,12 @@ export default function Preise() {
           <Price2 {...other} />
         ))}
       </PriceWrapper>
+      <ButtonToContactForm toContactForm />
+      <GreyBox>
+        <HeadlineGreyBox>Angebote für Selbstzahler</HeadlineGreyBox>
+        <Content fontSize={'1.1em'} text={preise.greyContent} />
+      </GreyBox>
+      <NormalText>{preise.normalContent}</NormalText>
       <SvgWrapper>
         <BottomSVG />
       </SvgWrapper>
