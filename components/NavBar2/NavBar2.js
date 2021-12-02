@@ -41,11 +41,6 @@ export default function NavBar2() {
                   <a>Betriebliches Gesundheitsmanagment</a>
                 </Link>
               </StyledNavLinkItem>
-              <StyledNavLinkItem>
-                <Link href="/athleten-betreuung">
-                  <a>Athlethen Betreuung</a>
-                </Link>
-              </StyledNavLinkItem>
             </ul>
           </StyledNavLink>
           <StyledNavLink isDeactivated={true}>Jobs</StyledNavLink>
