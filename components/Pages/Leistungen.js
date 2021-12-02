@@ -26,8 +26,8 @@ export default function LeistungenPage() {
           {svg}
         </TextSvgText>
       ))}
-      <TrustElements />
       <ContactForm />
+      <TrustElements />
       <Subline>Die Nordlichter - wir freuen uns auf Sie!</Subline>
       <BottomSvg style={bottomSvgStyle} />
     </Wrapper>
