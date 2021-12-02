@@ -11,6 +11,9 @@ export default function LeistungenPage() {
   return (
     <Wrapper>
       <Headline>Herzlich Willkommen bei den Nordlichtern</Headline>
+      <Link href="#contactForm" passHref>
+        <StyledLink>Jetzt einen Termin vereinbaren!</StyledLink>
+      </Link>
       <AboutUs>
         Ihre <span>Ansprechpartner</span> in Halstenbek rund um das Thema
         Physiotherapie, Prävention und Gesundheit.
@@ -19,16 +22,7 @@ export default function LeistungenPage() {
         <span>Gesundheit</span>.
       </AboutUs>
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
-        <TextSvgText
-          key={index}
-          firstText={firstText}
-          secondText={secondText}
-          button={
-            <Link href="#contactForm" passHref>
-              <StyledLink>Jetzt einen Termin vereinbaren!</StyledLink>
-            </Link>
-          }
-        >
+        <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}
         </TextSvgText>
       ))}
@@ -93,6 +87,7 @@ const StyledLink = styled.a`
   all: unset;
   background-color: #15bd77;
   padding: 15px;
+  margin-bottom: 30px;
   border-radius: 10px;
   color: whitesmoke;
   cursor: pointer;
