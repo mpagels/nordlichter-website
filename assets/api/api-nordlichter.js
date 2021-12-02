@@ -10,6 +10,22 @@ import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 
 const nordlichter = [
   {
+    profilfoto: kai,
+    name: 'Kai Heinemann',
+    fachbereich: [
+      'Manuelle Therapie',
+      'Manuelle Lymphdrainage - Osteopathisches Konzept',
+      'KG ZNS - PNF',
+      'Kinesio Taping ',
+      'Krankengymnastik am Gerät',
+      'Sportphysiotherapie',
+    ],
+    language: 'deutsch, englisch',
+    proffession: 'Physiotherapeut / Praxisleitung',
+    person:
+      'Seit 2010 im Beruf und seit Dezember 2019 an Bord. Fortbildungen in allen wichtigen Bereichen der Physiotherapie: Manuelle Therapie, Krankengymnastik PNF (KG ZNS), Manuelle Lymphdrainage, Kinesiotaping,Krankengymnastik am Gerät und Sportphysiotherapie. Langjährige Erfahrung in der Erstellung und Kontrolle von individuellen Trainingsplänen.',
+  },
+  {
     profilfoto: stefanieW,
     name: 'Stefanie Wenzel',
     fachbereich: [
@@ -30,7 +46,8 @@ const nordlichter = [
     profilfoto: franziska,
     name: 'Franziska Schulz',
     fachbereich: [
-      'Manuelle Lymphdrainage - Kenisiotape',
+      'Manuelle Lymphdrainage',
+      'Kenisiotape',
       'Manuelle Therapie',
       'Pilates',
     ],
@@ -44,9 +61,11 @@ const nordlichter = [
     name: 'Stefanie Kommnick',
     fachbereich: [
       'KG ZNS nach Bobath',
-      'Manuelle Lymphdrainage Myofasciale Triggerpunkttherapie',
+      'Manuelle Lymphdrainage',
+      'Myofasciale Triggerpunkttherapie',
       'Kinesio Taping',
-      'CMD Therapeutin Fußreflexzonentherapie Medical Flossing',
+      'CMD Therapeutin Fußreflexzonentherapie',
+      'Medical Flossing',
       'TMX Trigger-Coach',
     ],
     language: 'deutsch, englisch',
@@ -64,21 +83,6 @@ const nordlichter = [
       'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
   },
   {
-    profilfoto: kai,
-    name: 'Kai Heinemann',
-    fachbereich: [
-      'Manuelle Therapie',
-      'Osteopathisches Konzept KG ZNS - PNF',
-      'Manuelle Lymphdrainage',
-      'Sportphysiotherapie',
-      'Kinesio Taping Krankengymnastik am Gerät',
-    ],
-    language: 'deutsch, englisch',
-    proffession: 'Physiotherapeut',
-    person:
-      'Seit 2010 im Beruf und seit Dezember 2019 an Bord. Fortbildungen in allen wichtigen Bereichen der Physiotherapie: Manuelle Therapie, Krankengymnastik PNF (KG ZNS), Manuelle Lymphdrainage, Kinesiotaping,Krankengymnastik am Gerät und Sportphysiotherapie. Langjährige Erfahrung in der Erstellung und Kontrolle von individuellen Trainingsplänen.',
-  },
-  {
     profilfoto: kira,
     name: 'Kira Schlüter',
     fachbereich: [
@@ -87,7 +91,8 @@ const nordlichter = [
       'Spezifisches Krafttraining',
     ],
     language: 'deutsch, englisch, spanisch',
-    proffession: 'Bachelorandin Physiotherapie',
+    proffession: `Physiotherapeutin /
+    B.Sc. Physiotherapie`,
     fachbereich: ['Manuelle Lymphdrainage'],
     person:
       'Angehende Bachelorabsolventin der Physiotherapie, seit 2020 examinierte Physiotherapeutin und seit ihrem Abschluss bei den Nordlichtern tätig. Zertifikatsfortbildung in der manuellen Lymphdrainage und Expertin für gezieltes Krafttraining.',
@@ -104,7 +109,7 @@ const nordlichter = [
     profilfoto: janeDoe,
     name: 'Nicole Jensen',
     fachbereich: ['Osteopathie', 'Yoga', 'Krankengymnastik für Kinder'],
-    proffession: 'Physiotherapeutin',
+    proffession: 'Physiotherapeutin /  Freie Mitarbeiterin',
     language: 'deutsch',
     person:
       'Als freie Mitarbeiterin bereichert Frau Jensen das Nordlichter Team an zwei Nachmittagen (Dienstag / Donnerstag) in der Woche. Sie übernimmt die osteopathischen Behandlungen in der Praxis und hat weitreichende Fortbildungen im Yoga Training.',
