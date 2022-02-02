@@ -42,7 +42,6 @@ const footer = [
 
       `Mail: info@nordlichter-halstenbek.de`,
       `www.nordlichter-halstenbek.de`,
-      `IBAN: DE74 2219 1405 0079 8046 90`,
     ],
   },
 ]
