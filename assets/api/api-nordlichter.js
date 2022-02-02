@@ -13,8 +13,8 @@ const nordlichter = [
     profilfoto: kai,
     name: 'Kai Heinemann',
     fachbereich: [
-      'Manuelle Therapie',
-      'Manuelle Lymphdrainage - Osteopathisches Konzept',
+      'Manuelle Therapie - Osteopathisches Konzept',
+      'Manuelle Lymphdrainage',
       'KG ZNS - PNF',
       'Kinesio Taping ',
       'Krankengymnastik am Gerät',
@@ -33,7 +33,7 @@ const nordlichter = [
       'Manuelle Therapie',
       'Kinesiotaping',
       'Fußreflexzonentherapie',
-      'Einführung in die Rolfing Methode - Bindegewebsmassage',
+      'Einführung in die Rolfing Methode',
     ],
     proffession: 'Physiotherapeutin',
     languages: ['DE'],
@@ -100,7 +100,7 @@ const nordlichter = [
   {
     profilfoto: marco,
     name: 'Marco Hönemann',
-    fachbereich: ['Manuelle Therapie Krankengymnastik am Gerät'],
+    fachbereich: ['Manuelle Therapie', 'Krankengymnastik am Gerät'],
     proffession: 'Student in Medizinpädagogik',
     languages: ['DE'],
     person: '',
