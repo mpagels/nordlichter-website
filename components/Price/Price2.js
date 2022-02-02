@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 
-export default function Price2({ title, description, extras, price, isSmall }) {
+export default function Price2({
+  title,
+  description,
+  extras,
+  price,
+  isSmall,
+  starInfo,
+}) {
   return (
     <PriceWrapper isSmall={isSmall}>
       <InfoWrapper>
@@ -27,6 +34,7 @@ export default function Price2({ title, description, extras, price, isSmall }) {
       <PriceArea>
         {price.was ? <Price>{price.was}</Price> : ''}
         <Price isNow>{price.is}</Price>
+        {starInfo ? <StarInfo>{starInfo}</StarInfo> : ''}
       </PriceArea>
     </PriceWrapper>
   )
@@ -99,4 +107,9 @@ const PriceArea = styled.div`
 
 const Description = styled.h3`
   font-weight: 300;
+`
+
+const StarInfo = styled.p`
+  margin: 0;
+  font-size: 0.7em;
 `

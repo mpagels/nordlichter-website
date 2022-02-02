@@ -87,8 +87,8 @@ const preise = {
     ],
     abos: [
       {
-        title: 'Schmerz lass nach!',
-        description: '30 Minuten Massge',
+        title: '6er ABO',
+        description: '30 Minuten Massage',
         extras: ['Wärmepackung', '6x Massage', '10% Rabatt'],
         price: {
           was: 'Statt 312 €',
@@ -96,8 +96,8 @@ const preise = {
         },
       },
       {
-        title: 'Schmerz lass nach!',
-        description: '30 Minuten Massge',
+        title: '10er ABO',
+        description: '30 Minuten Massage',
         extras: ['Wärmepackung', '10x Massage', '15% Rabatt'],
         price: {
           was: 'Statt 520 €',
@@ -115,10 +115,11 @@ const preise = {
       },
       {
         isSmall: true,
-        title: 'Osteopathische Behandlung',
+        title: 'Osteopathische Behandlung*',
         price: {
-          is: '85 €',
+          is: '90 €',
         },
+        starInfo: '*PKV und Selbstzahler bei Frau Nicole Jensen',
       },
     ],
   },

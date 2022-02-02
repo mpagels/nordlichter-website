@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Background = () => (
   <Wrapper>
     <Image
-      alt="Mountains"
+      alt="anchor"
       src="/nordlichter-anker.png"
       layout="fill"
       objectFit="cover"
@@ -21,6 +21,6 @@ const Wrapper = styled.div`
   width: 100vw;
   overflow: hidden;
   z-index: -5;
-  opacity: 0.03;
+  opacity: 0.02;
   padding: 150px;
 `

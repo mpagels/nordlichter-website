@@ -21,6 +21,7 @@
     "next-images": "^1.6.2",
     "nodemailer": "^6.4.17",
     "react": "17.0.1",
+    "react-country-flag": "^3.0.2",
     "react-dom": "17.0.1",
     "react-hook-form": "^6.11.3",
     "react-responsive": "^8.2.0",

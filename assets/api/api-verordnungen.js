@@ -150,16 +150,12 @@ const verordnungen = {
       info: [
         {
           normal:
-            'erhalten Sie einen Behandlungsvertrag von uns in dem alle Leistungen und die pro Behandlung sind ',
+            ' richtet sich nach den Standard Vorgaben der gesetzlichen Krankenkassen. Es kann allerdings die Behandlungsdauer individuell ',
         },
-        { highlight: 'länger ' },
+        { highlight: 'verlängert ' },
         {
           normal:
-            'als bei gesetzlichlich Versicherten. Hier kommt es wieder darauf an was ingesamt ',
-        },
-        { highlight: 'verordnet ' },
-        {
-          normal: 'wurde.',
+            'werden und die Rechnungssumme entsprechend angepasst werden. Sprechen Sie uns hier bitte darauf an.',
         },
       ],
     },

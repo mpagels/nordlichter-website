@@ -4,7 +4,8 @@ import Content from '../../components/GreyContextBox/Content'
 import styled from 'styled-components'
 import GreyBoxContent from '../../components/GreyContextBox/GreyContentBox'
 import BetreuungListItem from '../../components/BetreuungsListItem/BetreuungListItem'
-import ContactForm from '../../components/ContactForm/ContactForm'
+import ButtonToContactForm from '../../components/ButtonToContactForm/ButtonToContactForm'
+import GirlGoalLineSVG from '../../assets/svgs/athlethen-betreuung/girl-goal-line.svg'
 
 export default function BetrieblichesGesundheitsmanagement() {
   return (
@@ -29,6 +30,7 @@ export default function BetrieblichesGesundheitsmanagement() {
           text={betrieblichesManagement.greyContent_2}
         />
       </GreyBox>
+      <ButtonToContactForm toContactForm />
       <SupportHeadline>
         Punkte einer solchen Betreuung durch unsere Physiotherapeuten könnten
         unter anderem sein:
@@ -39,7 +41,8 @@ export default function BetrieblichesGesundheitsmanagement() {
           <BetreuungListItem key={beratung.description} {...beratung} />
         ))}
       </SupportList>
-      <ContactForm />
+      <ButtonToContactForm toContactForm />
+      <GirlGoalLineSVG style={styleSVG} />
     </Layout>
   )
 }
@@ -107,3 +110,7 @@ const SupportList = styled.ul`
 const CustomBox = styled(GreyBoxContent)`
   max-width: 880px;
 `
+
+const styleSVG = {
+  marginBottom: '35px',
+}
