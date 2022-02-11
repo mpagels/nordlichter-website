@@ -1,5 +1,7 @@
 import nodemailer from 'nodemailer'
 
+const RECIEVE_EMAIL = process.env.MAILER_MAIL_ADRESS
+
 const transporter = nodemailer.createTransport({
   host: process.env.MAILER_SERVER,
   port: process.env.MAILER_PORT, // Use whichever port here.
@@ -14,10 +16,10 @@ const transporter = nodemailer.createTransport({
 export default async (req, res) => {
   try {
     const {
-      senderMail,
-      name,
-      content,
       recipientMail,
+      name,
+      senderMail,
+      content,
       telefon,
       adresse,
       betreff,
@@ -158,7 +160,7 @@ export default async (req, res) => {
         margin-top: 50px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
       }
 
       .tag__wrapper {
@@ -379,25 +381,25 @@ export default async (req, res) => {
       name,
       text: mergedContent,
       recipientMail,
+      email,
     })
     res.send(mailerRes)
     //[4]
   } catch (error) {
-    console.log('error')
+    console.log('error', error)
     res.status(404).send('')
     return
   }
 }
 
-const mailer = ({ senderMail, name, text, recipientMail }) => {
-  const from =
-    name && senderMail ? `${name} <${senderMail}>` : `${name || senderMail}`
+const mailer = ({ senderMail, name, text, recipientMail, email }) => {
+  const from = name && email ? `${name} <${email}>` : `${name || email}`
   const message = {
-    from,
-    to: `${recipientMail}`,
+    from: senderMail,
+    to: RECIEVE_EMAIL,
     subject: `Neue Nachricht von ${from}`,
     html: text,
-    replyTo: from,
+    replyTo: email,
   }
   //[5]
 
