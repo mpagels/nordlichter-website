@@ -20,12 +20,3 @@ jobs:
       with:
         source: "."
         target: "/usr/home/nordld/nordlichter"
-
-    - name: Executing remote command
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: ls
