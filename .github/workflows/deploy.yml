@@ -16,7 +16,7 @@ jobs:
         env:
           CI: false
       - name: copy-to-vps
-      - uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
