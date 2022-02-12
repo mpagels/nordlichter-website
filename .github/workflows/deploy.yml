@@ -32,5 +32,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
+            export PATH=$PATH:/usr/home/nordld/.linuxbrew/bin
             cd ~/nordlichter
             pm2 restart "halstenbek-frontend"
