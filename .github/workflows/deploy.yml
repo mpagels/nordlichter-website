@@ -23,6 +23,8 @@ jobs:
     needs: [copy-to-vps]
     
     steps:
+    - uses: actions/setup-node@v1
+    
     - name: deploy website and restart pm2 service
       uses: appleboy/ssh-action@master
       with:
