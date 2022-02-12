@@ -15,7 +15,7 @@ jobs:
       env:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        port: ${{ secrets.PORT }}
+        port: 222
         key: ${{ secrets.SSHKEY }}
       with:
         source: "."
