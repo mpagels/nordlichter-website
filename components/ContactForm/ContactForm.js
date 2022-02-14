@@ -65,17 +65,17 @@ export default function ContactForm() {
         addition: additional.lenght !== 0 ? additional : null,
       }
     }
-    const res = await sendContactMail(
-      'pagelsmartin@gmx.de',
-      name,
-      'pagelsmartin@gmx.de',
-      nachricht,
-      telefon,
-      adresse,
-      betreff,
-      email,
-      ImInterestedIn
-    )
+    const res = await sendContactMail({
+      recipientMail: process.env.recipientMail,
+      name: name,
+      senderMail: process.env.senderMail,
+      content: nachricht,
+      telefon: telefon,
+      adresse: adresse,
+      betreff: betreff,
+      email: email,
+      ImInterestedIn: ImInterestedIn,
+    })
 
     if (res.status < 300) {
       onSubmit('success')
