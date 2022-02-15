@@ -66,9 +66,9 @@ export default function ContactForm() {
       }
     }
     const res = await sendContactMail({
-      recipientMail: process.env.recipientMail,
+      recipientMail: process.env.NEXT_PUBLIC_recipientMail,
       name: name,
-      senderMail: process.env.senderMail,
+      senderMail: email,
       content: nachricht,
       telefon: telefon,
       adresse: adresse,

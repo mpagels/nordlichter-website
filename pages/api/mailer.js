@@ -12,6 +12,7 @@ const transporter = nodemailer.createTransport({
 //[1]
 
 export default async (req, res) => {
+  console.log(req.body)
   try {
     const {
       senderMail,
@@ -23,7 +24,7 @@ export default async (req, res) => {
       betreff,
       email,
       ImInterestedIn,
-    } = req.body
+    } = req.body.recipientMail
     //[2]
     // Check if fields are all filled
     if (
@@ -305,21 +306,21 @@ export default async (req, res) => {
                     <p class="value">${adresse}</p>
                 </section>
                 <section class="overall__topic">
-                <p class=tag>${ImInterestedIn.topic}</p>
+                <p class=tag>${ImInterestedIn?.topic}</p>
                 ${
-                  ImInterestedIn.prediction
+                  ImInterestedIn?.prediction
                     ? `<p class=tag>${ImInterestedIn.prediction}</p>`
                     : ''
                 }
                 </section>
                 ${
-                  ImInterestedIn.prediction && ImInterestedIn.interestedIn
+                  ImInterestedIn?.prediction && ImInterestedIn?.interestedIn
                     ? `<section class="additional-infos">
                     <header>VERORDNUNG/EN</header>
                     <div class="tag__wrapper">
                     ${
-                      ImInterestedIn.prediction
-                        ? ImInterestedIn.interestedIn
+                      ImInterestedIn?.prediction
+                        ? ImInterestedIn?.interestedIn
                             .map(
                               (interested) => `<p class=tag>${interested}</p>`
                             )
@@ -332,14 +333,14 @@ export default async (req, res) => {
                 }
 
                 ${
-                  ImInterestedIn.prediction && ImInterestedIn.addition
+                  ImInterestedIn?.prediction && ImInterestedIn?.addition
                     ? `
                 <section class="additional-infos">
                     <header>ERGÄNZENDE HEILMITTEL</header>
                     <div class="tag__wrapper">
                     ${
-                      ImInterestedIn.prediction
-                        ? ImInterestedIn.addition
+                      ImInterestedIn?.prediction
+                        ? ImInterestedIn?.addition
                             .map((addition) => `<p class=tag>${addition}</p>`)
                             .join('\n')
                         : ''
@@ -383,7 +384,7 @@ export default async (req, res) => {
     res.send(mailerRes)
     //[4]
   } catch (error) {
-    console.log('error')
+    console.log('error', error)
     res.status(404).send('')
     return
   }
