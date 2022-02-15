@@ -82,6 +82,7 @@ export default function ContactForm() {
     }
     if (res.status > 399) {
       onSubmit('error')
+      console.log(res.error)
     }
   }
 
