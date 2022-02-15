@@ -12,7 +12,6 @@ const transporter = nodemailer.createTransport({
 //[1]
 
 export default async (req, res) => {
-  console.log(req.body)
   try {
     const {
       senderMail,
@@ -384,7 +383,6 @@ export default async (req, res) => {
     res.send(mailerRes)
     //[4]
   } catch (error) {
-    console.log('error', error)
     res.status(404).send('')
     return
   }
