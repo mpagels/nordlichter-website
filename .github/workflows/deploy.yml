@@ -9,9 +9,7 @@ jobs:
       MAILER_PASSWORD: ${{ secrets.MAILER_PASSWORD }}
       MAILER_SERVER: ${{ secrets.MAILER_SERVER }}
       MAILER_PORT: ${{ secrets.MAILER_PORT }}
-      MAILER_MAIL_ADRESS: ${{ secrets.MAILER_MAIL_ADRESS }}
-      recipientMail: ${{ secrets.recipientMail }}
-      senderMail: ${{ secrets.senderMail }}
+      NEXT_PUBLIC_recipientMail: ${{ secrets.NEXT_PUBLIC_recipientMail }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
