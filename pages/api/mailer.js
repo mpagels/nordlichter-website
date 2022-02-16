@@ -13,6 +13,8 @@ const transporter = nodemailer.createTransport({
 
 export default async (req, res) => {
   console.log('clg from api/mailer.js')
+  console.log(process.env.MAILER_SERVER)
+  console.log(auth)
   try {
     const {
       senderMail,
