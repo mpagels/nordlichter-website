@@ -384,6 +384,7 @@ export default async (req, res) => {
     res.send(mailerRes)
     //[4]
   } catch (error) {
+    console.log('error in api/mailer', error)
     res.status(404).send(error)
     return
   }
