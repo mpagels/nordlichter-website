@@ -2,7 +2,7 @@ name: remote ssh command
 on:
   push:
     branches:
-      - develop
+      - main
 jobs:
   build:
     name: build nordlichter
