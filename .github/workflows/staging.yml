@@ -42,4 +42,4 @@ jobs:
           script: |
             export PATH=$PATH:/usr/home/nordld/.linuxbrew/bin
             cd ~/halstenbek-staging
-            pm2 restart "halstenbek-frontend-staging"
+            pm2 restart "staging-halstenbek-frontend"
