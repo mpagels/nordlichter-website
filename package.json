@@ -7,6 +7,7 @@
     "all": "next dev && start-storybook -p 6006 --no-dll",
     "build": "next build",
     "start": "next start",
+    "develop": "next start -p 3006",
     "storybook": "start-storybook -p 6006 --no-dll",
     "sb": "start-storybook -p 6006 --no-dll",
     "build-storybook": "build-storybook --no-dll"
