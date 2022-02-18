@@ -1,6 +1,6 @@
 import stefanieW from '../jpg/nordlichter/stefanieW-neu.png'
 import stefanieK from '../jpg/nordlichter/stefanieK-neu.png'
-import kevin from '../jpg/nordlichter/kevin-neu.png'
+import ines from '../jpg/nordlichter/ines-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
 import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
@@ -79,6 +79,15 @@ const nordlichter = [
     fachbereich: ['Rezeption und Anmeldung'],
     proffession: 'Verwaltung & Terminvergabe',
     languages: ['DE'],
+    person:
+      'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
+  },
+  {
+    profilfoto: ines,
+    name: 'Ines Lubowski',
+    fachbereich: ['Rezeption und Anmeldung'],
+    proffession: 'Verwaltung & Terminvergabe',
+    languages: ['DE', 'GB'],
     person:
       'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
   },
