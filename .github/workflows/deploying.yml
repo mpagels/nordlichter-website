@@ -1,0 +1,45 @@
+name: remote ssh command
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: build nordlichter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        env:
+          MAILER_USERNAME: ${{ secrets.MAILER_USERNAME }}
+          MAILER_PASSWORD: ${{ secrets.MAILER_PASSWORD }}
+          MAILER_SERVER: ${{ secrets.MAILER_SERVER }}
+          MAILER_PORT: ${{ secrets.MAILER_PORT }}
+          NEXT_PUBLIC_recipientMail: ${{ secrets.NEXT_PUBLIC_recipientMail }}
+        with:
+          node-version: '16.x'
+      - run: npm ci
+      - run: npm run build --if-present
+        env:
+          CI: false
+      - name: copy-to-vps
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: '.'
+          target: '/usr/home/nordld/nordlichter'
+      - name: deploy website and restart pm2 service
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            export PATH=$PATH:/usr/home/nordld/.linuxbrew/bin
+            cd ~/nordlichter
+            pm2 restart "halstenbek-frontend"

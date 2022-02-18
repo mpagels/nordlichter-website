@@ -1,5 +1,5 @@
-import Verband from '../../assets/jpg/nordlichter/trustElements/verband.jpg'
-import Netzwerk from '../../assets/jpg/nordlichter/trustElements/netzwerk-sportmedizin.jpg'
+import Verband from '../../assets/jpg/nordlichter/trustElements/verband.png'
+import Netzwerk from '../../assets/jpg/nordlichter/trustElements/netzwerk-sportmedizin.png'
 import styled from 'styled-components'
 
 export default function TrustElements() {

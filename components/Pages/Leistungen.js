@@ -11,7 +11,9 @@ import ButtonToContactForm from '../ButtonToContactForm/ButtonToContactForm'
 export default function LeistungenPage() {
   return (
     <Wrapper>
-      <Headline>Herzlich Willkommen bei den Nordlichtern</Headline>
+      <Headline>
+        Herzlich Willkommen bei den Nordlichtern in Halstenbek
+      </Headline>
       <ButtonToContactForm />
       <AboutUs>
         Ihre <span>Ansprechpartner</span> in Halstenbek rund um das Thema
