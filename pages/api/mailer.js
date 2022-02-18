@@ -16,11 +16,6 @@ const transporter = nodemailer.createTransport({
 //[1]
 
 export default async (req, res) => {
-  console.log('clg from api/mailer.js')
-  console.log(process.env.MAILER_SERVER)
-  console.log(process.env.MAILER_PORT)
-  console.log(process.env.MAILER_USERNAME)
-  console.log(process.env.MAILER_PASSWORD)
   try {
     const {
       senderMail,
@@ -392,7 +387,6 @@ export default async (req, res) => {
     res.send(mailerRes)
     //[4]
   } catch (error) {
-    console.log('error in api/mailer', error)
     res.status(404).send(error)
     return
   }
