@@ -66,7 +66,7 @@ export default function ContactForm() {
       }
     }
     const res = await sendContactMail({
-      recipientMail: process.env.NEXT_PUBLIC_recipientMail,
+      recipientMail: process.env.NEXT_PUBLIC_RECIPIENTMAIL,
       name: name,
       senderMail: email,
       content: nachricht,
@@ -82,7 +82,6 @@ export default function ContactForm() {
     }
     if (res.status > 399) {
       onSubmit('error')
-      console.log(res.error)
     }
   }
 
