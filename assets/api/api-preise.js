@@ -108,7 +108,7 @@ const preise = {
     others: [
       {
         isSmall: true,
-        title: 'Kenisiotape',
+        title: 'Kinesio Tape',
         price: {
           is: 'nur 10 € Grundpreis',
         },
