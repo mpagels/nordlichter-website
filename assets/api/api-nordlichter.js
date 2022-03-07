@@ -110,8 +110,8 @@ const nordlichter = [
     profilfoto: marco,
     name: 'Marco Hönemann',
     fachbereich: ['Manuelle Therapie', 'Krankengymnastik am Gerät'],
-    proffession: 'Student in Medizinpädagogik',
-    languages: ['DE'],
+    proffession: 'Physiotherapeut / Medizinpädagogikstudent',
+    languages: ['DE', 'GB'],
     person: '',
   },
   {
