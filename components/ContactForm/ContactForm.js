@@ -318,8 +318,11 @@ export default function ContactForm() {
               id="adresse"
               name="adresse"
               placeholder="Musterstraße 1, 12345, Musterstadt"
-              ref={register()}
+              ref={register({ required: true })}
             ></Input>
+            {errors.adresse && (
+              <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
+            )}
           </InputWrapper>
           <InputWrapper>
             <Label htmlFor="betreff">Betreff:</Label>
@@ -327,8 +330,11 @@ export default function ContactForm() {
               id="betreff"
               name="betreff"
               placeholder="Worum geht es?"
-              ref={register()}
+              ref={register({ required: true })}
             ></Input>
+            {errors.betreff && (
+              <ErrorMessage>Bitte füllen Sie dieses Feld aus!</ErrorMessage>
+            )}
           </InputWrapper>
           <InputWrapper>
             <Label htmlFor="nachricht">
