@@ -43,7 +43,11 @@ export default function NavBar2() {
               </StyledNavLinkItem>
             </ul>
           </StyledNavLink>
-          <StyledNavLink isDeactivated={true}>Jobs</StyledNavLink>
+          <StyledNavLink>
+            <Link href="/jobs">
+              <a>Jobs</a>
+            </Link>
+          </StyledNavLink>
           <StyledNavLink>
             <Link href="/nordlichter">
               <a>Nordlichter</a>
@@ -80,7 +84,6 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // padding: 0 30px;
   position: relative;
   height: 172px;
   & a {
