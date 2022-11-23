@@ -1,10 +1,8 @@
 import stefanieW from '../jpg/nordlichter/stefanieW-neu.png'
-import stefanieK from '../jpg/nordlichter/stefanieK-neu.png'
 import ines from '../jpg/nordlichter/ines-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
 import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
-import kira from '../jpg/nordlichter/kira-neu.png'
 import marco from '../jpg/nordlichter/marco.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 
@@ -57,23 +55,6 @@ const nordlichter = [
       'Seit 2012 staatlich anerkannte Physiotherapeutin mit Zusatzqualifikationen in MLD und MT. Ausserdem ist sie als ausgebildete Tanzpädagogin erfahren in Arbeit mit Gruppen und unterrichtet verschiedene Tänze an Tanzschulen in der näheren Umgebung.',
   },
   {
-    profilfoto: stefanieK,
-    name: 'Stefanie Kommnick',
-    fachbereich: [
-      'KG ZNS nach Bobath',
-      'Manuelle Lymphdrainage',
-      'Myofasciale Triggerpunkttherapie',
-      'Kinesio Taping',
-      'CMD Therapeutin Fußreflexzonentherapie',
-      'Medical Flossing',
-      'TMX Trigger-Coach',
-    ],
-    languages: ['DE', 'GB'],
-    proffession: 'Physiotherapeutin',
-    person:
-      'Seit 2006 staatlich anerkannte Physiotherapeutin mit Fortbildungen in MLD, CMD und KG ZNS. Im Rahmen der Krankengymnastik auf zentral-neurologischer Basis betreut sie eine Vielzahl an Patienten mit neurologischen Beschwerden.',
-  },
-  {
     profilfoto: michelle,
     name: 'Michelle Koster',
     fachbereich: ['Rezeption und Anmeldung'],
@@ -90,21 +71,6 @@ const nordlichter = [
     languages: ['DE', 'GB'],
     person:
       'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
-  },
-  {
-    profilfoto: kira,
-    name: 'Kira Schlüter',
-    fachbereich: [
-      'Krankengymnastik',
-      'Manuelle Lymphdrainage',
-      'Spezifisches Krafttraining',
-    ],
-    languages: ['DE', 'GB', 'ES'],
-    proffession: `Physiotherapeutin /
-    B.Sc. Physiotherapie`,
-    fachbereich: ['Manuelle Lymphdrainage'],
-    person:
-      'Angehende Bachelorabsolventin der Physiotherapie, seit 2020 examinierte Physiotherapeutin und seit ihrem Abschluss bei den Nordlichtern tätig. Zertifikatsfortbildung in der manuellen Lymphdrainage und Expertin für gezieltes Krafttraining.',
   },
   {
     profilfoto: marco,
