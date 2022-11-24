@@ -31,10 +31,11 @@ export default function NavBar2() {
                   <a>Verordnung</a>
                 </Link>
               </StyledNavLinkItem>
-              <StyledNavLinkItem>
-                <Link href="/selbstzahler">
-                  <a>Selbstzahler</a>
-                </Link>
+              <StyledNavLinkItem isDeactivated={true}>
+                Selbstzahler
+                {/* <Link href="/selbstzahler">
+                  <a>r</a>
+                </Link> */}
               </StyledNavLinkItem>
               <StyledNavLinkItem>
                 <Link href="/leistungen/betriebliches-gesundheitsmanagment">
