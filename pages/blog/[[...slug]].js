@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 
@@ -14,7 +13,6 @@ dayjs.locale('de')
 dayjs.extend(relativeTime)
 
 export default function Blog({ data, mainPage }) {
-  const router = useRouter()
   return (
     <>
       <Head>
