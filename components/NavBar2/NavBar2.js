@@ -59,7 +59,11 @@ export default function NavBar2() {
               <a>Kontakt</a>
             </Link>
           </StyledNavLink>
-          <StyledNavLink isDeactivated={true}>Blog</StyledNavLink>
+          <StyledNavLink>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </StyledNavLink>
         </NavBarList>
       </NavBarWrapper>
       <BurgerMenu onClick={changeBurgerOpen} isOpen={isOpen} />
