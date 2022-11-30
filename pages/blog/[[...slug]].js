@@ -119,7 +119,6 @@ export async function getServerSideProps(ctx) {
         'http://localhost:1337/api/blogeintrags?populate=*'
       )
       const data = await response.json()
-      console.log(data)
       return {
         props: { data, mainPage: true },
       }
