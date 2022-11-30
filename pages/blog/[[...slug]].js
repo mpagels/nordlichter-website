@@ -114,23 +114,35 @@ export async function getServerSideProps(ctx) {
   const { query } = ctx
 
   if (Object.keys(query).length === 0) {
-    const response = await fetch(
-      'http://localhost:1337/api/blogeintrags?populate=*'
-    )
-    const data = await response.json()
-    console.log(data)
-    return {
-      props: { data, mainPage: true },
+    try {
+      const response = await fetch(
+        'http://localhost:1337/api/blogeintrags?populate=*'
+      )
+      const data = await response.json()
+      console.log(data)
+      return {
+        props: { data, mainPage: true },
+      }
+    } catch (e) {
+      return {
+        props: { data: { data: [] }, mainPage: true },
+      }
     }
   } else {
     const { slug } = query
     const [blogSlug] = slug
-    const response = await fetch(
-      `http://localhost:1337/api/blogeintrags?filters[slug][$eq]=${blogSlug}&populate=*`
-    )
-    const data = await response.json()
-    return {
-      props: { data, mainPage: false },
+    try {
+      const response = await fetch(
+        `http://localhost:1337/api/blogeintrags?filters[slug][$eq]=${blogSlug}&populate=*`
+      )
+      const data = await response.json()
+      return {
+        props: { data, mainPage: false },
+      }
+    } catch (e) {
+      return {
+        props: { data: { data: [] }, mainPage: false },
+      }
     }
   }
 }
