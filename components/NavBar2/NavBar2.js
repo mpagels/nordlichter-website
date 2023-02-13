@@ -32,8 +32,8 @@ export default function NavBar2() {
                 </Link>
               </StyledNavLinkItem>
               <StyledNavLinkItem isDeactivated={true}>
-                Selbstzahler
-                {/* <Link href="/selbstzahler">
+                Akupunktur
+                {/* <Link href="/akupunktur">
                   <a>r</a>
                 </Link> */}
               </StyledNavLinkItem>
