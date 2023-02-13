@@ -1,10 +1,10 @@
 import stefanieW from '../jpg/nordlichter/stefanieW-neu.png'
 import ines from '../jpg/nordlichter/ines-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
-import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
-import marco from '../jpg/nordlichter/marco.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
+import johnDoe from '../jpg/nordlichter/johnDoe-neu.png'
+import torben from '../jpg/nordlichter/torben.png'
 
 const nordlichter = [
   {
@@ -55,15 +55,6 @@ const nordlichter = [
       'Seit 2012 staatlich anerkannte Physiotherapeutin mit Zusatzqualifikationen in MLD und MT. Ausserdem ist sie als ausgebildete Tanzpädagogin erfahren in Arbeit mit Gruppen und unterrichtet verschiedene Tänze an Tanzschulen in der näheren Umgebung.',
   },
   {
-    profilfoto: michelle,
-    name: 'Michelle Koster',
-    fachbereich: ['Rezeption und Anmeldung'],
-    proffession: 'Verwaltung & Terminvergabe',
-    languages: ['DE'],
-    person:
-      'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
-  },
-  {
     profilfoto: ines,
     name: 'Ines Lubowski',
     fachbereich: ['Rezeption und Anmeldung'],
@@ -73,14 +64,6 @@ const nordlichter = [
       'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
   },
   {
-    profilfoto: marco,
-    name: 'Marco Hönemann',
-    fachbereich: ['Manuelle Therapie', 'Krankengymnastik am Gerät'],
-    proffession: 'Physiotherapeut / Medizinpädagogikstudent',
-    languages: ['DE', 'GB'],
-    person: '',
-  },
-  {
     profilfoto: janeDoe,
     name: 'Nicole Jensen',
     fachbereich: ['Osteopathie', 'Yoga', 'Krankengymnastik für Kinder'],
@@ -88,6 +71,27 @@ const nordlichter = [
     languages: ['DE'],
     person:
       'Als freie Mitarbeiterin bereichert Frau Jensen das Nordlichter Team an zwei Nachmittagen (Dienstag / Donnerstag) in der Woche. Sie übernimmt die osteopathischen Behandlungen in der Praxis und hat weitreichende Fortbildungen im Yoga Training.',
+  },
+  {
+    profilfoto: johnDoe,
+    name: 'Dirk Niemeyer',
+    fachbereich: ['Manuelle Lymphdrainage', 'Massage'],
+    proffession: 'Med. Bademeister und Masseur',
+    languages: ['DE', 'GB'],
+    person: '',
+  },
+  {
+    profilfoto: torben,
+    name: 'Torben Petersen-Lund',
+    fachbereich: [
+      'Athleten Betreuung',
+      'Orthopädie/Chirurgie',
+      'Manuelle Therapie',
+    ],
+    proffession: 'Geschäftsführer',
+    languages: ['DE', 'GB'],
+    person:
+      'Seit 2010 ausgebildeter Physiotherapeut mit den Fortbildungen für manuelle Lymphdrainage, Manuelle Therapie, professioneller Athletenbetreuung und Ernährungsberatung. Seit vielen Jahren betreut er Fußballer, Handballer und Leichtathleten in Hamburg und gründete 2017 "Die Nordlichter" in Halstenbek.',
   },
 ]
 
