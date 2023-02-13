@@ -3,7 +3,6 @@ import ines from '../jpg/nordlichter/ines-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
 import michelle from '../jpg/nordlichter/michelle-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
-import marco from '../jpg/nordlichter/marco.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 
 const nordlichter = [
@@ -71,14 +70,6 @@ const nordlichter = [
     languages: ['DE', 'GB'],
     person:
       'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
-  },
-  {
-    profilfoto: marco,
-    name: 'Marco Hönemann',
-    fachbereich: ['Manuelle Therapie', 'Krankengymnastik am Gerät'],
-    proffession: 'Physiotherapeut / Medizinpädagogikstudent',
-    languages: ['DE', 'GB'],
-    person: '',
   },
   {
     profilfoto: janeDoe,
