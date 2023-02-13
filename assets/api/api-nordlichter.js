@@ -3,6 +3,7 @@ import ines from '../jpg/nordlichter/ines-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
+import johnDoe from '../jpg/nordlichter/johnDoe-neu.png'
 import torben from '../jpg/nordlichter/torben.png'
 
 const nordlichter = [
@@ -70,6 +71,14 @@ const nordlichter = [
     languages: ['DE'],
     person:
       'Als freie Mitarbeiterin bereichert Frau Jensen das Nordlichter Team an zwei Nachmittagen (Dienstag / Donnerstag) in der Woche. Sie übernimmt die osteopathischen Behandlungen in der Praxis und hat weitreichende Fortbildungen im Yoga Training.',
+  },
+  {
+    profilfoto: johnDoe,
+    name: 'Dirk Niemeyer',
+    fachbereich: ['Manuelle Lymphdrainage', 'Massage'],
+    proffession: 'Med. Bademeister und Masseur',
+    languages: ['DE', 'GB'],
+    person: '',
   },
   {
     profilfoto: torben,
