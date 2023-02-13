@@ -171,7 +171,7 @@ const StyledNavLink = styled.li`
     }
   }
 
-  @media (min-width: 842px) {
+  @media (min-width: 943px) {
     & > ul {
       display: flex;
       opacity: 0;
