@@ -3,6 +3,7 @@ import ines from '../jpg/nordlichter/ines-neu.png'
 import franziska from '../jpg/nordlichter/franziska-neu.png'
 import kai from '../jpg/nordlichter/kai-neu.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
+import torben from '../jpg/nordlichter/torben.png'
 
 const nordlichter = [
   {
@@ -69,6 +70,19 @@ const nordlichter = [
     languages: ['DE'],
     person:
       'Als freie Mitarbeiterin bereichert Frau Jensen das Nordlichter Team an zwei Nachmittagen (Dienstag / Donnerstag) in der Woche. Sie übernimmt die osteopathischen Behandlungen in der Praxis und hat weitreichende Fortbildungen im Yoga Training.',
+  },
+  {
+    profilfoto: torben,
+    name: 'Torben Petersen-Lund',
+    fachbereich: [
+      'Athleten Betreuung',
+      'Orthopädie/Chirurgie',
+      'Manuelle Therapie',
+    ],
+    proffession: 'Geschäftsführer',
+    languages: ['DE', 'GB'],
+    person:
+      'Seit 2010 ausgebildeter Physiotherapeut mit den Fortbildungen für manuelle Lymphdrainage, Manuelle Therapie, professioneller Athletenbetreuung und Ernährungsberatung. Seit vielen Jahren betreut er Fußballer, Handballer und Leichtathleten in Hamburg und gründete 2017 "Die Nordlichter" in Halstenbek.',
   },
 ]
 
