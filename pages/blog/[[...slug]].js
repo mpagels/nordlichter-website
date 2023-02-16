@@ -67,9 +67,9 @@ export default function Blog({ data, mainPage }) {
                             blogEntry.attributes.Erstellungszeitunkt
                           ).fromNow()}
                         </CreatedAt>
-                        <PreviewText>
+                        <ReactMarkdown>
                           {blogEntry.attributes.Preview}
-                        </PreviewText>
+                        </ReactMarkdown>
                         <Link href={blogEntry.attributes.slug}>
                           Mehr lesen...
                         </Link>
