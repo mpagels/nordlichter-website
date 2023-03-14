@@ -217,7 +217,7 @@ const CreatedAt = styled.h4`
 `
 
 const FullBlogEntry = styled.div`
-  padding: 0 10em;
+  padding: 0 15px;
 
   & > a {
     margin: 0 0 200px 0;
