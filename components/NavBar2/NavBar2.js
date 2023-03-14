@@ -96,6 +96,7 @@ const NavigationWrapper = styled.div`
   justify-content: space-between;
   position: relative;
   height: 172px;
+  z-index: 5;
   & a {
     color: var(--color-font-darkgrey);
   }
