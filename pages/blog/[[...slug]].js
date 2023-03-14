@@ -8,6 +8,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/de'
 import Layout from '../../components/Layout'
+import ButtonToContactForm from '../../components/ButtonToContactForm/ButtonToContactForm'
 dayjs.locale('de')
 
 dayjs.extend(relativeTime)
@@ -28,6 +29,7 @@ export default function Blog({ data, mainPage }) {
           {data.data.length === 0 ? (
             <div>
               <div>Keine Blogeinträge gefunden</div>
+              <ButtonToContactForm toContactForm />
             </div>
           ) : mainPage ? (
             <>
@@ -44,6 +46,7 @@ export default function Blog({ data, mainPage }) {
                   bleibst. Viel Spaß!
                 </BlogHeaderInfoText>
               </BlogOverallHeader>
+              <ButtonToContactForm toContactForm />
               <BlogList>
                 {data.data.map((blogEntry) => {
                   return (
