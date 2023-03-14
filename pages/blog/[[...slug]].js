@@ -183,7 +183,7 @@ const BlogList = styled.ul`
   @media (max-width: 841px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     padding: 0 1em;
     max-width: 480px;
@@ -227,8 +227,7 @@ const FullBlogEntry = styled.div`
 const ImageSizeWrapper = styled.div`
   @media (max-width: 841px) {
     display: flex;
-    justify-content: center;
-    width: 150px;
+    justify-content: start;
   }
 `
 
