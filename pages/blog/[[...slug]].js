@@ -8,6 +8,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/de'
 import Layout from '../../components/Layout'
+import ButtonToContactForm from '../../components/ButtonToContactForm/ButtonToContactForm'
 dayjs.locale('de')
 
 dayjs.extend(relativeTime)
@@ -28,6 +29,7 @@ export default function Blog({ data, mainPage }) {
           {data.data.length === 0 ? (
             <div>
               <div>Keine Blogeinträge gefunden</div>
+              <ButtonToContactForm toContactForm />
             </div>
           ) : mainPage ? (
             <>
@@ -44,6 +46,7 @@ export default function Blog({ data, mainPage }) {
                   bleibst. Viel Spaß!
                 </BlogHeaderInfoText>
               </BlogOverallHeader>
+              <ButtonToContactForm toContactForm />
               <BlogList>
                 {data.data.map((blogEntry) => {
                   return (
@@ -180,7 +183,7 @@ const BlogList = styled.ul`
   @media (max-width: 841px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     padding: 0 1em;
     max-width: 480px;
@@ -214,7 +217,7 @@ const CreatedAt = styled.h4`
 `
 
 const FullBlogEntry = styled.div`
-  padding: 0 10em;
+  padding: 0 15px;
 
   & > a {
     margin: 0 0 200px 0;
@@ -224,8 +227,7 @@ const FullBlogEntry = styled.div`
 const ImageSizeWrapper = styled.div`
   @media (max-width: 841px) {
     display: flex;
-    justify-content: center;
-    width: 150px;
+    justify-content: start;
   }
 `
 

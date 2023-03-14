@@ -7,6 +7,7 @@ import leistungen from '../../assets/api/api-leistungen'
 import TextSvgText from '../TextSvgText/TextSvgText'
 import TrustElements from '../TrustElements/TrustElements'
 import ButtonToContactForm from '../ButtonToContactForm/ButtonToContactForm'
+import BlogPreview from '../BlogPreview/BlogPreview'
 
 export default function LeistungenPage() {
   return (
@@ -22,6 +23,7 @@ export default function LeistungenPage() {
         nach einer OP, wir begleiten Sie auf Ihrem Weg zur{' '}
         <span>Gesundheit</span>.
       </AboutUs>
+      <BlogPreview />
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
         <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}
