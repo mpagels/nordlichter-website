@@ -9,7 +9,7 @@ import TrustElements from '../TrustElements/TrustElements'
 import ButtonToContactForm from '../ButtonToContactForm/ButtonToContactForm'
 import BlogPreview from '../BlogPreview/BlogPreview'
 
-export default function LeistungenPage() {
+export default function LeistungenPage({ blogEntries }) {
   return (
     <Wrapper>
       <Headline>
@@ -23,7 +23,7 @@ export default function LeistungenPage() {
         nach einer OP, wir begleiten Sie auf Ihrem Weg zur{' '}
         <span>Gesundheit</span>.
       </AboutUs>
-      <BlogPreview />
+      <BlogPreview blogEntries={blogEntries} />
       {leistungen.infoTexts.map(({ firstText, svg, secondText }, index) => (
         <TextSvgText key={index} firstText={firstText} secondText={secondText}>
           {svg}

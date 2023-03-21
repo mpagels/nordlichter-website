@@ -9,17 +9,7 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/de'
 dayjs.locale('de')
 
-export default function BlogPreview() {
-  const [blogEntries, setBlogEntries] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:1337/api/blogeintrags?populate=*')
-      .then((response) => response.json())
-      .then((data) => {
-        setBlogEntries(data.data)
-      })
-  }, [])
-
+export default function BlogPreview({ blogEntries }) {
   if (blogEntries.length === 0) {
     return <></>
   }
