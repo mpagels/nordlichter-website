@@ -5,11 +5,11 @@ import kai from '../jpg/nordlichter/kai-neu.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 import johnDoe from '../jpg/nordlichter/johnDoe-neu.png'
 import torben from '../jpg/nordlichter/torben.png'
-import constantin from '../jpg/nordlichter/constantin-rupp.jpg'
-import sabine from '../jpg/nordlichter/sabine-gerundt.jpg'
-import felix from '../jpg/nordlichter/felix-scheerer.jpg'
-import dirk from '../jpg/nordlichter/dirk-niemeyer.jpg'
-import katja from '../jpg/nordlichter/katja-brunhöver.jpg'
+import constantin from '../jpg/nordlichter/constantinRupp.png'
+import sabine from '../jpg/nordlichter/sabine-gerundt.png'
+import felix from '../jpg/nordlichter/felix-scheerer.png'
+import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
+import katja from '../jpg/nordlichter/katja-brunhöver.png'
 
 const nordlichter = [
   {
