@@ -5,6 +5,11 @@ import kai from '../jpg/nordlichter/kai-neu.png'
 import janeDoe from '../jpg/nordlichter/janeDoe-neu.png'
 import johnDoe from '../jpg/nordlichter/johnDoe-neu.png'
 import torben from '../jpg/nordlichter/torben.png'
+import constantin from '../jpg/nordlichter/constantinRupp.png'
+import sabine from '../jpg/nordlichter/sabine-gerundt.png'
+import felix from '../jpg/nordlichter/felix-scheerer.png'
+import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
+import katja from '../jpg/nordlichter/katja-brunhöver.png'
 
 const nordlichter = [
   {
@@ -73,8 +78,40 @@ const nordlichter = [
       'Als freie Mitarbeiterin bereichert Frau Jensen das Nordlichter Team an zwei Nachmittagen (Dienstag / Donnerstag) in der Woche. Sie übernimmt die osteopathischen Behandlungen in der Praxis und hat weitreichende Fortbildungen im Yoga Training.',
   },
   {
-    profilfoto: johnDoe,
+    profilfoto: dirk,
     name: 'Dirk Niemeyer',
+    fachbereich: ['Manuelle Lymphdrainage', 'Massage'],
+    proffession: 'Med. Bademeister und Masseur',
+    languages: ['DE', 'GB'],
+    person: '',
+  },
+  {
+    profilfoto: katja,
+    name: 'Katja Brunhöver',
+    fachbereich: ['KG ZNS - PNF'],
+    proffession: 'Physiotherapeutin',
+    languages: ['DE', 'GB'],
+    person: '',
+  },
+  {
+    profilfoto: felix,
+    name: 'Felix Scheerer',
+    fachbereich: [''],
+    proffession: 'Physiotherapeut',
+    languages: ['DE', 'GB'],
+    person: '',
+  },
+  {
+    profilfoto: sabine,
+    name: 'Sabine Gerundt',
+    fachbereich: ['Rezeption und Anmeldung'],
+    proffession: 'Verwaltung & Terminvergabe',
+    languages: ['DE', 'GB'],
+    person: '',
+  },
+  {
+    profilfoto: constantin,
+    name: 'Constantin Rupp',
     fachbereich: ['Manuelle Lymphdrainage', 'Massage'],
     proffession: 'Med. Bademeister und Masseur',
     languages: ['DE', 'GB'],
