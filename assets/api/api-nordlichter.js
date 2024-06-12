@@ -13,22 +13,6 @@ import katja from '../jpg/nordlichter/katja-brunhöver.png'
 
 const nordlichter = [
   {
-    profilfoto: kai,
-    name: 'Kai Heinemann',
-    fachbereich: [
-      'Manuelle Therapie - Osteopathisches Konzept',
-      'Manuelle Lymphdrainage',
-      'KG ZNS - PNF',
-      'Kinesio Taping ',
-      'Krankengymnastik am Gerät',
-      'Sportphysiotherapie',
-    ],
-    languages: ['DE', 'GB'],
-    proffession: 'Physiotherapeut / Praxisleitung',
-    person:
-      'Seit 2010 im Beruf und seit Dezember 2019 an Bord. Fortbildungen in allen wichtigen Bereichen der Physiotherapie: Manuelle Therapie, Krankengymnastik PNF (KG ZNS), Manuelle Lymphdrainage, Kinesiotaping,Krankengymnastik am Gerät und Sportphysiotherapie. Langjährige Erfahrung in der Erstellung und Kontrolle von individuellen Trainingsplänen.',
-  },
-  {
     profilfoto: stefanieW,
     name: 'Stefanie Wenzel',
     fachbereich: [
