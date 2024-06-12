@@ -3,6 +3,7 @@ import Navbar2 from './NavBar2/NavBar2'
 import Footer from './Footer/Footer'
 import styled from 'styled-components'
 import Background from './BackGroundAnchor/BackGroundAnchor'
+import AnnouncementBanner from './Announcement/AnnouncementBanner'
 export default function Layout({ children }) {
   const appTitle = 'Nordlichter Halstenbek'
 
@@ -19,6 +20,7 @@ export default function Layout({ children }) {
           rel="stylesheet"
         />
       </Head>
+      <AnnouncementBanner />
       <Background />
       <Navbar2 />
       <Content>{children}</Content>
