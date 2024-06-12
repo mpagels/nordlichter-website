@@ -62,14 +62,6 @@ const nordlichter = [
       'Als freie Mitarbeiterin bereichert Frau Jensen das Nordlichter Team an zwei Nachmittagen (Dienstag / Donnerstag) in der Woche. Sie übernimmt die osteopathischen Behandlungen in der Praxis und hat weitreichende Fortbildungen im Yoga Training.',
   },
   {
-    profilfoto: dirk,
-    name: 'Dirk Niemeyer',
-    fachbereich: ['Manuelle Lymphdrainage', 'Massage'],
-    proffession: 'Med. Bademeister und Masseur',
-    languages: ['DE', 'GB'],
-    person: '',
-  },
-  {
     profilfoto: katja,
     name: 'Katja Brunhöver',
     fachbereich: ['KG ZNS - PNF'],
