@@ -66,7 +66,7 @@ export default function WimHof() {
         verändern.
       </CTABlock>
       <CTAHeaderSmall>
-        Erlebe es selbst und hole dir weiter Infos zu meinen Atemkursen und
+        Erlebe es selbst und hole dir weitere Infos zu meinen Atemkursen und
         Workshops.
       </CTAHeaderSmall>
       <Link href="https://nordlife.info/" passHref target="_blank">
