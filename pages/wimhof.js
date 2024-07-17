@@ -83,7 +83,8 @@ const CTAHeader = styled.h3`
 `
 const CTAHeaderSmall = styled.h4`
   font-size: 1.5em;
-  margin-bottom: 5px;
+  margin: 5px 25px;
+  text-align: center;
 `
 
 const CTABlock = styled.section`
@@ -136,6 +137,10 @@ const GridWrapper = styled.ul`
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  @media (max-width: 1050px) {
+    grid-template-columns: 50%;
+  }
 `
 
 const Headline = styled.h1`
