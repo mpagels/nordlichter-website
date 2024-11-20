@@ -1,14 +1,14 @@
 import Layout from '../../components/Layout'
 import LeistungenPage from '../../components/Pages/Leistungen'
 
-export default function Leistungen({ blogEntries }) {
+export default function Leistungen() {
   return (
     <Layout>
-      <LeistungenPage blogEntries={blogEntries} />
+      <LeistungenPage />
     </Layout>
   )
 }
-export async function getStaticProps() {
+/* export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await fetch('http://localhost:1337/api/blogeintrags?populate=*')
@@ -22,4 +22,4 @@ export async function getStaticProps() {
     },
     revalidate: 10,
   }
-}
+} */
