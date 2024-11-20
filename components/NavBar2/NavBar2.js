@@ -46,7 +46,7 @@ export default function NavBar2() {
           </StyledNavLink>
           <StyledNavLink>
             <Link href="https://nordlichter.earthpower.shop/" passHref>
-              <a target="_blank">Hanf-Shop</a>
+              <a target="_blank">Hanföl-Shop</a>
             </Link>
           </StyledNavLink>
 
@@ -84,10 +84,10 @@ export default function NavBar2() {
 const StyledImage = styled.img`
   padding: 20px;
   height: 160px;
-  @media (max-width: 1220px) {
+  @media (max-width: 1232px) {
     height: 130px;
   }
-  @media (max-width: 1110px) {
+  @media (max-width: 1121px) {
     height: 100px;
   }
 `
@@ -173,7 +173,7 @@ const StyledNavLink = styled.li`
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1012px) {
     & > ul {
       display: flex;
       opacity: 0;
