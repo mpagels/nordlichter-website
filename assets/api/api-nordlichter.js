@@ -15,6 +15,15 @@ import xhonialiaj from '../jpg/nordlichter/xhoni-aliaj.png'
 
 const nordlichter = [
   {
+    profilfoto: ines,
+    name: 'Ines Lubowski',
+    fachbereich: ['Rezeption und Anmeldung'],
+    proffession: 'Praxisleitung',
+    languages: ['DE', 'GB'],
+    person:
+      'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
+  },
+  {
     profilfoto: stefanieW,
     name: 'Stefanie Wenzel',
     fachbereich: [
@@ -44,15 +53,6 @@ const nordlichter = [
     languages: ['DE'],
     person:
       'Seit 2012 staatlich anerkannte Physiotherapeutin mit Zusatzqualifikationen in MLD und MT. Ausserdem ist sie als ausgebildete Tanzpädagogin erfahren in Arbeit mit Gruppen und unterrichtet verschiedene Tänze an Tanzschulen in der näheren Umgebung.',
-  },
-  {
-    profilfoto: ines,
-    name: 'Ines Lubowski',
-    fachbereich: ['Rezeption und Anmeldung'],
-    proffession: 'Praxisleitung',
-    languages: ['DE', 'GB'],
-    person:
-      'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
   },
   {
     profilfoto: janeDoe,
