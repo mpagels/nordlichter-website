@@ -12,6 +12,7 @@ import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
 import katja from '../jpg/nordlichter/katja-brunhöver.png'
 import antoinetteGoldbach from '../jpg/nordlichter/antoinette-goldbach.png'
 import xhonialiaj from '../jpg/nordlichter/xhoni-aliaj.png'
+import brittastuck from '../jpg/nordlichter/britta-stuck.png'
 
 const nordlichter = [
   {
@@ -111,6 +112,20 @@ const nordlichter = [
     languages: ['DE', 'GB', 'FR', 'AE'],
     person: '',
   },
+  {
+    profilfoto: brittastuck,
+    name: 'Brita Stück ',
+    fachbereich: [
+      'Heilpraktikerin',
+      'Craniele, parietale und viszerale Osteopathie',
+      'Medi-Taping Ausbildung',
+      'Transformationstherapeutin nach Robert Betz',
+    ],
+    proffession: 'Osteopathin',
+    languages: ['DE', 'GB', 'FR', 'IT'],
+    person: '',
+  },
+
   {
     profilfoto: torben,
     name: 'Torben Petersen-Lund',
