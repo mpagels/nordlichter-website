@@ -10,6 +10,8 @@ import sabine from '../jpg/nordlichter/sabine-gerundt.png'
 import felix from '../jpg/nordlichter/felix-scheerer.png'
 import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
 import katja from '../jpg/nordlichter/katja-brunhöver.png'
+import antoinetteGoldbach from '../jpg/nordlichter/antoinette-goldbach.png'
+import xhonialiaj from '../jpg/nordlichter/xhoni-aliaj.png'
 
 const nordlichter = [
   {
@@ -91,6 +93,22 @@ const nordlichter = [
     fachbereich: ['Manuelle Lymphdrainage', 'Massage'],
     proffession: 'Med. Bademeister und Masseur',
     languages: ['DE', 'GB'],
+    person: '',
+  },
+  {
+    profilfoto: xhonialiaj,
+    name: 'Xhoni Aliaj',
+    fachbereich: ['Sportphysiotherapie', 'Massage'],
+    proffession: 'Physiotherapeut',
+    languages: ['DE', 'GB', 'AL', 'GR'],
+    person: '',
+  },
+  {
+    profilfoto: antoinetteGoldbach,
+    name: 'Antionette Goldbach',
+    fachbereich: ['Manuelle Lymphdrainage', 'KG ZNS', 'Manuelle Therapie'],
+    proffession: 'Physiotherapeutin',
+    languages: ['DE', 'GB', 'FR', 'AE'],
     person: '',
   },
   {
