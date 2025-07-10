@@ -126,7 +126,7 @@ const NavBarWrapper = styled.nav`
   box-shadow: 0 0px 5.7px rgba(0, 0, 0, 0.022),
     0 0px 14.5px rgba(0, 0, 0, 0.031), 0 0px 29.6px rgba(0, 0, 0, 0.039),
     0 0px 61px rgba(0, 0, 0, 0.048), 0 0px 167px rgba(0, 0, 0, 0.07);
-  @media (min-width: 1171px) {
+  @media (min-width: 1170px) {
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -142,7 +142,7 @@ const NavBarList = styled.ul`
   flex-direction: column;
   margin: 0;
   padding: 0;
-  @media (min-width: 943px) {
+  @media (min-width: 1170px) {
     flex-direction: row;
   }
 `
@@ -178,7 +178,7 @@ const StyledNavLink = styled.li`
     }
   }
 
-  @media (min-width: 1012px) {
+  @media (min-width: 1170px) {
     & > ul {
       display: flex;
       opacity: 0;
