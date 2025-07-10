@@ -47,7 +47,7 @@ const nordlichter = [
     profilfoto: ines,
     name: 'Ines Lubowski',
     fachbereich: ['Rezeption und Anmeldung'],
-    proffession: 'Verwaltung & Terminvergabe',
+    proffession: 'Praxisleitung',
     languages: ['DE', 'GB'],
     person:
       'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
