@@ -10,8 +10,20 @@ import sabine from '../jpg/nordlichter/sabine-gerundt.png'
 import felix from '../jpg/nordlichter/felix-scheerer.png'
 import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
 import katja from '../jpg/nordlichter/katja-brunhöver.png'
+import antoinetteGoldbach from '../jpg/nordlichter/antoinette-goldbach.png'
+import xhonialiaj from '../jpg/nordlichter/xhoni-aliaj.png'
+import brittastuck from '../jpg/nordlichter/britta-stuck.png'
 
 const nordlichter = [
+  {
+    profilfoto: ines,
+    name: 'Ines Lubowski',
+    fachbereich: ['Rezeption und Anmeldung'],
+    proffession: 'Praxisleitung',
+    languages: ['DE', 'GB'],
+    person:
+      'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
+  },
   {
     profilfoto: stefanieW,
     name: 'Stefanie Wenzel',
@@ -42,15 +54,6 @@ const nordlichter = [
     languages: ['DE'],
     person:
       'Seit 2012 staatlich anerkannte Physiotherapeutin mit Zusatzqualifikationen in MLD und MT. Ausserdem ist sie als ausgebildete Tanzpädagogin erfahren in Arbeit mit Gruppen und unterrichtet verschiedene Tänze an Tanzschulen in der näheren Umgebung.',
-  },
-  {
-    profilfoto: ines,
-    name: 'Ines Lubowski',
-    fachbereich: ['Rezeption und Anmeldung'],
-    proffession: 'Verwaltung & Terminvergabe',
-    languages: ['DE', 'GB'],
-    person:
-      'Persönlich erreichbar in der Woche von Montag bis Freitag ab 8:00 - 13:00 Uhr.',
   },
   {
     profilfoto: janeDoe,
@@ -93,6 +96,36 @@ const nordlichter = [
     languages: ['DE', 'GB'],
     person: '',
   },
+  {
+    profilfoto: xhonialiaj,
+    name: 'Xhoni Aliaj',
+    fachbereich: ['Sportphysiotherapie', 'Massage'],
+    proffession: 'Physiotherapeut',
+    languages: ['DE', 'GB', 'AL', 'GR'],
+    person: '',
+  },
+  {
+    profilfoto: antoinetteGoldbach,
+    name: 'Antionette Goldbach',
+    fachbereich: ['Manuelle Lymphdrainage', 'KG ZNS', 'Manuelle Therapie'],
+    proffession: 'Physiotherapeutin',
+    languages: ['DE', 'GB', 'FR', 'AE'],
+    person: '',
+  },
+  {
+    profilfoto: brittastuck,
+    name: 'Brita Stück ',
+    fachbereich: [
+      'Heilpraktikerin',
+      'Craniele, parietale und viszerale Osteopathie',
+      'Medi-Taping Ausbildung',
+      'Transformationstherapeutin nach Robert Betz',
+    ],
+    proffession: 'Osteopathin',
+    languages: ['DE', 'GB', 'FR', 'IT'],
+    person: '',
+  },
+
   {
     profilfoto: torben,
     name: 'Torben Petersen-Lund',
