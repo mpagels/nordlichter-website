@@ -10,9 +10,11 @@ export default function Nordlichter() {
     <Layout>
       <Headline>Unser Team in Halstenbek</Headline>
       <Wrapper>
-        {nordlichter.map((nordlicht, index) => (
-          <PersonnelFile key={index} {...nordlicht} />
-        ))}
+        {nordlichter
+          .filter((nordlicht) => !nordlicht.name.includes('Brita Stück'))
+          .map((nordlicht, index) => (
+            <PersonnelFile key={index} {...nordlicht} />
+          ))}
       </Wrapper>
       <BottomSVG style={customSvgStyle} />
     </Layout>

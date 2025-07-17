@@ -114,7 +114,7 @@ const nordlichter = [
   },
   {
     profilfoto: brittastuck,
-    name: 'Brita Stück ',
+    name: 'Brita Stück',
     fachbereich: [
       'Heilpraktikerin',
       'Craniele, parietale und viszerale Osteopathie',
