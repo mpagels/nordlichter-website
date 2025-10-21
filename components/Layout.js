@@ -4,6 +4,7 @@ import Footer from './Footer/Footer'
 import styled from 'styled-components'
 import Background from './BackGroundAnchor/BackGroundAnchor'
 import AnnouncementBanner from './Announcement/AnnouncementBanner'
+import Script from 'next/script'
 export default function Layout({ children }) {
   const appTitle = 'Nordlichter Halstenbek'
 
