@@ -36,3 +36,4 @@ yarn-error.log*
 
 # storybook templates
 /stories
+.env

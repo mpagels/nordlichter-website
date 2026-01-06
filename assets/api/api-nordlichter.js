@@ -46,11 +46,12 @@ const nordlichter = [
     name: 'Franziska Schulz',
     fachbereich: [
       'Manuelle Lymphdrainage',
+      'KG ZNS',
       'Kenisiotape',
       'Manuelle Therapie',
       'Pilates',
     ],
-    proffession: 'Physiotherapeutin',
+    proffession: 'Physiotherapeutin / Stellvertretende Praxisleitung',
     languages: ['DE'],
     person:
       'Seit 2012 staatlich anerkannte Physiotherapeutin mit Zusatzqualifikationen in MLD und MT. Ausserdem ist sie als ausgebildete Tanzpädagogin erfahren in Arbeit mit Gruppen und unterrichtet verschiedene Tänze an Tanzschulen in der näheren Umgebung.',
@@ -75,7 +76,7 @@ const nordlichter = [
   {
     profilfoto: felix,
     name: 'Felix Scheerer',
-    fachbereich: [''],
+    fachbereich: ['KG ZNS'],
     proffession: 'Physiotherapeut',
     languages: ['DE', 'GB'],
     person: '',
