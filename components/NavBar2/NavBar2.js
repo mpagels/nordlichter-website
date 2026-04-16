@@ -49,6 +49,11 @@ export default function NavBar2() {
               <a>Osteopathie</a>
             </Link>
           </StyledNavLink>
+              <StyledNavLink>
+            <Link href="/youtube">
+              <a>Youtube Kanal</a>
+            </Link>
+          </StyledNavLink>
           <StyledNavLink>
             <Link href="/wimhofmethode">
               <a>Wim Hof Methode</a>
