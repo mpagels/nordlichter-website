@@ -11,6 +11,7 @@ import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
 import katja from '../jpg/nordlichter/katja-brunhöver.png'
 import xhonialiaj from '../jpg/nordlichter/xhoni-aliaj.png'
 import brittastuck from '../jpg/nordlichter/britta-stuck.png'
+import shebinsaji from '../jpg/nordlichter/shebin-saji.png'
 
 const nordlichter = [
   {
@@ -106,6 +107,20 @@ const nordlichter = [
     ],
     proffession: 'Osteopathin',
     languages: ['DE', 'GB', 'FR', 'IT'],
+    person: '',
+  },
+    {
+    profilfoto: shebinsaji,
+    name: 'Shebin Saji',
+    fachbereich: [
+      'Neurologie',
+      'Krankengymnastik',
+      'MFR ( Myofascial Release Therapy )',
+'Schröpftherapie',
+'Spezialisiert auf orthopädischen Gelenkersatz'
+    ],
+    proffession: 'Physiotherapeut in Anerkennung',
+    languages: ['IN','GB','DE'],
     person: '',
   },
 
