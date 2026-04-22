@@ -7,12 +7,11 @@ import johnDoe from '../jpg/nordlichter/johnDoe-neu.png'
 import torben from '../jpg/nordlichter/torben.png'
 import constantin from '../jpg/nordlichter/constantinRupp.png'
 import sabine from '../jpg/nordlichter/sabine-gerundt.png'
-import felix from '../jpg/nordlichter/felix-scheerer.png'
 import dirk from '../jpg/nordlichter/dirk-niemeyer.png'
 import katja from '../jpg/nordlichter/katja-brunhöver.png'
-import antoinetteGoldbach from '../jpg/nordlichter/antoinette-goldbach.png'
 import xhonialiaj from '../jpg/nordlichter/xhoni-aliaj.png'
 import brittastuck from '../jpg/nordlichter/britta-stuck.png'
+import shebinsaji from '../jpg/nordlichter/shebin-saji.png'
 
 const nordlichter = [
   {
@@ -74,14 +73,6 @@ const nordlichter = [
     person: '',
   },
   {
-    profilfoto: felix,
-    name: 'Felix Scheerer',
-    fachbereich: ['KG ZNS'],
-    proffession: 'Physiotherapeut',
-    languages: ['DE', 'GB'],
-    person: '',
-  },
-  {
     profilfoto: sabine,
     name: 'Sabine Gerundt',
     fachbereich: ['Rezeption und Anmeldung'],
@@ -106,14 +97,6 @@ const nordlichter = [
     person: '',
   },
   {
-    profilfoto: antoinetteGoldbach,
-    name: 'Antionette Goldbach',
-    fachbereich: ['Manuelle Lymphdrainage', 'KG ZNS', 'Manuelle Therapie'],
-    proffession: 'Physiotherapeutin',
-    languages: ['DE', 'GB', 'FR', 'AE'],
-    person: '',
-  },
-  {
     profilfoto: brittastuck,
     name: 'Brita Stück ',
     fachbereich: [
@@ -124,6 +107,20 @@ const nordlichter = [
     ],
     proffession: 'Osteopathin',
     languages: ['DE', 'GB', 'FR', 'IT'],
+    person: '',
+  },
+    {
+    profilfoto: shebinsaji,
+    name: 'Shebin Saji',
+    fachbereich: [
+      'Neurologie',
+      'Krankengymnastik',
+      'MFR ( Myofascial Release Therapy )',
+'Schröpftherapie',
+'Spezialisiert auf orthopädischen Gelenkersatz'
+    ],
+    proffession: 'Physiotherapeut in Anerkennung',
+    languages: ['IN','GB','DE'],
     person: '',
   },
 

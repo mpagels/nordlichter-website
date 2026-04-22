@@ -5,8 +5,8 @@ const footer = [
   {
     title: 'Sprechzeiten:',
     infos: [
-      'Mo - Do: 07:00 - 19:00',
-      'Fr: 07:00 - 18:00',
+      'Mo - Do: 08:00 - 17:00',
+      'Fr: 08:00 - 14:00',
       'Termine nach Vereinbarung',
     ],
   },
