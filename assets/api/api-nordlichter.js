@@ -58,7 +58,7 @@ const nordlichter = [
   {
     profilfoto: janeDoe,
     name: 'Nicole Jensen',
-    fachbereich: ['Osteopathie', 'Yoga', 'Krankengymnastik für Kinder'],
+    fachbereich: ['Osteopathie', 'Yoga', 'Krankengymnastik für Kinder', 'Manuelle Therapie'],
     proffession: 'Physiotherapeutin /  Freie Mitarbeiterin',
     languages: ['DE'],
     person:
@@ -91,8 +91,8 @@ const nordlichter = [
   {
     profilfoto: xhonialiaj,
     name: 'Xhoni Aliaj',
-    fachbereich: ['Sportphysiotherapie', 'Massage'],
-    proffession: 'Physiotherapeut',
+    fachbereich: ['Sportphysiotherapie', 'Massage', 'Atemtherapie','Lymphtherapie', 'Kieferphysiotherapy', 'Sportherapie'],
+    proffession: 'Msc in Physiotherapie',
     languages: ['DE', 'GB', 'AL', 'GR'],
     person: '',
   },
@@ -131,6 +131,7 @@ const nordlichter = [
       'Athleten Betreuung',
       'Orthopädie/Chirurgie',
       'Manuelle Therapie',
+      'Wim Hof Instructor',
     ],
     proffession: 'Geschäftsführer',
     languages: ['DE', 'GB'],
